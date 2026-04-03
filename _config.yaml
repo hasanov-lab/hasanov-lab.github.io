@@ -1,7 +1,7 @@
 # site properties and page defaults
-title: Code to Clinic
-subtitle: 
-description: 
+title: Hasanov Lab
+subtitle: Code to Clinic
+description: Bridging computational biology and clinical oncology to understand and combat brain metastasis.
 header: images/background.jpg
 footer: images/background.jpg
 proofer: false
@@ -12,12 +12,10 @@ url: "https://hasanov-lab.github.io"
 
 # site social media and other links
 links:
-  email: 
-  orcid: 
-  google-scholar: ETJoidYAAAAJ
+  email: elshad.hasanov@osumc.edu
+  google-scholar: R6wSHlgAAAAJ
   github: hasanov-lab
-  twitter: 
-  youtube: 
+  twitter: HasanovLab
 
 ### jekyll settings
 

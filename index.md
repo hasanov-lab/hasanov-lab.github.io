@@ -1,9 +1,9 @@
 ---
 ---
 
-# stevenli11's Website
+# Code to Clinic
 
-An engaging 1-3 sentence description of your lab.
+We are a physician-scientist lab at The Ohio State University Comprehensive Cancer Center (OSUCCC – James), focused on understanding and preventing brain metastasis through multi-omics approaches, tumor immunology, and translational research.
 
 {% include section.html %}
 
@@ -11,7 +11,7 @@ An engaging 1-3 sentence description of your lab.
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Our research centers on genitourinary malignancies, renal cell carcinoma, and pan-cancer brain metastasis. We leverage single-cell omics, computational biology, and immunotherapy to uncover the mechanisms driving metastatic disease and develop novel therapeutic strategies.
 
 {%
   include button.html
@@ -34,7 +34,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+From tumor microenvironment characterization to immunotherapy optimization, our projects aim to bridge the gap between bench discoveries and bedside applications for patients with brain metastases.
 
 {%
   include button.html
@@ -59,7 +59,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+We are a multidisciplinary team of clinicians, computational biologists, and trainees working together toward a shared vision: a colorful, beautiful, and healthy brain — free of metastasis.
 
 {%
   include button.html
