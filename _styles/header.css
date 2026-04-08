@@ -48,6 +48,8 @@ header a {
 
 .title {
   font-size: var(--large);
+  font-weight: var(--bold);
+  letter-spacing: 0.5px;
 }
 
 .subtitle {
@@ -93,11 +95,14 @@ nav {
 }
 
 nav > a {
-  padding: 5px;
+  padding: 5px 10px;
+  border-radius: var(--rounded);
+  transition: color var(--transition), background var(--transition);
 }
 
 nav > a:hover {
   color: var(--primary);
+  background: var(--overlay);
 }
 
 @media (max-width: 700px) {
@@ -139,9 +144,11 @@ header[data-big] .title-text {
 }
 header[data-big] .title {
   font-size: var(--xxl);
+  letter-spacing: 2px;
 }
 header[data-big] .subtitle {
   font-size: var(--large);
+  letter-spacing: 1px;
 }
 
 /*# sourceMappingURL=header.css.map */

@@ -4,6 +4,14 @@
   align-items: center;
   gap: 40px;
   margin: 40px 0;
+  padding: 30px;
+  border-radius: var(--rounded);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px var(--overlay);
 }
 
 .feature-image {
@@ -13,6 +21,11 @@
   border-radius: var(--rounded);
   overflow: hidden;
   box-shadow: var(--shadow);
+  transition: transform var(--transition);
+}
+
+.feature:hover .feature-image {
+  transform: scale(1.03);
 }
 
 .feature-image img {
@@ -30,6 +43,7 @@
   text-align: center;
   font-family: var(--heading);
   font-weight: var(--semi-bold);
+  color: var(--primary);
 }
 
 .feature[data-flip] {

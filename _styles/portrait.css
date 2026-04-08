@@ -12,6 +12,11 @@
   width: 175px;
   max-width: calc(100% - 20px - 20px);
   text-decoration: none;
+  transition: transform var(--transition);
+}
+
+.portrait:hover {
+  transform: translateY(-6px);
 }
 
 .portrait[data-style=small] {
@@ -56,16 +61,18 @@
   border-radius: 999px;
   object-fit: cover;
   box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.portrait[data-style=tiny] .portrait-image {
-  width: 50px;
-  margin: 0;
+.portrait:hover .portrait-image {
+  transform: scale(1.08);
+  box-shadow: 0 8px 25px var(--overlay);
 }
 
 .portrait-name {
   font-family: var(--heading);
   font-weight: var(--semi-bold);
+  color: var(--primary);
 }
 
 .portrait[data-style=tiny] .portrait-description,

@@ -11,6 +11,12 @@
   overflow: hidden;
   box-shadow: var(--shadow);
   vertical-align: top;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px var(--overlay);
 }
 
 .card[data-style=small] {
@@ -21,6 +27,15 @@
   aspect-ratio: 3/2;
   object-fit: cover;
   width: 100%;
+  transition: transform var(--transition);
+}
+
+.card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-image {
+  overflow: hidden;
 }
 
 .card-text {
@@ -40,6 +55,7 @@
 .card-title {
   font-family: var(--heading);
   font-weight: var(--semi-bold);
+  color: var(--primary);
 }
 
 .card-subtitle {
