@@ -20,23 +20,24 @@
   z-index: -1;
 }
 
-// header: show full image, no color overlay
+// header: show full original image, no tint
+header.background {
+  background: #000000 !important;
+  color: #ffffff;
+}
+
 header.background:before {
-  opacity: 1;
+  opacity: 1 !important;
   background-position: 50% 30%;
 }
 
-// slight dark overlay for text readability
+// only a subtle dark overlay for text readability, NO color tint
 header.background:after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.3) !important;
   z-index: -1;
-}
-
-header.background {
-  color: #ffffff;
 }
 
 header.background a {
