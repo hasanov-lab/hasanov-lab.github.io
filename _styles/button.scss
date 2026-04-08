@@ -16,7 +16,7 @@ button {
   gap: 10px;
   max-width: calc(100% - 5px - 5px);
   margin: 5px;
-  padding: 8px 15px;
+  padding: 10px 20px;
   border: none;
   border-radius: var(--rounded);
   background: var(--primary);
@@ -28,12 +28,14 @@ button {
   text-decoration: none;
   vertical-align: middle;
   appearance: none;
-  transition: background var(--transition), color var(--transition);
+  transition: background var(--transition), color var(--transition), transform var(--transition), box-shadow var(--transition);
 }
 
 .button:hover {
-  background: var(--text);
+  background: var(--dark-gray);
   color: var(--background);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--overlay);
 }
 
 .button[data-style="bare"] {
@@ -42,7 +44,9 @@ button {
   color: var(--primary);
 
   &:hover {
-    color: var(--text);
+    color: var(--dark-gray);
+    transform: translateX(4px);
+    box-shadow: none;
   }
 }
 

@@ -10,16 +10,24 @@ footer {
   padding: 40px;
   line-height: var(--spacing);
   box-shadow: var(--shadow);
+  background: var(--dark-gray);
+  color: #ffffff;
 }
 
 footer a {
-  color: var(--text) !important;
+  color: #ffffff !important;
+  transition: color var(--transition);
 }
 
 footer a:hover {
-  color: var(--primary) !important;
+  color: var(--accent) !important;
 }
 
 footer .icon {
   font-size: var(--xl);
+  transition: transform var(--transition);
+}
+
+footer .icon:hover {
+  transform: scale(1.2);
 }
