@@ -57,7 +57,7 @@ nav:
   </div>
 
   <div class="contact-map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1528.5!2d-83.02940!3d40.00380!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88388c9e1f1ceb9d%3A0x3e8e28e3b0f1e2a1!2sPelotonia%20Research%20Center%2C%202255%20Kenny%20Rd%2C%20Columbus%2C%20OH%2043210!5e0!3m2!1sen!2sus!4v1712500000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0; min-height:500px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3056.1465851169764!2d-83.03784782286336!3d40.005173180583625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88388f13e6c94ee3%3A0x48d06e813a65ad00!2sPelotonia%20Research%20Center!5e0!3m2!1sen!2sus!4v1775620845716!5m2!1sen!2sus" width="100%" height="100%" style="border:0; min-height:500px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </div>
 
