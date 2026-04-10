@@ -48,6 +48,30 @@ header.background[data-big]:after {
   z-index: -1;
 }
 
+// === Mobile: drop aspect-ratio so content fits, image sits on top ===
+@media (max-width: 768px) {
+  header.background[data-big] {
+    aspect-ratio: unset !important;
+    height: auto !important;
+    padding-top: calc(100vw * 1536 / 2730 + 20px) !important;
+    padding-bottom: 30px !important;
+    justify-content: flex-start !important;
+  }
+
+  header.background[data-big]:before {
+    background-size: 100% auto !important;
+    background-position: top center !important;
+    bottom: auto !important;
+    height: calc(100vw * 1536 / 2730) !important;
+  }
+
+  header.background[data-big]:after {
+    bottom: auto !important;
+    height: calc(100vw * 1536 / 2730) !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+  }
+}
+
 // === SUBPAGE nav bar: blue-green gradient ===
 header.background:not([data-big]) {
   color: #ffffff;
