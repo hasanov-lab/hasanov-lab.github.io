@@ -171,11 +171,12 @@ header.background[data-big]:after {
   }
 }
 
-// === SUBPAGE nav bar: clean white background, no image ===
+// === SUBPAGE nav bar: light gray background with divider ===
 header.background:not([data-big]) {
-  background: var(--background) !important;
+  background: #f4f6f9 !important;
   color: var(--text) !important;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #d8dde5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 header.background:not([data-big]):before,
