@@ -42,6 +42,26 @@ header.background[data-big]:after {
   z-index: -1;
 }
 
+@media (max-width: 768px) {
+  header.background[data-big] {
+    aspect-ratio: unset !important;
+    height: auto !important;
+    padding-top: calc(56.2637362637vw + 20px) !important;
+    padding-bottom: 30px !important;
+    justify-content: flex-start !important;
+  }
+  header.background[data-big]:before {
+    background-size: 100% auto !important;
+    background-position: top center !important;
+    bottom: auto !important;
+    height: 56.2637362637vw !important;
+  }
+  header.background[data-big]:after {
+    bottom: auto !important;
+    height: 56.2637362637vw !important;
+    background: rgba(0, 0, 0, 0.4) !important;
+  }
+}
 header.background:not([data-big]) {
   color: #ffffff;
 }
