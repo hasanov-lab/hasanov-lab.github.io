@@ -24,11 +24,18 @@
 header.background[data-big] {
   background: #000000 !important;
   color: #ffffff;
+  // Match brain1.png aspect ratio (2730x1536) so the full image
+  // fills the header without black bars and without cropping.
+  aspect-ratio: 2730 / 1536;
+  min-height: unset;
+  height: auto;
+  justify-content: flex-end !important;
+  padding-bottom: 60px !important;
 }
 
 header.background[data-big]:before {
   opacity: 1 !important;
-  background-size: contain !important;
+  background-size: cover !important;
   background-position: 50% 50%;
   transform: scaleX(-1);
 }
