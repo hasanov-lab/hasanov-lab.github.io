@@ -28,7 +28,9 @@ header.background[data-big] {
 
 header.background[data-big]:before {
   opacity: 1 !important;
-  background-position: 50% 30%;
+  background-size: contain !important;
+  background-position: 50% 50%;
+  transform: scaleX(-1);
 }
 
 header.background[data-big]:after {
