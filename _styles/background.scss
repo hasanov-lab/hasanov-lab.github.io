@@ -171,36 +171,54 @@ header.background[data-big]:after {
   }
 }
 
-// === SUBPAGE nav bar: blue-green gradient ===
+// === SUBPAGE nav bar: clean white background, no image ===
 header.background:not([data-big]) {
-  color: #ffffff;
+  background: var(--background) !important;
+  color: var(--text) !important;
+  border-bottom: 1px solid #eee;
 }
 
-header.background:not([data-big]):before {
-  opacity: 1;
-}
-
+header.background:not([data-big]):before,
 header.background:not([data-big]):after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(26, 82, 118, 0.88) 0%,
-    rgba(46, 134, 193, 0.75) 50%,
-    rgba(23, 165, 137, 0.65) 100%
-  ) !important;
-  z-index: -1;
+  display: none !important;
+}
+
+// === FOOTER: clean solid background, no image ===
+footer.background {
+  background: var(--background-alt) !important;
+  color: var(--text) !important;
+  border-top: 1px solid #eee;
+}
+
+footer.background:before,
+footer.background:after {
+  display: none !important;
 }
 
 // === shared header styles ===
-header.background a {
+// Homepage big header keeps white text on dark hero
+header.background[data-big] a {
   color: #ffffff;
 }
 
-header.background nav > a:hover {
+header.background[data-big] nav > a:hover {
   color: #ffffff;
   background: rgba(255, 255, 255, 0.15);
+}
+
+// Subpage header uses dark text on white background
+header.background:not([data-big]) a {
+  color: var(--text);
+}
+
+header.background:not([data-big]) nav > a:hover {
+  color: var(--primary);
+  background: var(--overlay);
+}
+
+header.background:not([data-big]) nav > a.nav-active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
 }
 
 // particles.js canvas
