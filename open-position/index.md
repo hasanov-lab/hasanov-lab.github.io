@@ -1,7 +1,7 @@
 ---
 title: Open Position
 nav:
-  order: 6
+  order: 7
   tooltip: Join our team
 ---
 
