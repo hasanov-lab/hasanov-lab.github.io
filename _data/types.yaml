@@ -10,9 +10,29 @@ postdoc:
   icon: fa-solid fa-glasses
   description: Postdoctoral Researcher
 
+faculty:
+  icon: fa-solid fa-user-doctor
+  description: Faculty
+
+clinical:
+  icon: fa-solid fa-stethoscope
+  description: Clinical Team Member
+
+visiting-scholar:
+  icon: fa-solid fa-earth-americas
+  description: Visiting Scholar
+
 phd:
   icon: fa-solid fa-graduation-cap
   description: PhD Student
+
+team-member:
+  icon: fa-solid fa-user
+  description: Team Member
+
+future:
+  icon: fa-solid fa-user-plus
+  description: Future Lab Member
 
 undergrad:
   icon: fa-solid fa-user-graduate
