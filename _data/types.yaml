@@ -30,10 +30,6 @@ team-member:
   icon: fa-solid fa-user
   description: Team Member
 
-future:
-  icon: fa-solid fa-user-plus
-  description: Future Lab Member
-
 undergrad:
   icon: fa-solid fa-user-graduate
   description: Undergraduate Student
