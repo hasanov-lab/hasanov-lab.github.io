@@ -30,6 +30,10 @@ team-member:
   icon: fa-solid fa-user
   description: Team Member
 
+alumni:
+  icon: fa-solid fa-user-clock
+  description: Alumni
+
 undergrad:
   icon: fa-solid fa-user-graduate
   description: Undergraduate Student

@@ -1,8 +1,9 @@
 ---
-name: Betul Gok Yavuz
+name: Betul Gok Yavuz, MD, PhD
 image: images/photo.jpg
-role: team-member
-affiliation: The Ohio State University
+role: alumni
+description: Former Postdoctoral Fellow
+affiliation: Current Heme/Onc Fellow at University of Chicago
 ---
 
-Team member in the Hasanov Lab.
+Former Postdoctoral Fellow in the Hasanov Lab. Current Heme/Onc Fellow at University of Chicago.

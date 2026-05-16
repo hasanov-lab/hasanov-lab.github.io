@@ -18,5 +18,6 @@ Our lab brings together clinicians, statisticians, bioinformaticians, and comput
 {% include list.html data="members" component="portrait" filter="role == 'postdoc'" %}
 {% include list.html data="members" component="portrait" filter="role == 'phd'" %}
 {% include list.html data="members" component="portrait" filter="role == 'team-member'" %}
+{% include list.html data="members" component="portrait" filter="role == 'alumni'" %}
 
 {% include section.html %}
