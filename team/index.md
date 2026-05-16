@@ -18,6 +18,25 @@ Our lab brings together clinicians, statisticians, bioinformaticians, and comput
 {% include list.html data="members" component="portrait" filter="role == 'postdoc'" %}
 {% include list.html data="members" component="portrait" filter="role == 'phd'" %}
 {% include list.html data="members" component="portrait" filter="role == 'team-member'" %}
-{% include list.html data="members" component="portrait" filter="role == 'alumni'" %}
+
+## Alumni
+
+{% assign alumni = site.members | where: "role", "alumni" | sort: "name" %}
+
+<div class="alumni-list">
+  {% for member in alumni %}
+    <div class="alumni-item">
+      <a class="alumni-name" href="{{ member.url | relative_url | uri_escape }}">
+        {{ member.name }}
+      </a>
+      {% if member.description %}
+        <div class="alumni-description">{{ member.description }}</div>
+      {% endif %}
+      {% if member.affiliation %}
+        <div class="alumni-affiliation">{{ member.affiliation }}</div>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
 
 {% include section.html %}
