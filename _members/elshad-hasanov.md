@@ -2,7 +2,6 @@
 name: Elshad Hasanov, MD, PhD
 image: images/photo.jpg
 role: principal-investigator
-affiliation: The Ohio State University
 description: Assistant Professor, Internal Medicine - Medical Oncology
 links:
   email: elshad.hasanov@osumc.edu
