@@ -15,10 +15,10 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
   <a
     class="twitter-timeline"
     data-height="900"
-    data-chrome="noheader nofooter"
-    href="https://x.com/HasanovLab"
+    data-theme="light"
+    href="https://twitter.com/HasanovLab?ref_src=twsrc%5Etfw"
   >
-    Latest posts from @HasanovLab
+    Tweets by HasanovLab
   </a>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -33,6 +33,11 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
 .x-feed {
   max-width: 720px;
   margin: 20px auto;
+  min-height: 900px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
 }
 
 .x-feed-fallback {
