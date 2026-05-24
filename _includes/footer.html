@@ -1,14 +1,4 @@
-{% assign image = page.footer | default: site.footer %}
-{% assign dark = page.footer-dark | is_nil: site.footer-dark | is_nil: true %}
-
-<footer
-  class="background"
-  style="--image: url('{{ image | relative_url | uri_escape }}')"
-  {% if dark == true or dark == false %}
-    data-dark="{{ dark }}"
-  {% endif %}
-  data-size="wide"
->
+<footer data-size="wide">
   <div>
     {% for link in site.links %}
       {% assign key = link[0] %}
@@ -20,7 +10,6 @@
   <div>
     &copy; {{ site.time | date: "%Y" }}
     {{ site.title }}
-    &nbsp; | &nbsp; Design by Peng Li
   </div>
 
   <input

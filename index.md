@@ -3,7 +3,11 @@
 
 # Code to Clinic
 
-We are a physician-scientist lab at [The Ohio State University Comprehensive Cancer Center (OSUCCC – James)](https://cancer.osu.edu/), led by Dr. Elshad Hasanov. Our mission is to bridge the gap between computational discovery and clinical application in oncology. We integrate multi-omics data analysis, single-cell genomics, tumor immunology, and translational research to advance the understanding and treatment of genitourinary malignancies, renal cell carcinoma (RCC), hepatocellular carcinoma, and pan-cancer brain metastasis. By combining deep expertise in clinical oncology with cutting-edge computational biology, we aim to identify novel biomarkers, characterize the tumor microenvironment, and develop innovative immunotherapy strategies that can be translated into improved patient outcomes.
+We are a physician-scientist lab at [The Ohio State University Comprehensive Cancer Center (OSUCCC – James)](https://cancer.osu.edu/), led by Elshad Hasanov, MD, PhD. Our mission is to bridge computational discovery and clinical application in oncology by transforming complex cancer data into clinically meaningful insights.
+
+Through the Code to Clinic initiative, we build machine learning models, reproducible computational pipelines, and translational research tools that integrate clinical data, cancer genomics, transcriptomics, single-cell biology, tumor immunology, and clinical trial outcomes. Our research spans genitourinary malignancies, renal cell carcinoma (RCC), hepatocellular carcinoma, melanoma, brain metastases, and pan-cancer studies.
+
+Our work focuses on biomarker discovery, treatment response prediction, survival modeling, patient stratification, clinical trial interpretation, and characterization of the tumor microenvironment. By combining clinical expertise with machine learning and large-scale cancer data analysis, we aim to develop practical tools that accelerate discovery, support trial-informed research, and translate data-driven findings into improved patient outcomes.
 
 {% include section.html %}
 

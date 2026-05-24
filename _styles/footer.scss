@@ -10,12 +10,12 @@ footer {
   padding: 40px;
   line-height: var(--spacing);
   box-shadow: var(--shadow);
-  background: var(--dark-gray);
-  color: #ffffff;
+  background: var(--background);
+  color: var(--text);
 }
 
 footer a {
-  color: #ffffff !important;
+  color: var(--text) !important;
   transition: color var(--transition);
 }
 

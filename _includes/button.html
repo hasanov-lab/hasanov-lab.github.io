@@ -1,11 +1,19 @@
 {% assign button = include %}
 {% assign button = button | hash_default: site.data.types[include.type] %}
+{% assign href = button.link | replace: "$VALUE", button.link | replace: "$LINK", button.link %}
+{% unless href contains "://" or href contains "mailto:" or href contains "tel:" %}
+  {% assign href = href | relative_url %}
+{% endunless %}
 
 {% if button.link or button.icon or button.text %}
   <div class="button-wrapper">
     <a
       class="button"
-      href="{{ button.link | replace: "$LINK", button.link | relative_url }}"
+      href="{{ href }}"
+      {% if href contains "http://" or href contains "https://" %}
+        target="_blank"
+        rel="noopener noreferrer"
+      {% endif %}
       {% if button.tooltip %}
         data-tooltip="{{ button.tooltip | xml_escape }}"
       {% endif %}

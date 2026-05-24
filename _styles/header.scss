@@ -69,6 +69,10 @@ header a {
   font-weight: var(--thin);
 }
 
+header:not([data-big]) .subtitle {
+  display: none;
+}
+
 .nav-toggle {
   display: none;
   position: relative;

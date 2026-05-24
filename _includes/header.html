@@ -49,21 +49,12 @@
   <input class="nav-toggle" type="checkbox" aria-label="show/hide nav">
 
   <nav>
-    {% assign pages = site.pages
-      | where_exp: "page", "page.nav"
-      | sort: "nav.order"
-    %}
-    {% for nav_page in pages %}
-      {% if nav_page.nav %}
-        {% assign nav_path = nav_page.url | split: "/" | slice: 1 | first %}
-        <a
-          href="{{ nav_page.dir | relative_url | uri_escape }}"
-          data-tooltip="{{ nav_page.nav.tooltip | xml_escape }}"
-          {% if nav_path == current_path %}class="nav-active"{% endif %}
-        >
-          {{ nav_page.title }}
-        </a>
-      {% endif %}
-    {% endfor %}
+    <a href="{{ "/" | relative_url }}" data-tooltip="Home" {% if page.url == "/" %}class="nav-active"{% endif %}>Home</a>
+    <a href="{{ "/publications/" | relative_url }}" data-tooltip="Publications" {% if current_path == "publications" %}class="nav-active"{% endif %}>Publications</a>
+    <a href="{{ "/tools/" | relative_url }}" data-tooltip="Interactive tools" {% if current_path == "tools" %}class="nav-active"{% endif %}>Tools</a>
+    <a href="{{ "/team/" | relative_url }}" data-tooltip="About our team" {% if current_path == "team" %}class="nav-active"{% endif %}>Team</a>
+    <a href="{{ "/blog/" | relative_url }}" data-tooltip="News and events" {% if current_path == "blog" %}class="nav-active"{% endif %}>News & Events</a>
+    <a href="{{ "/contact/" | relative_url }}" data-tooltip="Contact" {% if current_path == "contact" %}class="nav-active"{% endif %}>Contact</a>
+    <a href="https://giveto.osu.edu/makeagift/details/318580?Source_Code=AGAG-OTH-S-ON-GivingHome" data-tooltip="Donate" target="_blank" rel="noopener noreferrer">Donate</a>
   </nav>
 </header>

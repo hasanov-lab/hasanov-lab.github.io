@@ -2,7 +2,7 @@
 name: Elshad Hasanov, MD, PhD
 image: images/photo.jpg
 role: principal-investigator
-description: Assistant Professor, Internal Medicine - Medical Oncology
+description: Assistant Professor<br>Medical Oncology
 links:
   email: elshad.hasanov@osumc.edu
   google-scholar: R6wSHlgAAAAJ

@@ -1,5 +1,5 @@
 ---
-name: Bayan Abu Alragheb, MD
+name: Nurlan Mammadzada, MD
 image: images/photo.jpg
 role: postdoc
 description: Postdoctoral Scholar

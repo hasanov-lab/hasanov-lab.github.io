@@ -11,13 +11,17 @@ Our lab brings together clinicians, statisticians, bioinformaticians, and comput
 
 {% include section.html %}
 
-{% include list.html data="members" component="portrait" filter="role == 'principal-investigator'" %}
-{% include list.html data="members" component="portrait" filter="role == 'faculty'" %}
-{% include list.html data="members" component="portrait" filter="role == 'clinical'" %}
-{% include list.html data="members" component="portrait" filter="role == 'visiting-scholar'" %}
-{% include list.html data="members" component="portrait" filter="role == 'postdoc'" %}
-{% include list.html data="members" component="portrait" filter="role == 'phd'" %}
-{% include list.html data="members" component="portrait" filter="role == 'team-member'" %}
+{% include portrait.html lookup="elshad-hasanov" no_link=true %}
+{% include portrait.html lookup="merve-hasanov" no_link=true %}
+{% include portrait.html lookup="zuhair-majeed" no_link=true %}
+{% include portrait.html lookup="bayan-abu-alragheb" no_link=true %}
+{% include portrait.html lookup="semiha-ozgul" no_link=true %}
+{% include portrait.html lookup="mostafa-ali" no_link=true %}
+{% include portrait.html lookup="peng-li" no_link=true %}
+{% include portrait.html lookup="antonio-fajeta" no_link=true %}
+{% include portrait.html lookup="shriya-deshmukh" no_link=true %}
+{% include portrait.html lookup="tugcs" no_link=true %}
+{% include portrait.html lookup="nurlan" no_link=true %}
 
 ## Alumni
 
@@ -26,9 +30,9 @@ Our lab brings together clinicians, statisticians, bioinformaticians, and comput
 <div class="alumni-list">
   {% for member in alumni %}
     <div class="alumni-item">
-      <a class="alumni-name" href="{{ member.url | relative_url | uri_escape }}">
+      <span class="alumni-name">
         {{ member.name }}
-      </a>
+      </span>
       {% if member.description %}
         <div class="alumni-description">{{ member.description }}</div>
       {% endif %}

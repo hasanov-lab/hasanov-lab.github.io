@@ -45,11 +45,17 @@ nav:
       <div class="contact-info">
         <h4>Social Media</h4>
         <div class="contact-buttons">
-          <a href="https://github.com/hasanov-lab" class="contact-social-btn github">
+          <a href="https://github.com/hasanov-lab" class="contact-social-btn github" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-github"></i> GitHub
           </a>
-          <a href="https://scholar.google.com/citations?user=R6wSHlgAAAAJ" class="contact-social-btn scholar">
+          <a href="https://scholar.google.com/citations?user=R6wSHlgAAAAJ" class="contact-social-btn scholar" target="_blank" rel="noopener noreferrer">
             <i class="fa-brands fa-google-scholar"></i> Google Scholar
+          </a>
+          <a href="https://x.com/HasanovLab" class="contact-social-btn x" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-x-twitter"></i> X
+          </a>
+          <a href="https://www.linkedin.com/in/elshad-hasanov-44991b268" class="contact-social-btn linkedin" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin"></i> LinkedIn
           </a>
         </div>
       </div>
@@ -176,6 +182,16 @@ nav:
 
 .contact-social-btn.scholar {
   background: #2e86c1;
+  color: #ffffff !important;
+}
+
+.contact-social-btn.x {
+  background: #000000;
+  color: #ffffff !important;
+}
+
+.contact-social-btn.linkedin {
+  background: #0a66c2;
   color: #ffffff !important;
 }
 

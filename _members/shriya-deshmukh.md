@@ -1,8 +1,8 @@
 ---
-name: Shriya Deshmukh
+name: Shriya Deshmukh, MD, PhD
 image: images/photo.jpg
 role: clinical
-description: Clinical Inst H S
+description: Heme/Onc Fellow
 ---
 
 Clinical team member in the Hasanov Lab.
