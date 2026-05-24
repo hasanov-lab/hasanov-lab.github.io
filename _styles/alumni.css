@@ -19,10 +19,6 @@
   text-decoration: none;
 }
 
-.alumni-name:hover {
-  text-decoration: underline;
-}
-
 .alumni-description,
 .alumni-affiliation {
   color: var(--text);

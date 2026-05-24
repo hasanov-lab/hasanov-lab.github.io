@@ -19,6 +19,10 @@
   transform: translateY(-6px);
 }
 
+.portrait[data-no-link]:hover {
+  transform: none;
+}
+
 .portrait[data-style=small] {
   width: 100px;
 }
@@ -67,6 +71,11 @@
 .portrait:hover .portrait-image {
   transform: scale(1.08);
   box-shadow: 0 8px 25px var(--overlay);
+}
+
+.portrait[data-no-link]:hover .portrait-image {
+  transform: none;
+  box-shadow: var(--shadow);
 }
 
 .portrait-name {
