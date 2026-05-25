@@ -28,11 +28,22 @@ header a {
 
 .logo {
   height: 40px;
+  max-width: 44px;
 }
 
 .logo > * {
   width: unset;
   height: 100%;
+}
+
+.logo.code-to-clinic-logo {
+  height: 34px;
+  max-width: 120px;
+}
+
+.logo.code-to-clinic-logo > img {
+  width: 100%;
+  object-fit: contain;
 }
 
 .title-text {
@@ -151,6 +162,11 @@ header[data-big] .home {
 header[data-big] .logo {
   height: 80px;
   flex-shrink: 0;
+  max-width: 120px;
+}
+header[data-big] .logo.code-to-clinic-logo {
+  height: 150px;
+  max-width: min(80vw, 520px);
 }
 header[data-big] .title-text {
   flex-direction: column;
