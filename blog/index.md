@@ -5,7 +5,9 @@ nav:
   tooltip: News and events from the lab
 ---
 
-# {% include icon.html icon="fa-solid fa-newspaper" %}News & Events
+<img class="page-logo page-logo-small code-to-clinic-page-logo" src="{{ '/images/code-to-clinic-logo.png' | relative_url }}" alt="Code to Clinic logo">
+
+<h1 class="page-title-clean">NEWS & EVENTS</h1>
 
 Stay updated with the latest news, publications, and events from the Hasanov Lab.
 

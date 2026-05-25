@@ -5,7 +5,9 @@ nav:
   tooltip: Software, datasets, and more
 ---
 
-# {% include icon.html icon="fa-solid fa-wrench" %}Projects
+<img class="page-logo page-logo-small code-to-clinic-page-logo" src="{{ '/images/code-to-clinic-logo.png' | relative_url }}" alt="Code to Clinic logo">
+
+<h1 class="page-title-clean">PROJECTS</h1>
 
 Our projects range from computational tools for multi-omics data integration to translational studies on tumor microenvironment characterization and immunotherapy optimization.
 

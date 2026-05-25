@@ -5,7 +5,9 @@ nav:
   tooltip: Published works
 ---
 
-# {% include icon.html icon="fa-solid fa-microscope" %}Research
+<img class="page-logo page-logo-small code-to-clinic-page-logo" src="{{ '/images/code-to-clinic-logo.png' | relative_url }}" alt="Code to Clinic logo">
+
+<h1 class="page-title-clean">RESEARCH</h1>
 
 Our lab publishes on genitourinary malignancies, renal cell carcinoma, brain metastasis, tumor immunology, immunotherapy, and computational biology. Below is a selection of our work — see [Google Scholar](https://scholar.google.com/citations?user=R6wSHlgAAAAJ) for a complete list.
 

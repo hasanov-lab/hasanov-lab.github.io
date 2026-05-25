@@ -9,7 +9,7 @@ nav:
 
 <h1 class="page-title-clean">TEAM</h1>
 
-Our lab brings together clinicians, statisticians, bioinformaticians, and computer scientists with a shared goal of translating multi-omics discoveries into clinical impact for patients with genitourinary malignancies and brain metastases.
+Our lab brings together physician-scientists, clinicians, statisticians, bioinformaticians, computational biologists, and trainees with a shared mission of translating multi-omics and clinical data discoveries into meaningful impact for patients with cancer.
 
 {% include section.html %}
 
@@ -19,14 +19,14 @@ Our lab brings together clinicians, statisticians, bioinformaticians, and comput
   {% include portrait.html lookup="fuat-bicer" no_link=true %}
   {% include portrait.html lookup="richard-wu" no_link=true %}
   {% include portrait.html lookup="antonio-fajeta" no_link=true %}
-  {% include portrait.html lookup="shriya-deshmukh" no_link=true %}
-  {% include portrait.html lookup="tugcs" no_link=true %}
   {% include portrait.html lookup="zuhair-majeed" no_link=true %}
   {% include portrait.html lookup="semiha-ozgul" no_link=true %}
   {% include portrait.html lookup="bayan-abu-alragheb" no_link=true %}
-  {% include portrait.html lookup="nurlan" no_link=true %}
   {% include portrait.html lookup="peng-li" no_link=true %}
   {% include portrait.html lookup="mostafa-ali" no_link=true %}
+  {% include portrait.html lookup="nurlan" no_link=true %}
+  {% include portrait.html lookup="shriya-deshmukh" no_link=true %}
+  {% include portrait.html lookup="tugcs" no_link=true %}
 </div>
 
 ## Alumni

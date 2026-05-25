@@ -5,7 +5,9 @@ nav:
   tooltip: Join our team
 ---
 
-# {% include icon.html icon="fa-solid fa-user-plus" %}Open Position
+<img class="page-logo page-logo-small code-to-clinic-page-logo" src="{{ '/images/code-to-clinic-logo.png' | relative_url }}" alt="Code to Clinic logo">
+
+<h1 class="page-title-clean">OPEN POSITION</h1>
 
 We are always looking for motivated students, postdocs, and collaborators who are passionate about cancer research and computational biology.
 
