@@ -23,3 +23,8 @@
 .anchor:hover {
   color: var(--text) !important;
 }
+
+.home-page main h1 > .anchor,
+.home-page main h2 > .anchor {
+  display: none !important;
+}
