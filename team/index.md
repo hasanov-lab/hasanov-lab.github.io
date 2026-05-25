@@ -40,8 +40,8 @@ Our lab brings together clinicians, statisticians, bioinformaticians, and comput
   <h2 class="team-tier-title">Postdoctoral Scholars</h2>
   <div class="team-tier-members">
     {% include portrait.html lookup="zuhair-majeed" no_link=true %}
-    {% include portrait.html lookup="bayan-abu-alragheb" no_link=true %}
     {% include portrait.html lookup="semiha-ozgul" no_link=true %}
+    {% include portrait.html lookup="bayan-abu-alragheb" no_link=true %}
     {% include portrait.html lookup="nurlan" no_link=true %}
   </div>
 </div>
@@ -49,8 +49,8 @@ Our lab brings together clinicians, statisticians, bioinformaticians, and comput
 <div class="team-tier">
   <h2 class="team-tier-title">PhD Students</h2>
   <div class="team-tier-members">
-    {% include portrait.html lookup="mostafa-ali" no_link=true %}
     {% include portrait.html lookup="peng-li" no_link=true %}
+    {% include portrait.html lookup="mostafa-ali" no_link=true %}
   </div>
 </div>
 
