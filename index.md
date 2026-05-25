@@ -1,7 +1,7 @@
 ---
 ---
 
-<h1>CODE TO CLINIC</h1>
+<img class="page-logo home-intro-logo" src="{{ '/images/code-to-clinic-logo.png' | relative_url }}" alt="Code to Clinic logo">
 
 We are a physician-scientist lab at [The Ohio State University Comprehensive Cancer Center (OSUCCC – James)](https://cancer.osu.edu/), led by Elshad Hasanov, MD, PhD. Our mission is to bridge computational discovery and clinical application in oncology by transforming complex cancer data into clinically meaningful insights.
 

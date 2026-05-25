@@ -31,18 +31,20 @@
   {% endif %}
 
   <a href="{{ "/" | relative_url }}" class="home">
-    {% if nav_logo or code_logo or logo %}
-      <span class="logo{% if is_home != true and nav_logo %} navbar-code-to-clinic-logo{% elsif code_logo %} code-to-clinic-logo{% endif %}">
-        {% if is_home != true and nav_logo %}
-          <img src="{{ nav_logo | relative_url | uri_escape }}" alt="Code to Clinic logo">
-        {% elsif code_logo %}
-          <img src="{{ code_logo | relative_url | uri_escape }}" alt="Code to Clinic logo">
-        {% elsif svg %}
-          {{ svg | file_read }}
-        {% else %}
-          <img src="{{ logo | relative_url | uri_escape }}" alt="logo">
-        {% endif %}
-      </span>
+    {% if is_home != true %}
+      {% if nav_logo or code_logo or logo %}
+        <span class="logo{% if nav_logo %} navbar-code-to-clinic-logo{% elsif code_logo %} code-to-clinic-logo{% endif %}">
+          {% if nav_logo %}
+            <img src="{{ nav_logo | relative_url | uri_escape }}" alt="Code to Clinic logo">
+          {% elsif code_logo %}
+            <img src="{{ code_logo | relative_url | uri_escape }}" alt="Code to Clinic logo">
+          {% elsif svg %}
+            {{ svg | file_read }}
+          {% else %}
+            <img src="{{ logo | relative_url | uri_escape }}" alt="logo">
+          {% endif %}
+        </span>
+      {% endif %}
     {% endif %}
     {% if site.logo-text != false %}
       <span class="title-text" data-tooltip="Home">
