@@ -13,17 +13,46 @@ Our lab brings together clinicians, statisticians, bioinformaticians, and comput
 
 {% include section.html %}
 
-{% include portrait.html lookup="elshad-hasanov" no_link=true %}
-{% include portrait.html lookup="merve-hasanov" no_link=true %}
-{% include portrait.html lookup="zuhair-majeed" no_link=true %}
-{% include portrait.html lookup="bayan-abu-alragheb" no_link=true %}
-{% include portrait.html lookup="semiha-ozgul" no_link=true %}
-{% include portrait.html lookup="mostafa-ali" no_link=true %}
-{% include portrait.html lookup="peng-li" no_link=true %}
-{% include portrait.html lookup="antonio-fajeta" no_link=true %}
-{% include portrait.html lookup="shriya-deshmukh" no_link=true %}
-{% include portrait.html lookup="tugcs" no_link=true %}
-{% include portrait.html lookup="nurlan" no_link=true %}
+<div class="team-tier">
+  <h2 class="team-tier-title">Principal Investigator</h2>
+  <div class="team-tier-members">
+    {% include portrait.html lookup="elshad-hasanov" no_link=true %}
+  </div>
+</div>
+
+<div class="team-tier">
+  <h2 class="team-tier-title">Faculty</h2>
+  <div class="team-tier-members">
+    {% include portrait.html lookup="merve-hasanov" no_link=true %}
+    {% include portrait.html lookup="antonio-fajeta" no_link=true %}
+  </div>
+</div>
+
+<div class="team-tier">
+  <h2 class="team-tier-title">Clinical Team</h2>
+  <div class="team-tier-members">
+    {% include portrait.html lookup="shriya-deshmukh" no_link=true %}
+    {% include portrait.html lookup="tugcs" no_link=true %}
+  </div>
+</div>
+
+<div class="team-tier">
+  <h2 class="team-tier-title">Postdoctoral Scholars</h2>
+  <div class="team-tier-members">
+    {% include portrait.html lookup="zuhair-majeed" no_link=true %}
+    {% include portrait.html lookup="bayan-abu-alragheb" no_link=true %}
+    {% include portrait.html lookup="semiha-ozgul" no_link=true %}
+    {% include portrait.html lookup="nurlan" no_link=true %}
+  </div>
+</div>
+
+<div class="team-tier">
+  <h2 class="team-tier-title">PhD Students</h2>
+  <div class="team-tier-members">
+    {% include portrait.html lookup="mostafa-ali" no_link=true %}
+    {% include portrait.html lookup="peng-li" no_link=true %}
+  </div>
+</div>
 
 ## Alumni
 
