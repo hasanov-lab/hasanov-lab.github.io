@@ -30,7 +30,8 @@ header.background[data-big] {
   min-height: unset;
   height: auto;
   justify-content: flex-end !important;
-  padding-bottom: 60px !important;
+  gap: 12px;
+  padding-bottom: 34px !important;
 }
 
 header.background[data-big]:before {
