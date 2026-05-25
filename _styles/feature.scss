@@ -39,6 +39,12 @@ $wrap: 800px;
   object-fit: cover;
 }
 
+.feature-image img[src*="code-to-clinic-logo"] {
+  object-fit: contain;
+  padding: 18px;
+  background: #ffffff;
+}
+
 .feature-text {
   flex-grow: 1;
 }
