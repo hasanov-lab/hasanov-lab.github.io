@@ -26,9 +26,9 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
       class="twitter-timeline"
       data-height="720"
       data-dnt="true"
-      href="https://twitter.com/HasanovLab"
+      href="https://twitter.com/X"
     >
-      Latest posts from @HasanovLab
+      Latest posts from @X
     </a>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <a class="x-feed-fallback" href="https://x.com/HasanovLab" target="_blank" rel="noopener noreferrer">
