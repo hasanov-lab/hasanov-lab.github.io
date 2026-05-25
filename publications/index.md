@@ -15,28 +15,28 @@ Hasanov Lab publications grouped by year. Papers and conference abstracts are me
 <ol class="publication-list">
   <li>Yu K, et al. A spatial atlas of muscle-invasive bladder cancer reveals lineage-specific vulnerabilities and immune architecture. Cancer Discovery. 2026.</li>
   <li>Chen Y, et al. Integrating image and text-based AI improves identification of metastatic sites from whole-slide pathology images. Cancer Research. 2026;86(7_Supplement):2771.</li>
-  <li>Su Z, et al. Low-magnification deep learning model for rapid HER2 status prediction from H&E whole-slide images. Cancer Research. 2026;86(7_Supplement):5470.</li>
+  <li>Su Z, et al. Low-magnification deep learning model for rapid HER2 status prediction from H&amp;E whole-slide images. Cancer Research. 2026;86(7_Supplement):5470.</li>
   <li>Meng L, et al. Circulating tumor DNA dynamics as a predictive biomarker of response and survival in metastatic urothelial carcinoma treated with enfortumab vedotin and pembrolizumab. Journal of Clinical Oncology. 2026;44(7_suppl):860.</li>
   <li>Jonasch E, et al. Phase 1B/2 study of combination 177Lu girentuximab plus cabozantinib and nivolumab in treatment-naive patients with advanced clear cell RCC. Journal of Clinical Oncology. 2026;44(7_suppl):TPS582.</li>
   <li>Chen Y, et al. HistoMet: A pan-cancer deep learning framework for prognostic prediction of metastatic progression and site tropism from primary tumor histopathology. arXiv preprint arXiv:2602.07608. 2026.</li>
   <li>Akbar AR, et al. Inferring clinically relevant molecular subtypes of pancreatic cancer from routine histopathology using deep learning. arXiv preprint arXiv:2601.03410. 2026.</li>
   <li>Ali MIH, et al. Single-cell atlas of renal cell carcinoma brain metastasis uncovers mechanisms of immune dysfunction and resistance. bioRxiv. 2026:2026.05.06.722652.</li>
   <li>Gok Yavuz B, et al. Deciphering the genomic landscape of renal cell carcinoma brain metastases. bioRxiv. 2026:2026.05.02.722447.</li>
-  <li>Li P, et al. [Machine learning-based transcriptomic signatures to predict treatment outcomes across targeted and immunotherapy regimens in renal cell carcinoma](https://doi.org/10.1200/JCO.2026.44.16_suppl.4526). Journal of Clinical Oncology. 2026;44(suppl 16):4526. DOI: [10.1200/JCO.2026.44.16_suppl.4526](https://doi.org/10.1200/JCO.2026.44.16_suppl.4526).</li>
-  <li>Deshmukh S, et al. [Spatial transcriptomic profiling of the tumor microenvironment associated with sunitinib response in metastatic renal cell carcinoma](https://doi.org/10.1200/JCO.2026.44.16_suppl.3119). Journal of Clinical Oncology. 2026;44(suppl 16):3119. DOI: [10.1200/JCO.2026.44.16_suppl.3119](https://doi.org/10.1200/JCO.2026.44.16_suppl.3119).</li>
-  <li>Gok Yavuz B, et al. [Deciphering the genomic landscape of renal cell carcinoma brain metastases](https://doi.org/10.1200/JCO.2026.44.16_suppl.4524). Journal of Clinical Oncology. 2026;44(suppl 16):4524. DOI: [10.1200/JCO.2026.44.16_suppl.4524](https://doi.org/10.1200/JCO.2026.44.16_suppl.4524).</li>
-  <li>Hasanov E, et al. [Real-world overall survival outcomes of belzutifan treatment in advanced renal cell carcinoma](https://doi.org/10.1200/JCO.2026.44.16_suppl.4561). Journal of Clinical Oncology. 2026;44(suppl 16):4561. DOI: [10.1200/JCO.2026.44.16_suppl.4561](https://doi.org/10.1200/JCO.2026.44.16_suppl.4561).</li>
-  <li>Faieta A, et al. [Real-world overall survival outcomes of lutetium (Lu177) vipivotide tetraxetan treatment in prostate cancer](https://doi.org/10.1200/JCO.2026.44.16_suppl.5033). Journal of Clinical Oncology. 2026;44(suppl 16):5033. DOI: [10.1200/JCO.2026.44.16_suppl.5033](https://doi.org/10.1200/JCO.2026.44.16_suppl.5033).</li>
-  <li>Qin Q, et al. [A phase II trial of neoadjuvant zanzalintinib plus nivolumab in patients with locally advanced and/or surgically challenging clear cell renal cell carcinoma (EXPLORE-RCC)](https://doi.org/10.1200/JCO.2026.44.16_suppl.TPS4629). Journal of Clinical Oncology. 2026;44(suppl 16):TPS4629. DOI: [10.1200/JCO.2026.44.16_suppl.TPS4629](https://doi.org/10.1200/JCO.2026.44.16_suppl.TPS4629).</li>
-  <li>Das A, et al. [Phase II study of cemiplimab +/- fianlimab following SBRT for oligometastatic clear-cell RCC (LAG-BOOST)](https://doi.org/10.1200/JCO.2026.44.16_suppl.TPS4637). Journal of Clinical Oncology. 2026;44(suppl 16):TPS4637. DOI: [10.1200/JCO.2026.44.16_suppl.TPS4637](https://doi.org/10.1200/JCO.2026.44.16_suppl.TPS4637).</li>
-  <li>Ali MI, et al. [Single-cell characterization of renal cell carcinoma brain metastasis](https://doi.org/10.1200/JCO.2026.44.16_suppl.e14013). Journal of Clinical Oncology. 2026;44(suppl 16):e14013. DOI: [10.1200/JCO.2026.44.16_suppl.e14013](https://doi.org/10.1200/JCO.2026.44.16_suppl.e14013).</li>
-  <li>Ali MI, et al. [An optimized machine learning model for overall survival prediction in brain metastasis patients using genomic mutation and copy number features](https://doi.org/10.1200/JCO.2026.44.16_suppl.e14002). Journal of Clinical Oncology. 2026;44(suppl 16):e14002. DOI: [10.1200/JCO.2026.44.16_suppl.e14002](https://doi.org/10.1200/JCO.2026.44.16_suppl.e14002).</li>
-  <li>Faieta A, et al. [Real-world overall survival after PD-1 failure in advanced cutaneous squamous cell carcinoma](https://doi.org/10.1200/JCO.2026.44.16_suppl.e21570). Journal of Clinical Oncology. 2026;44(suppl 16):e21570. DOI: [10.1200/JCO.2026.44.16_suppl.e21570](https://doi.org/10.1200/JCO.2026.44.16_suppl.e21570).</li>
-  <li>Majeed Z, et al. [In silico phase III clinical trial of avelumab plus axitinib versus sunitinib in advanced renal cell carcinoma using a machine learning model transfer approach](https://doi.org/10.1200/JCO.2026.44.16_suppl.e16500). Journal of Clinical Oncology. 2026;44(suppl 16):e16500. DOI: [10.1200/JCO.2026.44.16_suppl.e16500](https://doi.org/10.1200/JCO.2026.44.16_suppl.e16500).</li>
-  <li>Faieta A, et al. [Real-world survival outcomes and prognostic factors with adjuvant pembrolizumab for renal cell carcinoma](https://doi.org/10.1200/JCO.2026.44.16_suppl.e16555). Journal of Clinical Oncology. 2026;44(suppl 16):e16555. DOI: [10.1200/JCO.2026.44.16_suppl.e16555](https://doi.org/10.1200/JCO.2026.44.16_suppl.e16555).</li>
-  <li>Majeed Z, et al. [Real-world toxicity outcomes with adjuvant pembrolizumab following nephrectomy for renal cell carcinoma](https://doi.org/10.1200/JCO.2026.44.16_suppl.e23447). Journal of Clinical Oncology. 2026;44(suppl 16):e23447. DOI: [10.1200/JCO.2026.44.16_suppl.e23447](https://doi.org/10.1200/JCO.2026.44.16_suppl.e23447).</li>
-  <li>Abu Alragheb B, et al. [Decoding cancers of unknown primary through genomics-driven clustering: A pan-cancer framework for prognostic classification using AACR GENIE data](https://doi.org/10.1200/JCO.2026.44.16_suppl.e15006). Journal of Clinical Oncology. 2026;44(suppl 16):e15006. DOI: [10.1200/JCO.2026.44.16_suppl.e15006](https://doi.org/10.1200/JCO.2026.44.16_suppl.e15006).</li>
-  <li>Li M, et al. [Siltuximab for the prevention of severe immune-related adverse events during immune checkpoint inhibitor rechallenge in advanced cancer: First interim analysis of the CIRES trial](https://doi.org/10.1200/JCO.2026.44.16_suppl.e24146). Journal of Clinical Oncology. 2026;44(suppl 16):e24146. DOI: [10.1200/JCO.2026.44.16_suppl.e24146](https://doi.org/10.1200/JCO.2026.44.16_suppl.e24146).</li>
+  <li>Li P, et al. <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.4526" target="_blank" rel="noopener noreferrer">Machine learning-based transcriptomic signatures to predict treatment outcomes across targeted and immunotherapy regimens in renal cell carcinoma</a>. Journal of Clinical Oncology. 2026;44(suppl 16):4526. DOI: <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.4526" target="_blank" rel="noopener noreferrer">10.1200/JCO.2026.44.16_suppl.4526</a>.</li>
+  <li>Deshmukh S, et al. <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.3119" target="_blank" rel="noopener noreferrer">Spatial transcriptomic profiling of the tumor microenvironment associated with sunitinib response in metastatic renal cell carcinoma</a>. Journal of Clinical Oncology. 2026;44(suppl 16):3119. DOI: <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.3119" target="_blank" rel="noopener noreferrer">10.1200/JCO.2026.44.16_suppl.3119</a>.</li>
+  <li>Gok Yavuz B, et al. <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.4524" target="_blank" rel="noopener noreferrer">Deciphering the genomic landscape of renal cell carcinoma brain metastases</a>. Journal of Clinical Oncology. 2026;44(suppl 16):4524. DOI: <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.4524" target="_blank" rel="noopener noreferrer">10.1200/JCO.2026.44.16_suppl.4524</a>.</li>
+  <li>Hasanov E, et al. <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.4561" target="_blank" rel="noopener noreferrer">Real-world overall survival outcomes of belzutifan treatment in advanced renal cell carcinoma</a>. Journal of Clinical Oncology. 2026;44(suppl 16):4561. DOI: <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.4561" target="_blank" rel="noopener noreferrer">10.1200/JCO.2026.44.16_suppl.4561</a>.</li>
+  <li>Faieta A, et al. <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.5033" target="_blank" rel="noopener noreferrer">Real-world overall survival outcomes of lutetium (Lu177) vipivotide tetraxetan treatment in prostate cancer</a>. Journal of Clinical Oncology. 2026;44(suppl 16):5033. DOI: <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.5033" target="_blank" rel="noopener noreferrer">10.1200/JCO.2026.44.16_suppl.5033</a>.</li>
+  <li>Qin Q, et al. <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.TPS4629" target="_blank" rel="noopener noreferrer">A phase II trial of neoadjuvant zanzalintinib plus nivolumab in patients with locally advanced and/or surgically challenging clear cell renal cell carcinoma (EXPLORE-RCC)</a>. Journal of Clinical Oncology. 2026;44(suppl 16):TPS4629. DOI: <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.TPS4629" target="_blank" rel="noopener noreferrer">10.1200/JCO.2026.44.16_suppl.TPS4629</a>.</li>
+  <li>Das A, et al. <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.TPS4637" target="_blank" rel="noopener noreferrer">Phase II study of cemiplimab +/- fianlimab following SBRT for oligometastatic clear-cell RCC (LAG-BOOST)</a>. Journal of Clinical Oncology. 2026;44(suppl 16):TPS4637. DOI: <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.TPS4637" target="_blank" rel="noopener noreferrer">10.1200/JCO.2026.44.16_suppl.TPS4637</a>.</li>
+  <li>Ali MI, et al. <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.e14013" target="_blank" rel="noopener noreferrer">Single-cell characterization of renal cell carcinoma brain metastasis</a>. Journal of Clinical Oncology. 2026;44(suppl 16):e14013. DOI: <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.e14013" target="_blank" rel="noopener noreferrer">10.1200/JCO.2026.44.16_suppl.e14013</a>.</li>
+  <li>Ali MI, et al. <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.e14002" target="_blank" rel="noopener noreferrer">An optimized machine learning model for overall survival prediction in brain metastasis patients using genomic mutation and copy number features</a>. Journal of Clinical Oncology. 2026;44(suppl 16):e14002. DOI: <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.e14002" target="_blank" rel="noopener noreferrer">10.1200/JCO.2026.44.16_suppl.e14002</a>.</li>
+  <li>Faieta A, et al. <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.e21570" target="_blank" rel="noopener noreferrer">Real-world overall survival after PD-1 failure in advanced cutaneous squamous cell carcinoma</a>. Journal of Clinical Oncology. 2026;44(suppl 16):e21570. DOI: <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.e21570" target="_blank" rel="noopener noreferrer">10.1200/JCO.2026.44.16_suppl.e21570</a>.</li>
+  <li>Majeed Z, et al. <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.e16500" target="_blank" rel="noopener noreferrer">In silico phase III clinical trial of avelumab plus axitinib versus sunitinib in advanced renal cell carcinoma using a machine learning model transfer approach</a>. Journal of Clinical Oncology. 2026;44(suppl 16):e16500. DOI: <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.e16500" target="_blank" rel="noopener noreferrer">10.1200/JCO.2026.44.16_suppl.e16500</a>.</li>
+  <li>Faieta A, et al. <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.e16555" target="_blank" rel="noopener noreferrer">Real-world survival outcomes and prognostic factors with adjuvant pembrolizumab for renal cell carcinoma</a>. Journal of Clinical Oncology. 2026;44(suppl 16):e16555. DOI: <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.e16555" target="_blank" rel="noopener noreferrer">10.1200/JCO.2026.44.16_suppl.e16555</a>.</li>
+  <li>Majeed Z, et al. <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.e23447" target="_blank" rel="noopener noreferrer">Real-world toxicity outcomes with adjuvant pembrolizumab following nephrectomy for renal cell carcinoma</a>. Journal of Clinical Oncology. 2026;44(suppl 16):e23447. DOI: <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.e23447" target="_blank" rel="noopener noreferrer">10.1200/JCO.2026.44.16_suppl.e23447</a>.</li>
+  <li>Abu Alragheb B, et al. <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.e15006" target="_blank" rel="noopener noreferrer">Decoding cancers of unknown primary through genomics-driven clustering: A pan-cancer framework for prognostic classification using AACR GENIE data</a>. Journal of Clinical Oncology. 2026;44(suppl 16):e15006. DOI: <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.e15006" target="_blank" rel="noopener noreferrer">10.1200/JCO.2026.44.16_suppl.e15006</a>.</li>
+  <li>Li M, et al. <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.e24146" target="_blank" rel="noopener noreferrer">Siltuximab for the prevention of severe immune-related adverse events during immune checkpoint inhibitor rechallenge in advanced cancer: First interim analysis of the CIRES trial</a>. Journal of Clinical Oncology. 2026;44(suppl 16):e24146. DOI: <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.e24146" target="_blank" rel="noopener noreferrer">10.1200/JCO.2026.44.16_suppl.e24146</a>.</li>
 </ol>
 
 ## 2025
@@ -83,7 +83,7 @@ Hasanov Lab publications grouped by year. Papers and conference abstracts are me
   <li>Hasanov E, et al. An interdisciplinary consensus on the management of brain metastases in patients with renal cell carcinoma. CA: A Cancer Journal for Clinicians. 2022;72(5):454-489.</li>
   <li>Hasanov E, et al. Patient-reported outcomes: What really matters to patients? The Lancet Oncology. 2022;23(5):e198.</li>
   <li>Hasanov E, et al. Current systemic treatments for the hereditary cancer syndromes: Drug development in light of genomic defects. American Society of Clinical Oncology Educational Book. 2022.</li>
-  <li>Kaseb AO, et al. Perioperative nivolumab monotherapy versus nivolumab plus ipilimumab in resectable hepatocellular carcinoma: A randomised, open-label, phase 2 trial. The Lancet Gastroenterology & Hepatology. 2022;7(3):208-218.</li>
+  <li>Kaseb AO, et al. Perioperative nivolumab monotherapy versus nivolumab plus ipilimumab in resectable hepatocellular carcinoma: A randomised, open-label, phase 2 trial. The Lancet Gastroenterology &amp; Hepatology. 2022;7(3):208-218.</li>
   <li>Kaseb AO, et al. Serum IGF-1 scores and clinical outcomes in the phase III IMbrave150 study of atezolizumab plus bevacizumab versus sorafenib in patients with unresectable hepatocellular carcinoma. Journal of Hepatocellular Carcinoma. 2022:1065-1079.</li>
   <li>Wilson N, et al. Immune checkpoint blockade (ICB) in brain metastases (BM) from advanced small cell urothelial cancer (aSCUC). Journal for ImmunoTherapy of Cancer. 2021;9(Suppl 2).</li>
   <li>Gok Yavuz B, et al. The role of tissue stiffness in predicting the immunotherapy response in hepatocellular carcinoma. Journal for ImmunoTherapy of Cancer. 2021;9(Suppl 2):A49.</li>
@@ -112,17 +112,27 @@ Hasanov Lab publications grouped by year. Papers and conference abstracts are me
   margin: 0 auto;
 }
 
+.publications-by-year h2 {
+  margin-top: 56px;
+}
+
 .publication-list {
   padding-left: 1.4rem;
+  margin-bottom: 36px;
 }
 
 .publication-list li {
-  margin: 0 0 14px;
-  line-height: 1.6;
+  margin: 0 0 18px;
+  line-height: 1.65;
+  text-align: left;
+  word-spacing: normal;
+  letter-spacing: 0;
 }
 
 .publication-list a {
   color: var(--primary);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 @media (max-width: 700px) {
