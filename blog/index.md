@@ -19,35 +19,41 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
     {% include list.html data="posts" component="post-excerpt" %}
   </div>
 
-  <a class="x-card" href="https://x.com/HasanovLab" target="_blank" rel="noopener noreferrer">
+  <div class="x-card">
     <div class="x-card-cover"></div>
     <div class="x-card-body">
-      <img class="x-card-avatar" src="{{ '/images/photo.jpg' | relative_url }}" alt="Dr. Elshad Hasanov">
+      <img class="x-card-avatar" src="{{ '/images/x/hasanov-profile.jpg' | relative_url }}" alt="Elshad Hasanov, MD, PhD">
       <div class="x-card-name">
         Elshad Hasanov, MD, PhD
         <i class="fa-solid fa-circle-check x-card-verified"></i>
       </div>
       <div class="x-card-handle">@HasanovLab</div>
       <p class="x-card-bio">
-        Physician-Scientist <span class="x-mention">@OSUCCC_James</span> in
-        <span class="x-tag">#GU</span> cancers <span class="x-tag">#brainmet</span> | PI
-        <span class="x-tag">#HasanovLab</span> <span class="x-mention">@OhioStatePIIO</span>
-        <span class="x-tag">#spatialsinglecell</span> | former fellow
-        <span class="x-mention">@MDAndersonNews</span> | <span class="x-tag">#cancerfreeworld</span>
+        Physician-Scientist <a class="x-mention" href="https://x.com/OSUCCC_James" target="_blank" rel="noopener noreferrer">@OSUCCC_James</a> in
+        <a class="x-tag" href="https://x.com/hashtag/GU" target="_blank" rel="noopener noreferrer">#GU</a> cancers
+        <a class="x-tag" href="https://x.com/hashtag/brainmet" target="_blank" rel="noopener noreferrer">#brainmet</a> | PI
+        <a class="x-tag" href="https://x.com/hashtag/HasanovLab" target="_blank" rel="noopener noreferrer">#HasanovLab</a>
+        <a class="x-mention" href="https://x.com/OhioStatePIIO" target="_blank" rel="noopener noreferrer">@OhioStatePIIO</a>
+        <a class="x-tag" href="https://x.com/hashtag/spatialsinglecell" target="_blank" rel="noopener noreferrer">#spatialsinglecell</a> | former fellow
+        <a class="x-mention" href="https://x.com/MDAndersonNews" target="_blank" rel="noopener noreferrer">@MDAndersonNews</a> |
+        <a class="x-tag" href="https://x.com/hashtag/cancerfreeworld" target="_blank" rel="noopener noreferrer">#cancerfreeworld</a>
       </p>
       <div class="x-card-meta">
         <span><i class="fa-solid fa-location-dot"></i> Columbus, OH</span>
+        <a href="https://scholar.google.com/citations?user=R6wSHlgAAAAJ" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-google"></i> Google Scholar
+        </a>
       </div>
       <div class="x-card-stats">
         <div><strong>458</strong><span>Posts</span></div>
         <div><strong>886</strong><span>Following</span></div>
         <div><strong>759</strong><span>Followers</span></div>
       </div>
-      <span class="x-card-button">
+      <a class="x-card-button" href="https://x.com/HasanovLab" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-x-twitter"></i> Follow on X
-      </span>
+      </a>
     </div>
-  </a>
+  </div>
 </div>
 
 <style>
@@ -90,7 +96,11 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
 
 .x-card-cover {
   height: 110px;
-  background: linear-gradient(135deg, #1a5276 0%, #2e86c1 50%, #17a589 100%);
+  background:
+    linear-gradient(rgba(15, 20, 25, 0.05), rgba(15, 20, 25, 0.05)),
+    url("{{ '/images/x/hasanov-banner.jpg' | relative_url }}");
+  background-size: cover;
+  background-position: center;
 }
 
 .x-card-body {
@@ -140,6 +150,12 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
 .x-mention,
 .x-tag {
   color: #1d9bf0;
+  text-decoration: none !important;
+}
+
+.x-mention:hover,
+.x-tag:hover {
+  text-decoration: underline !important;
 }
 
 .x-card-meta {
@@ -149,6 +165,16 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
   color: #536471;
   font-size: 0.88rem;
   margin-bottom: 14px;
+}
+
+.x-card-meta a {
+  color: #536471;
+  text-decoration: none !important;
+}
+
+.x-card-meta a:hover {
+  color: #1d9bf0;
+  text-decoration: underline !important;
 }
 
 .x-card-meta i {
@@ -190,6 +216,7 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
   border-radius: 999px;
   font-weight: 700;
   font-size: 0.98rem;
+  text-decoration: none !important;
   transition: background 0.2s ease;
 }
 

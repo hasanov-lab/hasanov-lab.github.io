@@ -15,16 +15,12 @@ Our work focuses on biomarker discovery, treatment response prediction, survival
 
 {% capture text %}
 
-Our research spans multiple areas of oncology with a focus on translating biological discoveries into clinical impact:
-- **Genitourinary malignancies & renal cell carcinoma (RCC):** Investigating tumor heterogeneity, treatment resistance, and immunotherapy response in clear cell and variant histology RCC
-- **Pan-cancer brain metastasis:** Uncovering the distinct immunosuppressive tumor microenvironment in brain metastases and developing strategies to overcome it
-- **Tumor immunology & immunotherapy:** Optimizing immune checkpoint inhibitor approaches including nivolumab and ipilimumab combinations
-- **Single-cell & multi-omics:** Leveraging scRNA-seq, spatial transcriptomics, and integrative computational methods to dissect tumor complexity
+Explore our publications, abstracts, and translational oncology research outputs grouped by year.
 
 {%
   include button.html
-  link="research"
-  text="See our publications"
+  link="publications"
+  text="View publications"
   icon="fa-solid fa-arrow-right"
   flip=true
   style="bare"
@@ -34,40 +30,15 @@ Our research spans multiple areas of oncology with a focus on translating biolog
 
 {%
   include feature.html
-  image="images/photo.jpg"
-  link="research"
-  title="Our Research"
+  image="images/code-to-clinic-logo.png"
+  link="publications"
+  title="Publications"
   text=text
 %}
 
 {% capture text %}
 
-Our ongoing projects span from bench to bedside, including characterizing the tumor microenvironment in brain metastases using single-cell and spatial omics, developing multi-omics integration tools for patient stratification, investigating neoadjuvant immunotherapy approaches, and building predictive models for metastatic risk and treatment response.
-
-{%
-  include button.html
-  link="projects"
-  text="Browse our projects"
-  icon="fa-solid fa-arrow-right"
-  flip=true
-  style="bare"
-%}
-
-{% endcapture %}
-
-{%
-  include feature.html
-  image="images/photo.jpg"
-  link="projects"
-  title="Our Projects"
-  flip=true
-  style="bare"
-  text=text
-%}
-
-{% capture text %}
-
-We are a multidisciplinary team of clinicians, computational biologists, and trainees working together toward a shared vision: a colorful, beautiful, and healthy brain — free of metastasis. Our team members bring diverse expertise spanning medicine, bioinformatics, machine learning, and molecular biology.
+Meet our multidisciplinary team of clinicians, computational biologists, statisticians, and trainees working together to advance Code to Clinic research.
 
 {%
   include button.html
@@ -82,8 +53,10 @@ We are a multidisciplinary team of clinicians, computational biologists, and tra
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/team/elshad-hasanov.jpg"
   link="team"
-  title="Our Team"
+  title="Team"
+  flip=true
+  style="bare"
   text=text
 %}
