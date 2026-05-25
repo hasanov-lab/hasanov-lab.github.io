@@ -1,6 +1,6 @@
 ---
 name: Bayan Abu Alragheb, MD
-image: images/photo.jpg
+image: images/team/bayan-abu-alragheb.jpg
 role: postdoc
 description: Postdoctoral Scholar
 ---

@@ -1,6 +1,6 @@
 ---
 name: Shriya Deshmukh, MD, PhD
-image: images/photo.jpg
+image: images/team/shriya-deshmukh.jpg
 role: clinical
 description: Heme/Onc Fellow
 ---

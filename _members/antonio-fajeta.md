@@ -1,6 +1,6 @@
 ---
 name: Antonio Faieta, MD
-image: images/photo.jpg
+image: images/team/antonio-faieta.jpg
 role: faculty
 description: Assistant Professor<br>Internal Medicine
 ---

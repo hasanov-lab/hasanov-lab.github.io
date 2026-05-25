@@ -1,6 +1,6 @@
 ---
 name: Tugce Kutuk, MD, PhD
-image: images/photo.jpg
+image: images/team/tugce-kutuk.jpg
 role: clinical
 description: Rad Onc Resident
 ---

@@ -1,6 +1,6 @@
 ---
 name: Peng Li
-image: images/photo.jpg
+image: images/team/peng-li.jpg
 role: phd
 description: PhD Student<br>Biomedical Informatics
 ---

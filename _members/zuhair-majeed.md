@@ -1,6 +1,6 @@
 ---
 name: Zuhair Majeed, MD
-image: images/photo.jpg
+image: images/team/zuhair-majeed.jpg
 role: postdoc
 description: Postdoctoral Scholar
 ---

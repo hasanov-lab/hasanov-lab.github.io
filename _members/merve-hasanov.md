@@ -1,6 +1,6 @@
 ---
 name: Merve Hasanov, MD
-image: images/photo.jpg
+image: images/team/merve-hasanov.jpg
 role: faculty
 description: Assistant Professor<br>Medical Oncology
 ---

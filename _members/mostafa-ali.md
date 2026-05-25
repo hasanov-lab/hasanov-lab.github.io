@@ -1,6 +1,6 @@
 ---
 name: Mostafa Ali
-image: images/photo.jpg
+image: images/team/mostafa-ali.jpg
 role: phd
 description: PhD Student<br>Biomedical Informatics
 ---

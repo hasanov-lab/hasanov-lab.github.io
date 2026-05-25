@@ -1,6 +1,6 @@
 ---
 name: Elshad Hasanov, MD, PhD
-image: images/photo.jpg
+image: images/team/elshad-hasanov.jpg
 role: principal-investigator
 description: Assistant Professor<br>Medical Oncology
 links:

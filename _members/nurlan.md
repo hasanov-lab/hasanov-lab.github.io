@@ -1,6 +1,6 @@
 ---
 name: Nurlan Mammadzada, MD
-image: images/photo.jpg
+image: images/team/nurlan-mammadzada.jpg
 role: postdoc
 description: Postdoctoral Scholar
 ---
