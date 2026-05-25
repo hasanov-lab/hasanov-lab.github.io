@@ -2,15 +2,15 @@
 title: Publications
 ---
 
-# {% include icon.html icon="fa-solid fa-scroll" %}Publications
+<h1 class="page-title-clean">PUBLICATIONS</h1>
 
-Hasanov Lab publications grouped by year. Papers and conference abstracts are merged under each year.
+Selected publications and conference abstracts from the Hasanov Lab, highlighting work in machine learning, artificial intelligence, cancer genomics, translational oncology, tumor immunology, biomarker discovery, and clinical outcomes research.
 
 {% include section.html %}
 
 <div class="publications-by-year">
 
-## 2026
+<h2 class="publication-year">2026</h2>
 
 <ol class="publication-list">
   <li>Yu K, et al. A spatial atlas of muscle-invasive bladder cancer reveals lineage-specific vulnerabilities and immune architecture. Cancer Discovery. 2026.</li>
@@ -39,7 +39,7 @@ Hasanov Lab publications grouped by year. Papers and conference abstracts are me
   <li>Li M, et al. Siltuximab for the prevention of severe immune-related adverse events during immune checkpoint inhibitor rechallenge in advanced cancer: First interim analysis of the CIRES trial. Journal of Clinical Oncology. 2026;44(suppl 16):e24146. DOI: <a href="https://doi.org/10.1200/JCO.2026.44.16_suppl.e24146" target="_blank" rel="noopener noreferrer">10.1200/JCO.2026.44.16_suppl.e24146</a>.</li>
 </ol>
 
-## 2025
+<h2 class="publication-year">2025</h2>
 
 <ol class="publication-list">
   <li>Gok Yavuz B, et al. Mapping heterogeneity in the tumor microenvironment of renal cell carcinoma through single-cell omics. Trends in Cancer. 2025.</li>
@@ -54,7 +54,7 @@ Hasanov Lab publications grouped by year. Papers and conference abstracts are me
   <li>Hasanov M, et al. The 31-GEP identifies patients with localized cutaneous melanoma at the highest risk of metastasis to the central nervous system. EJC Skin Cancer. 2025;3.</li>
 </ol>
 
-## 2024
+<h2 class="publication-year">2024</h2>
 
 <ol class="publication-list">
   <li>Sood A, et al. From the editor September 2024: The spectrum of clinical trial reports. JU Open Plus. 2024;2(10):e00112.</li>
@@ -66,7 +66,7 @@ Hasanov Lab publications grouped by year. Papers and conference abstracts are me
   <li>LaPelusa MB, et al. Serologic, radiographic, and tissue-based markers associated with major pathologic response after treatment with neoadjuvant immunotherapy in patients with resectable hepatocellular carcinoma. Journal of Clinical Oncology. 2024;42(3_suppl):561.</li>
 </ol>
 
-## 2023
+<h2 class="publication-year">2023</h2>
 
 <ol class="publication-list">
   <li>Liu XD, et al. SETD2 loss and ATR inhibition synergize to promote cGAS signaling and immunotherapy response in renal cell carcinoma. Clinical Cancer Research. 2023;29(19):4002-4015.</li>
@@ -76,7 +76,7 @@ Hasanov Lab publications grouped by year. Papers and conference abstracts are me
   <li>Hasanov E, et al. Single-cell and spatial transcriptomic mapping of human renal cell carcinoma brain metastases uncovers actionable immune-resistance targets. Cancer Research. 2023;83(7_Supplement):5788.</li>
 </ol>
 
-## Before 2023
+<h2 class="publication-year">Before 2023</h2>
 
 <ol class="publication-list">
   <li>Thouvenin J, et al. Efficacy of cabozantinib in metastatic MiT family translocation renal cell carcinomas. The Oncologist. 2022;27(12):1041-1047.</li>
@@ -112,8 +112,10 @@ Hasanov Lab publications grouped by year. Papers and conference abstracts are me
   margin: 0 auto;
 }
 
-.publications-by-year h2 {
+.publications-by-year .publication-year {
   margin-top: 56px;
+  color: var(--primary);
+  text-align: left;
 }
 
 .publication-list {

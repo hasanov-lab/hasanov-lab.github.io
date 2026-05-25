@@ -1,19 +1,42 @@
 ---
 ---
 
-.team-tier {
-  margin: 34px 0 46px;
-}
-
-.team-tier-title {
-  margin: 0 0 16px;
+.page-title-clean {
   text-align: center;
-  color: var(--primary);
 }
 
-.team-tier-members {
+.page-logo-small {
+  max-width: min(180px, 46vw);
+  margin-bottom: 12px;
+}
+
+.team-member-grid {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 8px 28px;
+  margin: 24px 0 42px;
+}
+
+.team-member-grid .portrait {
+  width: 205px;
+}
+
+.team-member-grid .portrait .icon {
+  display: none;
+}
+
+.team-member-grid .portrait-name {
+  white-space: nowrap;
+  font-size: 0.98rem;
+}
+
+@media (max-width: 520px) {
+  .team-member-grid .portrait {
+    width: min(210px, 100%);
+  }
+
+  .team-member-grid .portrait-name {
+    white-space: normal;
+  }
 }

@@ -5,7 +5,9 @@ nav:
   tooltip: Interactive web tools and calculators from our publications
 ---
 
-# {% include icon.html icon="fa-solid fa-laptop-medical" %}Tools
+<img class="page-logo page-logo-small code-to-clinic-page-logo" src="{{ '/images/code-to-clinic-logo.png' | relative_url }}" alt="Code to Clinic logo">
+
+<h1 class="page-title-clean">TOOLS</h1>
 
 Interactive web-based calculators and tools developed by the Hasanov Lab.
 

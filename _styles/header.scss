@@ -58,6 +58,16 @@ header a {
   object-fit: contain;
 }
 
+.logo.navbar-code-to-clinic-logo {
+  height: 34px;
+  max-width: 82px;
+}
+
+.logo.navbar-code-to-clinic-logo > img {
+  width: 100%;
+  object-fit: contain;
+}
+
 .title-text {
   display: flex;
   justify-content: flex-start;

@@ -6,6 +6,7 @@
 {% assign jpg = "images/logo.jpg" | file_exists %}
 {% assign logo = svg | default: png | default: jpg | default: nil %}
 {% assign code_logo = "images/code-to-clinic-logo.png" | file_exists %}
+{% assign nav_logo = "images/navbar-code-to-clinic-white.png" | file_exists %}
 
 {% assign current_path = page.url | split: "/" | slice: 1 | first %}
 
@@ -26,9 +27,11 @@
   {% endif %}
 
   <a href="{{ "/" | relative_url }}" class="home">
-    {% if code_logo or logo %}
-      <span class="logo{% if code_logo %} code-to-clinic-logo{% endif %}">
-        {% if code_logo %}
+    {% if nav_logo or code_logo or logo %}
+      <span class="logo{% if page.url != "/" and nav_logo %} navbar-code-to-clinic-logo{% elsif code_logo %} code-to-clinic-logo{% endif %}">
+        {% if page.url != "/" and nav_logo %}
+          <img src="{{ nav_logo | relative_url | uri_escape }}" alt="Code to Clinic logo">
+        {% elsif code_logo %}
           <img src="{{ code_logo | relative_url | uri_escape }}" alt="Code to Clinic logo">
         {% elsif svg %}
           {{ svg | file_read }}

@@ -29,14 +29,7 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
       </div>
       <div class="x-card-handle">@HasanovLab</div>
       <p class="x-card-bio">
-        Physician-Scientist <a class="x-mention" href="https://x.com/OSUCCC_James" target="_blank" rel="noopener noreferrer">@OSUCCC_James</a> in
-        <a class="x-tag" href="https://x.com/hashtag/GU" target="_blank" rel="noopener noreferrer">#GU</a> cancers
-        <a class="x-tag" href="https://x.com/hashtag/brainmet" target="_blank" rel="noopener noreferrer">#brainmet</a> | PI
-        <a class="x-tag" href="https://x.com/hashtag/HasanovLab" target="_blank" rel="noopener noreferrer">#HasanovLab</a>
-        <a class="x-mention" href="https://x.com/OhioStatePIIO" target="_blank" rel="noopener noreferrer">@OhioStatePIIO</a>
-        <a class="x-tag" href="https://x.com/hashtag/spatialsinglecell" target="_blank" rel="noopener noreferrer">#spatialsinglecell</a> | former fellow
-        <a class="x-mention" href="https://x.com/MDAndersonNews" target="_blank" rel="noopener noreferrer">@MDAndersonNews</a> |
-        <a class="x-tag" href="https://x.com/hashtag/cancerfreeworld" target="_blank" rel="noopener noreferrer">#cancerfreeworld</a>
+        Physician-Scientist @OSUCCC_James in #GU cancers #brainmet | PI #HasanovLab @OhioStatePIIO #spatialsinglecell | former fellow @MDAndersonNews | #cancerfreeworld
       </p>
       <div class="x-card-meta">
         <span><i class="fa-solid fa-location-dot"></i> Columbus, OH</span>
