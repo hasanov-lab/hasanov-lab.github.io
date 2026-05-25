@@ -32,15 +32,15 @@ Interactive web-based calculators and tools developed by the Hasanov Lab.
     </div>
   </a>
 
-  <div class="tool-card tool-card-disabled" aria-label="RCC-BM link coming soon">
+  <a class="tool-card" href="{{ '/tools/rcc-bm/' | relative_url }}" aria-label="Open RCC-BM model selection">
     <div class="tool-logo-wrap">
       <img src="{{ '/images/tools/rccbm-logo.png' | relative_url }}" alt="RCC-BM logo" class="tool-logo tool-logo-wide">
     </div>
     <div class="tool-card-body">
       <h2 class="tool-title">RCC-BM</h2>
-      <p class="tool-status">Link coming soon</p>
+      <p class="tool-status">Select model <i class="fa-solid fa-arrow-right"></i></p>
     </div>
-  </div>
+  </a>
 </div>
 
 <style>

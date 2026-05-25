@@ -1,6 +1,6 @@
 ---
 name: Semiha Ozgul, PhD
-image: images/photo.jpg
+image: images/team/semiha-ozgul.jpg
 role: postdoc
 description: Postdoctoral Scholar<br>Statistician
 ---
