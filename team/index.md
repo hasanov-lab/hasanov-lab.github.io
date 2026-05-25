@@ -16,15 +16,17 @@ Our lab brings together clinicians, statisticians, bioinformaticians, and comput
 <div class="team-member-grid">
   {% include portrait.html lookup="elshad-hasanov" no_link=true %}
   {% include portrait.html lookup="merve-hasanov" no_link=true %}
-  {% include portrait.html lookup="zuhair-majeed" no_link=true %}
-  {% include portrait.html lookup="bayan-abu-alragheb" no_link=true %}
-  {% include portrait.html lookup="semiha-ozgul" no_link=true %}
-  {% include portrait.html lookup="mostafa-ali" no_link=true %}
-  {% include portrait.html lookup="peng-li" no_link=true %}
+  {% include portrait.html lookup="fuat-bicer" no_link=true %}
+  {% include portrait.html lookup="richard-wu" no_link=true %}
   {% include portrait.html lookup="antonio-fajeta" no_link=true %}
   {% include portrait.html lookup="shriya-deshmukh" no_link=true %}
   {% include portrait.html lookup="tugcs" no_link=true %}
+  {% include portrait.html lookup="zuhair-majeed" no_link=true %}
+  {% include portrait.html lookup="semiha-ozgul" no_link=true %}
+  {% include portrait.html lookup="bayan-abu-alragheb" no_link=true %}
   {% include portrait.html lookup="nurlan" no_link=true %}
+  {% include portrait.html lookup="peng-li" no_link=true %}
+  {% include portrait.html lookup="mostafa-ali" no_link=true %}
 </div>
 
 ## Alumni

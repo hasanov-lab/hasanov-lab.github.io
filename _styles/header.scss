@@ -195,8 +195,8 @@ header[data-big] {
   }
 
   .logo.code-to-clinic-logo {
-    height: 150px;
-    max-width: min(80vw, 520px);
+    height: 92px;
+    max-width: min(62vw, 340px);
   }
 
   .title-text {
@@ -211,7 +211,6 @@ header[data-big] {
   }
 
   .subtitle {
-    font-size: var(--large);
-    letter-spacing: 1px;
+    display: none;
   }
 }

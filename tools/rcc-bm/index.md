@@ -15,17 +15,17 @@ Select one of the RCC-BM prediction models below.
     <span>Launch model <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
   </a>
 
-  <div class="rccbm-model-card rccbm-model-disabled">
+  <a class="rccbm-model-card" href="https://hasanovlab.shinyapps.io/rcc_bm_srs_prognosticml1/" target="_blank" rel="noopener noreferrer">
     <h2>RCCBM-SRS</h2>
     <p>Post-SRS prediction model</p>
-    <span>Link coming soon</span>
-  </div>
+    <span>Launch model <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+  </a>
 
-  <div class="rccbm-model-card rccbm-model-disabled">
+  <a class="rccbm-model-card" href="https://hasanov-lab.shinyapps.io/rcc_bmio_era_prognosticml/" target="_blank" rel="noopener noreferrer">
     <h2>RCCBM-Systemic</h2>
     <p>Systemic therapy prediction model</p>
-    <span>Link coming soon</span>
-  </div>
+    <span>Launch model <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+  </a>
 </div>
 
 <style>
