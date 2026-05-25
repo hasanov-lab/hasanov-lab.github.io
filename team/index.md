@@ -5,6 +5,8 @@ nav:
   tooltip: About our team
 ---
 
+<img class="page-logo code-to-clinic-page-logo" src="{{ '/images/code-to-clinic-logo.png' | relative_url }}" alt="Code to Clinic logo">
+
 # {% include icon.html icon="fa-solid fa-users" %}Team
 
 Our lab brings together clinicians, statisticians, bioinformaticians, and computer scientists with a shared goal of translating multi-omics discoveries into clinical impact for patients with genitourinary malignancies and brain metastases.
