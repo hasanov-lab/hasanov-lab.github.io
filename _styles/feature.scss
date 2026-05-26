@@ -45,6 +45,10 @@ $wrap: 800px;
   background: #ffffff;
 }
 
+.feature-image img[src*="elshad-hasanov"] {
+  object-position: 50% 22%;
+}
+
 .feature-text {
   flex-grow: 1;
 }
