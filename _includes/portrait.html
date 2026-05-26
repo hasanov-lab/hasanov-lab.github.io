@@ -11,7 +11,7 @@
 
 <div class="portrait-wrapper">
   {% if include.no_link %}
-    <div class="portrait" data-style="{{ include.style }}" data-no-link>
+    <div class="portrait" data-style="{{ include.style }}" data-member="{{ member.slug }}" data-no-link>
   {% else %}
     <a
       {% if page.slug != member.slug %}
@@ -19,6 +19,7 @@
       {% endif %}
       class="portrait"
       data-style="{{ include.style }}"
+      data-member="{{ member.slug }}"
       aria-label="{{ member.name | default: "member link" | regex_strip }}"
     >
   {% endif %}

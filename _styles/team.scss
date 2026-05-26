@@ -28,6 +28,10 @@
   width: min(100%, 210px);
 }
 
+.team-member-grid .portrait[data-member="peng-li"] .portrait-image {
+  object-position: 50% 58%;
+}
+
 .team-member-grid .portrait .icon {
   display: none;
 }
