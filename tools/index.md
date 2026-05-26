@@ -92,7 +92,8 @@ Interactive web-based calculators and tools developed by the Hasanov Lab.
 }
 
 .tool-logo-wide {
-  max-height: 170px;
+  max-width: 112%;
+  max-height: 210px;
 }
 
 .tool-card-body {
