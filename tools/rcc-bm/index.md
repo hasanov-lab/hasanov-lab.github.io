@@ -9,19 +9,19 @@ Select one of the RCC-BM prediction models below.
 {% include section.html %}
 
 <div class="rccbm-model-grid">
-  <a class="rccbm-model-card" href="https://hasanovlab.shinyapps.io/rcc_brainmetresection_prognosticml/" target="_blank" rel="noopener noreferrer">
+  <a class="rccbm-model-card" href="https://hasanovlab-rcc-bm-resect.share.connect.posit.cloud/" target="_blank" rel="noopener noreferrer">
     <h2>RCCBM-Resect</h2>
     <p>Post-craniotomy prediction model</p>
     <span>Launch model <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
   </a>
 
-  <a class="rccbm-model-card" href="https://hasanovlab.shinyapps.io/rcc_bm_srs_prognosticml1/" target="_blank" rel="noopener noreferrer">
+  <a class="rccbm-model-card" href="https://hasanovlab-rcc-bm-srs.share.connect.posit.cloud/" target="_blank" rel="noopener noreferrer">
     <h2>RCCBM-SRS</h2>
     <p>Post-SRS prediction model</p>
     <span>Launch model <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
   </a>
 
-  <a class="rccbm-model-card" href="https://hasanov-lab.shinyapps.io/rcc_bmio_era_prognosticml/" target="_blank" rel="noopener noreferrer">
+  <a class="rccbm-model-card" href="https://hasanovlab-rcc-bm-systemic.share.connect.posit.cloud/" target="_blank" rel="noopener noreferrer">
     <h2>RCCBM-Systemic</h2>
     <p>Systemic therapy prediction model</p>
     <span>Launch model <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
