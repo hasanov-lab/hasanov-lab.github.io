@@ -15,7 +15,13 @@
   {% else %}
     <a
       {% if page.slug != member.slug %}
-        href="{{ member.url | relative_url | uri_escape }}"
+        {% if member.website %}
+          href="{{ member.website }}"
+          target="_blank"
+          rel="noopener"
+        {% else %}
+          href="{{ member.url | relative_url | uri_escape }}"
+        {% endif %}
       {% endif %}
       class="portrait"
       data-style="{{ include.style }}"
