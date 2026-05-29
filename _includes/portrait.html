@@ -43,7 +43,13 @@
 
     {% if member.name %}
       <span class="portrait-name">
-        {{ member.name }}
+        {% if include.no_link and member.website %}
+          <a href="{{ member.website }}" target="_blank" rel="noopener">
+            {{ member.name }}
+          </a>
+        {% else %}
+          {{ member.name }}
+        {% endif %}
       </span>
     {% endif %}
 
