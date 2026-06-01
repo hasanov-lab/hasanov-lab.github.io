@@ -82,7 +82,7 @@ title: Gallery
     </article>
 
     <article class="gallery-card" data-category="lab-life">
-      <img src="{{ '/images/news/news-zeynep-internal-medicine-match.jpg' | relative_url }}" alt="Zeynep Matches into Internal Medicine" loading="lazy">
+      <img src="{{ '/gallery/news-zeynep-internal-medicine-match.jpeg' | relative_url }}" alt="Zeynep Matches into Internal Medicine" loading="lazy">
       <div class="gallery-card-body">
         <span class="gallery-tag">Lab Life</span>
         <h2>Zeynep Matches into Internal Medicine</h2>
