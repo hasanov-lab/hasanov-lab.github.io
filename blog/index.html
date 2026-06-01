@@ -485,12 +485,47 @@
 
 <div class="news-container">
   <div class="news-main">
-    <div class="x-timeline-embed">
-      <a class="twitter-timeline" data-height="650" data-theme="light" href="https://twitter.com/HasanovLab">
-        Posts by HasanovLab
-      </a>
+    <div class="news-posts">
+      
+        <article class="news-post-card">
+          
+
+          <div class="news-post-content">
+            <div class="news-post-meta">
+              <time datetime="2026-05-25">May 25, 2026</time>
+              
+                <span class="news-post-category">news</span>
+              
+            </div>
+
+            <h2 class="news-post-title">Hasanov Lab Website Launch</h2>
+            <p class="news-post-text">We are excited to announce the launch of the Hasanov Lab website. Stay tuned for updates on our research, publications, tools, and team news.</p>
+
+            
+          </div>
+        </article>
+      
+        <article class="news-post-card">
+          
+            <img class="news-post-image" src="/gallery/news-zeynep-internal-medicine-match.jpg.jpeg" alt="Congratulations to Zeynep on Matching into Internal Medicine">
+          
+
+          <div class="news-post-content">
+            <div class="news-post-meta">
+              <time datetime="2026-03-20">March 20, 2026</time>
+              
+                <span class="news-post-category">news</span>
+              
+            </div>
+
+            <h2 class="news-post-title">Congratulations to Zeynep on Matching into Internal Medicine</h2>
+            <p class="news-post-text">Congratulations to Zeynep, one of our postdoctoral scholars, on matching into Internal Medicine at UConn / the University of Connecticut. We are proud of her achievement and excited to celebrate this important milestone in her medical career.</p>
+
+            
+          </div>
+        </article>
+      
     </div>
-    <script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 
   <div class="x-card">
@@ -548,27 +583,85 @@
   min-width: 0;
 }
 
-.x-timeline-embed {
-  min-height: 650px;
+.news-posts {
+  display: grid;
+  gap: 22px;
 }
 
-.x-timeline-embed .twitter-timeline:not(.twitter-timeline-rendered) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 650px;
-  padding: 24px;
+.news-post-card {
   background: #ffffff;
   border-radius: 18px;
+  overflow: hidden;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
-  color: #0f1419;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.news-post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.news-post-image {
+  display: block;
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+}
+
+.news-post-content {
+  padding: 26px;
+}
+
+.news-post-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: #536471;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.news-post-category {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(29, 155, 240, 0.12);
+  color: #1d6fb8;
+  font-size: 0.78rem;
   font-weight: 700;
-  text-align: center;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.news-post-title {
+  margin: 0 0 12px 0 !important;
+  color: #0f1419;
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+
+.news-post-text {
+  margin: 0 !important;
+  color: #0f1419;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.news-post-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: #1d9bf0;
+  font-weight: 700;
   text-decoration: none !important;
 }
 
-.x-timeline-embed .twitter-timeline:not(.twitter-timeline-rendered):hover {
-  color: #1d9bf0;
+.news-post-link:hover {
+  text-decoration: underline !important;
 }
 
 /* === X / Twitter follow card === */
