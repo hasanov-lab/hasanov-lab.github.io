@@ -15,6 +15,7 @@ title: Gallery
     <button class="gallery-filter is-active" type="button" data-filter="all" aria-pressed="true">All</button>
     <button class="gallery-filter" type="button" data-filter="science" aria-pressed="false">Science</button>
     <button class="gallery-filter" type="button" data-filter="lab-life" aria-pressed="false">Lab Life</button>
+    <button class="gallery-filter" type="button" data-filter="celebrations" aria-pressed="false">Celebrations</button>
   </div>
 
   <div class="gallery-grid">
@@ -38,10 +39,10 @@ title: Gallery
       </div>
     </article>
 
-    <article class="gallery-card gallery-card-action" data-category="lab-life" data-gallery-card="zeynep-match" role="button" tabindex="0" aria-label="Open Zeynep Matches into Internal Medicine gallery">
+    <article class="gallery-card gallery-card-action" data-category="celebrations" data-gallery-card="zeynep-match" role="button" tabindex="0" aria-label="Open Zeynep Matches into Internal Medicine gallery">
       <img src="{{ '/gallery/news-zeynep-internal-medicine-match.jpeg' | relative_url }}" alt="Zeynep Matches into Internal Medicine" loading="lazy">
       <div class="gallery-card-body">
-        <span class="gallery-tag">Lab Life</span>
+        <span class="gallery-tag">Celebrations</span>
         <h2>Zeynep Matches into Internal Medicine</h2>
         <p>Celebrating Zeynep, one of our postdoctoral scholars, on matching into Internal Medicine at UConn / the University of Connecticut.</p>
         <span class="gallery-card-button">View photos</span>
@@ -135,8 +136,8 @@ title: Gallery
         ]
       },
       "zeynep-match": {
-        category: "Lab Life",
-        categorySlug: "lab-life",
+        category: "Celebrations",
+        categorySlug: "celebrations",
         title: "Zeynep Matches into Internal Medicine",
         description: "Celebrating Zeynep, one of our postdoctoral scholars, on matching into Internal Medicine at UConn / the University of Connecticut.",
         images: [
