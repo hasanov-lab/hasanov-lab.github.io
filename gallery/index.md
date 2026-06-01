@@ -18,13 +18,13 @@ title: Gallery
   </div>
 
   <div class="gallery-grid">
-    <article class="gallery-card" data-category="science">
+    <article class="gallery-card gallery-card-action" data-category="science" data-asco-modal-card>
       <img src="{{ '/gallery/ascoposters/ascoa.jpeg' | relative_url }}" alt="ASCO 2026 poster preview from Hasanov Lab" loading="lazy">
       <div class="gallery-card-body">
         <span class="gallery-tag">Science</span>
         <h2>ASCO 2026 Posters</h2>
         <p>A collection of Hasanov Lab poster presentations from the Annual ASCO 2026 meeting.</p>
-        <button class="gallery-poster-button" type="button" data-asco-modal-open>View posters</button>
+        <button class="gallery-poster-button" id="open-asco-posters" type="button" data-asco-modal-open>View posters</button>
       </div>
     </article>
     <article class="gallery-card" data-category="science">
@@ -101,7 +101,7 @@ title: Gallery
   </div>
 </div>
 
-<div class="gallery-modal asco-poster-modal" data-asco-modal hidden aria-hidden="true">
+<div class="gallery-modal asco-poster-modal" id="asco-posters-modal" data-asco-modal hidden aria-hidden="true">
   <button class="gallery-modal-backdrop asco-poster-modal-backdrop" type="button" aria-label="Close ASCO poster viewer" data-asco-modal-close></button>
   <div class="gallery-modal-panel asco-poster-modal-panel" role="dialog" aria-modal="true" aria-labelledby="asco-poster-modal-title">
     <button class="gallery-modal-close asco-poster-modal-close" type="button" aria-label="Close ASCO poster viewer" data-asco-modal-close>&times;</button>
@@ -322,7 +322,7 @@ title: Gallery
 </style>
 
 <script>
-  (() => {
+  document.addEventListener("DOMContentLoaded", () => {
     const gallery = document.querySelector("[data-gallery]");
 
     if (!gallery) {
@@ -331,8 +331,9 @@ title: Gallery
 
     const filters = gallery.querySelectorAll("[data-filter]");
     const cards = gallery.querySelectorAll("[data-category]");
-    const openAscoModalButton = gallery.querySelector("[data-asco-modal-open]");
-    const ascoModal = document.querySelector("[data-asco-modal]");
+    const openAscoModalButton = document.getElementById("open-asco-posters");
+    const openAscoModalCard = gallery.querySelector("[data-asco-modal-card]");
+    const ascoModal = document.getElementById("asco-posters-modal");
 
     const ascoPosters = [
       {
@@ -403,7 +404,10 @@ title: Gallery
         ascoModal.hidden = true;
         ascoModal.setAttribute("aria-hidden", "true");
         document.body.classList.remove("gallery-modal-is-open");
-        previousFocus?.focus();
+
+        if (previousFocus && typeof previousFocus.focus === "function") {
+          previousFocus.focus();
+        }
       };
 
       const openModal = () => {
@@ -415,7 +419,22 @@ title: Gallery
         nextButton.focus();
       };
 
-      openAscoModalButton.addEventListener("click", openModal);
+      openAscoModalButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        openModal();
+      });
+
+      if (openAscoModalCard) {
+        openAscoModalCard.addEventListener("click", (event) => {
+          if (event.target.closest("a, button")) {
+            return;
+          }
+
+          openModal();
+        });
+      }
+
       previousButton.addEventListener("click", () => showPoster(activeIndex - 1));
       nextButton.addEventListener("click", () => showPoster(activeIndex + 1));
       closeButtons.forEach((button) => button.addEventListener("click", closeModal));
@@ -447,5 +466,5 @@ title: Gallery
 
     setupAscoModal();
     applyFilter("all");
-  })();
+  });
 </script>
