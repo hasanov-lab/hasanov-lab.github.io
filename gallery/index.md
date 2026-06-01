@@ -18,359 +18,153 @@ title: Gallery
   </div>
 
   <div class="gallery-grid">
-    <article class="gallery-card gallery-card-action" data-category="science" data-asco-modal-card>
+    <button class="gallery-card gallery-card-action" type="button" data-category="science" data-gallery-card="asco-posters" aria-label="Open ASCO 2026 Posters gallery">
       <img src="{{ '/gallery/ascoposters/ascoa.jpeg' | relative_url }}" alt="ASCO 2026 poster preview from Hasanov Lab" loading="lazy">
       <div class="gallery-card-body">
         <span class="gallery-tag">Science</span>
         <h2>ASCO 2026 Posters</h2>
         <p>A collection of Hasanov Lab poster presentations from the Annual ASCO 2026 meeting.</p>
-        <button class="gallery-poster-button" id="open-asco-posters" type="button" data-asco-modal-open>View posters</button>
+        <span class="gallery-card-button">View posters</span>
       </div>
-    </article>
-    <article class="gallery-card" data-category="science">
-      <img src="{{ '/images/gallery/science-placeholder.svg' | relative_url }}" alt="Science gallery placeholder for Conference Presentation" loading="lazy">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">Science</span>
-        <h2>Conference Presentation</h2>
-        <p>Sharing Hasanov Lab research at scientific meetings.</p>
-      </div>
-    </article>
+    </button>
 
-    <article class="gallery-card" data-category="science">
-      <img src="{{ '/images/gallery/science-placeholder.svg' | relative_url }}" alt="Science gallery placeholder for Research Poster" loading="lazy">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">Science</span>
-        <h2>Research Poster</h2>
-        <p>Presenting translational oncology and computational cancer research.</p>
-      </div>
-    </article>
-
-    <article class="gallery-card" data-category="science">
-      <img src="{{ '/images/gallery/science-placeholder.svg' | relative_url }}" alt="Science gallery placeholder for Lab Meeting" loading="lazy">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">Science</span>
-        <h2>Lab Meeting</h2>
-        <p>Discussing ongoing projects, data analysis, and manuscripts.</p>
-      </div>
-    </article>
-
-    <article class="gallery-card" data-category="lab-life">
+    <button class="gallery-card gallery-card-action" type="button" data-category="lab-life" data-gallery-card="lab-meeting" aria-label="Open Lab Meeting and Team Gathering gallery">
       <img src="{{ '/gallery/gallery-lab-meeting-team-gathering.png.jpeg' | relative_url }}" alt="Lab Meeting & Team Gathering" loading="lazy">
       <div class="gallery-card-body">
         <span class="gallery-tag">Lab Life</span>
         <h2>Lab Meeting &amp; Team Gathering</h2>
         <p>A Hasanov Lab team gathering, bringing together lab members for project discussions, collaboration, and community.</p>
+        <span class="gallery-card-button">View photos</span>
       </div>
-    </article>
+    </button>
 
-    <article class="gallery-card" data-category="lab-life">
-      <img src="{{ '/images/gallery/lab-life-placeholder.svg' | relative_url }}" alt="Lab Life gallery placeholder for Team Gathering" loading="lazy">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">Lab Life</span>
-        <h2>Team Gathering</h2>
-        <p>Celebrating milestones and building community.</p>
-      </div>
-    </article>
-
-    <article class="gallery-card" data-category="lab-life">
-      <img src="{{ '/images/gallery/lab-life-placeholder.svg' | relative_url }}" alt="Lab Life gallery placeholder for Lab Celebration" loading="lazy">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">Lab Life</span>
-        <h2>Lab Celebration</h2>
-        <p>Moments from team events and lab activities.</p>
-      </div>
-    </article>
-
-    <article class="gallery-card" data-category="lab-life">
-      <img src="{{ '/images/gallery/lab-life-placeholder.svg' | relative_url }}" alt="Lab Life gallery placeholder for Group Photo" loading="lazy">
-      <div class="gallery-card-body">
-        <span class="gallery-tag">Lab Life</span>
-        <h2>Group Photo</h2>
-        <p>Hasanov Lab members and collaborators.</p>
-      </div>
-    </article>
-
-    <article class="gallery-card" data-category="lab-life">
+    <button class="gallery-card gallery-card-action" type="button" data-category="lab-life" data-gallery-card="zeynep-match" aria-label="Open Zeynep Matches into Internal Medicine gallery">
       <img src="{{ '/gallery/news-zeynep-internal-medicine-match.jpeg' | relative_url }}" alt="Zeynep Matches into Internal Medicine" loading="lazy">
       <div class="gallery-card-body">
         <span class="gallery-tag">Lab Life</span>
         <h2>Zeynep Matches into Internal Medicine</h2>
         <p>Celebrating Zeynep, one of our postdoctoral scholars, on matching into Internal Medicine at UConn / the University of Connecticut.</p>
+        <span class="gallery-card-button">View photos</span>
       </div>
-    </article>
+    </button>
   </div>
 </div>
 
-<div class="gallery-modal asco-poster-modal" id="asco-posters-modal" data-asco-modal hidden aria-hidden="true">
-  <button class="gallery-modal-backdrop asco-poster-modal-backdrop" type="button" aria-label="Close ASCO poster viewer" data-asco-modal-close></button>
-  <div class="gallery-modal-panel asco-poster-modal-panel" role="dialog" aria-modal="true" aria-labelledby="asco-poster-modal-title">
-    <button class="gallery-modal-close asco-poster-modal-close" type="button" aria-label="Close ASCO poster viewer" data-asco-modal-close>&times;</button>
-    <div class="gallery-modal-header asco-poster-modal-header">
-      <span class="gallery-tag">Science</span>
-      <h2 id="asco-poster-modal-title">ASCO 2026 Posters</h2>
-      <p>A collection of Hasanov Lab poster presentations from the Annual ASCO 2026 meeting.</p>
+<div class="gallery-modal" id="gallery-lightbox" data-gallery-modal hidden aria-hidden="true">
+  <button class="gallery-modal-backdrop" type="button" aria-label="Close gallery viewer" data-gallery-close></button>
+  <div class="gallery-modal-panel" role="dialog" aria-modal="true" aria-labelledby="gallery-modal-title" aria-describedby="gallery-modal-description">
+    <button class="gallery-modal-close" type="button" aria-label="Close gallery viewer" data-gallery-close>&times;</button>
+    <div class="gallery-modal-header">
+      <span class="gallery-tag" data-gallery-modal-category>Science</span>
+      <h2 id="gallery-modal-title" data-gallery-modal-title>Gallery</h2>
+      <p id="gallery-modal-description" data-gallery-modal-description></p>
     </div>
-    <div class="asco-poster-modal-viewer">
-      <button class="asco-poster-modal-arrow asco-poster-modal-arrow-prev" type="button" aria-label="Show previous ASCO 2026 poster" data-asco-modal-prev>&#8249;</button>
-      <figure class="asco-poster-modal-figure">
-        <img src="{{ '/gallery/ascoposters/ascoa.jpeg' | relative_url }}" alt="ASCO 2026 poster preview from Hasanov Lab" data-asco-modal-image>
-        <figcaption class="asco-poster-modal-counter" data-asco-modal-counter>1 / 6</figcaption>
+    <div class="gallery-carousel">
+      <button class="gallery-carousel-arrow gallery-carousel-arrow-prev" type="button" aria-label="Show previous image" data-gallery-prev>&#8249;</button>
+      <figure class="gallery-carousel-figure">
+        <img src="{{ '/gallery/ascoposters/ascoa.jpeg' | relative_url }}" alt="ASCO 2026 poster preview from Hasanov Lab" data-gallery-image>
+        <figcaption>
+          <span class="gallery-carousel-caption" data-gallery-caption>ASCO 2026 Posters</span>
+          <span class="gallery-carousel-counter" data-gallery-counter>1 / 1</span>
+        </figcaption>
       </figure>
-      <button class="asco-poster-modal-arrow asco-poster-modal-arrow-next" type="button" aria-label="Show next ASCO 2026 poster" data-asco-modal-next>&#8250;</button>
+      <button class="gallery-carousel-arrow gallery-carousel-arrow-next" type="button" aria-label="Show next image" data-gallery-next>&#8250;</button>
     </div>
   </div>
 </div>
-
-<style>
-  .gallery-poster-button {
-    align-self: flex-start;
-    margin-top: auto;
-    padding: 10px 16px;
-    border: 0;
-    border-radius: 999px;
-    background: var(--gallery-science);
-    color: #ffffff;
-    font: inherit;
-    font-weight: var(--bold);
-    line-height: 1;
-    cursor: pointer;
-    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-  }
-
-  .gallery-poster-button:hover,
-  .gallery-poster-button:focus-visible {
-    background: var(--gallery-science-dark);
-    box-shadow: 0 10px 24px color-mix(in srgb, var(--gallery-science), transparent 62%);
-    transform: translateY(-2px);
-  }
-
-  .gallery-poster-button:focus-visible {
-    outline: 3px solid var(--gallery-science);
-    outline-offset: 3px;
-  }
-
-  .asco-poster-modal {
-    --gallery-science: #0b63ce;
-    --gallery-science-dark: #084b9c;
-    --gallery-science-soft: #e7f0ff;
-    background: rgba(10, 18, 32, 0.58);
-  }
-
-  .asco-poster-modal-backdrop {
-    border: 0;
-    cursor: default;
-  }
-
-  .asco-poster-modal-panel {
-    width: min(1180px, 100%);
-    max-height: min(92vh, 980px);
-    border: 1px solid color-mix(in srgb, var(--gallery-science), transparent 82%);
-    background: #f8fbff;
-    color: var(--text);
-  }
-
-  .asco-poster-modal-close {
-    top: 16px;
-    right: 16px;
-    background: var(--gallery-science);
-    color: #ffffff;
-    font-size: 2rem;
-    font-weight: var(--bold);
-    box-shadow: 0 10px 24px color-mix(in srgb, var(--gallery-science), transparent 70%);
-  }
-
-  .asco-poster-modal-close:hover,
-  .asco-poster-modal-close:focus-visible {
-    background: var(--gallery-science-dark);
-  }
-
-  .asco-poster-modal-header {
-    padding: 24px 86px 16px 28px;
-  }
-
-  .asco-poster-modal-header h2 {
-    color: var(--text);
-  }
-
-  .asco-poster-modal-header p {
-    color: var(--text);
-    opacity: 0.78;
-  }
-
-  .asco-poster-modal-viewer {
-    position: relative;
-    display: grid;
-    grid-template-columns: 56px minmax(0, 1fr) 56px;
-    align-items: center;
-    gap: 16px;
-    min-height: 0;
-    padding: 0 24px 28px;
-  }
-
-  .asco-poster-modal-figure {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-width: 0;
-    min-height: 0;
-    margin: 0;
-  }
-
-  .asco-poster-modal-figure img {
-    display: block;
-    width: auto;
-    max-width: 100%;
-    max-height: calc(92vh - 210px);
-    object-fit: contain;
-    border-radius: 12px;
-    background: #ffffff;
-    box-shadow: 0 18px 50px rgba(8, 75, 156, 0.18);
-  }
-
-  .asco-poster-modal-counter {
-    margin-top: 12px;
-    color: var(--gallery-science-dark);
-    font-size: 0.95rem;
-    font-weight: var(--bold);
-    letter-spacing: 0.04em;
-  }
-
-  .asco-poster-modal-arrow {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 52px;
-    height: 52px;
-    border: 0;
-    border-radius: 999px;
-    background: #ffffff;
-    color: var(--gallery-science-dark);
-    font: inherit;
-    font-size: 2.7rem;
-    font-weight: var(--bold);
-    line-height: 1;
-    cursor: pointer;
-    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
-  }
-
-  .asco-poster-modal-arrow:hover,
-  .asco-poster-modal-arrow:focus-visible {
-    background: var(--gallery-science);
-    color: #ffffff;
-    box-shadow: 0 10px 26px color-mix(in srgb, var(--gallery-science), transparent 68%);
-    transform: scale(1.06);
-  }
-
-  .asco-poster-modal-arrow:focus-visible {
-    outline: 3px solid var(--gallery-science);
-    outline-offset: 3px;
-  }
-
-  @media (max-width: 720px) {
-    .asco-poster-modal {
-      padding: 12px;
-    }
-
-    .asco-poster-modal-panel {
-      max-height: 94vh;
-    }
-
-    .asco-poster-modal-header {
-      padding: 22px 66px 14px 18px;
-    }
-
-    .asco-poster-modal-header h2 {
-      font-size: 1.3rem;
-    }
-
-    .asco-poster-modal-viewer {
-      grid-template-columns: 44px minmax(0, 1fr) 44px;
-      gap: 8px;
-      padding: 0 12px 18px;
-    }
-
-    .asco-poster-modal-figure img {
-      max-height: calc(94vh - 230px);
-      border-radius: 8px;
-    }
-
-    .asco-poster-modal-arrow {
-      width: 42px;
-      height: 42px;
-      font-size: 2.2rem;
-    }
-  }
-
-  @media (max-width: 440px) {
-    .asco-poster-modal-viewer {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .asco-poster-modal-figure {
-      grid-column: 1 / -1;
-      grid-row: 1;
-    }
-
-    .asco-poster-modal-arrow {
-      grid-row: 2;
-      justify-self: center;
-    }
-
-    .asco-poster-modal-arrow-prev {
-      grid-column: 1;
-    }
-
-    .asco-poster-modal-arrow-next {
-      grid-column: 2;
-    }
-
-    .asco-poster-modal-figure img {
-      max-height: calc(94vh - 280px);
-    }
-  }
-</style>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const gallery = document.querySelector("[data-gallery]");
+    const modal = document.querySelector("[data-gallery-modal]");
 
-    if (!gallery) {
+    if (!gallery || !modal) {
       return;
     }
 
+    const galleryItems = {
+      "asco-posters": {
+        category: "Science",
+        categorySlug: "science",
+        title: "ASCO 2026 Posters",
+        description: "A collection of Hasanov Lab poster presentations from the Annual ASCO 2026 meeting.",
+        images: [
+          {
+            src: "{{ '/gallery/ascoposters/ascoa.jpeg' | relative_url }}",
+            alt: "ASCO 2026 poster preview from Hasanov Lab",
+            caption: "ASCO 2026 Posters"
+          },
+          {
+            src: "{{ '/gallery/ascoposters/asco-antonio.jpeg' | relative_url }}",
+            alt: "ASCO 2026 poster by Antonio Faieta from Hasanov Lab",
+            caption: "ASCO 2026 poster by Antonio Faieta"
+          },
+          {
+            src: "{{ '/gallery/ascoposters/asco-betul.jpeg' | relative_url }}",
+            alt: "ASCO 2026 poster by Betul from Hasanov Lab",
+            caption: "ASCO 2026 poster by Betul"
+          },
+          {
+            src: "{{ '/gallery/ascoposters/asco-peng.jpeg' | relative_url }}",
+            alt: "ASCO 2026 poster by Peng Li from Hasanov Lab",
+            caption: "ASCO 2026 poster by Peng Li"
+          },
+          {
+            src: "{{ '/gallery/ascoposters/asco-zuhair.jpeg' | relative_url }}",
+            alt: "ASCO 2026 poster by Zuhair Majeed from Hasanov Lab",
+            caption: "ASCO 2026 poster by Zuhair Majeed"
+          },
+          {
+            src: "{{ '/gallery/ascoposters/ascozz.jpeg' | relative_url }}",
+            alt: "ASCO 2026 poster from Hasanov Lab",
+            caption: "ASCO 2026 Posters"
+          }
+        ]
+      },
+      "lab-meeting": {
+        category: "Lab Life",
+        categorySlug: "lab-life",
+        title: "Lab Meeting & Team Gathering",
+        description: "A Hasanov Lab team gathering, bringing together lab members for project discussions, collaboration, and community.",
+        images: [
+          {
+            src: "{{ '/gallery/gallery-lab-meeting-team-gathering.png.jpeg' | relative_url }}",
+            alt: "Lab Meeting & Team Gathering",
+            caption: "Lab Meeting & Team Gathering"
+          }
+        ]
+      },
+      "zeynep-match": {
+        category: "Lab Life",
+        categorySlug: "lab-life",
+        title: "Zeynep Matches into Internal Medicine",
+        description: "Celebrating Zeynep, one of our postdoctoral scholars, on matching into Internal Medicine at UConn / the University of Connecticut.",
+        images: [
+          {
+            src: "{{ '/gallery/news-zeynep-internal-medicine-match.jpeg' | relative_url }}",
+            alt: "Zeynep Matches into Internal Medicine",
+            caption: "Zeynep Matches into Internal Medicine"
+          }
+        ]
+      }
+    };
+
     const filters = gallery.querySelectorAll("[data-filter]");
     const cards = gallery.querySelectorAll("[data-category]");
-    const openAscoModalButton = document.getElementById("open-asco-posters");
-    const openAscoModalCard = gallery.querySelector("[data-asco-modal-card]");
-    const ascoModal = document.getElementById("asco-posters-modal");
-
-    const ascoPosters = [
-      {
-        src: "{{ '/gallery/ascoposters/ascoa.jpeg' | relative_url }}",
-        alt: "ASCO 2026 poster preview from Hasanov Lab"
-      },
-      {
-        src: "{{ '/gallery/ascoposters/asco-antonio.jpeg' | relative_url }}",
-        alt: "ASCO 2026 poster by Antonio Faieta from Hasanov Lab"
-      },
-      {
-        src: "{{ '/gallery/ascoposters/asco-betul.jpeg' | relative_url }}",
-        alt: "ASCO 2026 poster by Betul from Hasanov Lab"
-      },
-      {
-        src: "{{ '/gallery/ascoposters/asco-peng.jpeg' | relative_url }}",
-        alt: "ASCO 2026 poster by Peng Li from Hasanov Lab"
-      },
-      {
-        src: "{{ '/gallery/ascoposters/asco-zuhair.jpeg' | relative_url }}",
-        alt: "ASCO 2026 poster by Zuhair Majeed from Hasanov Lab"
-      },
-      {
-        src: "{{ '/gallery/ascoposters/ascozz.jpeg' | relative_url }}",
-        alt: "ASCO 2026 poster from Hasanov Lab"
-      }
-    ];
+    const modalPanel = modal.querySelector(".gallery-modal-panel");
+    const modalCategory = modal.querySelector("[data-gallery-modal-category]");
+    const modalTitle = modal.querySelector("[data-gallery-modal-title]");
+    const modalDescription = modal.querySelector("[data-gallery-modal-description]");
+    const modalImage = modal.querySelector("[data-gallery-image]");
+    const modalCaption = modal.querySelector("[data-gallery-caption]");
+    const modalCounter = modal.querySelector("[data-gallery-counter]");
+    const previousButton = modal.querySelector("[data-gallery-prev]");
+    const nextButton = modal.querySelector("[data-gallery-next]");
+    const closeButtons = modal.querySelectorAll("[data-gallery-close]");
+    const closeButton = modal.querySelector(".gallery-modal-close");
+    let activeGallery = null;
+    let activeIndex = 0;
+    let previousFocus = null;
 
     const applyFilter = (selected) => {
       filters.forEach((button) => {
@@ -385,96 +179,86 @@ title: Gallery
       });
     };
 
-    const setupAscoModal = () => {
-      if (!openAscoModalButton || !ascoModal) {
+    const updateCarousel = (index) => {
+      if (!activeGallery || !modalImage || !modalCaption || !modalCounter || !previousButton || !nextButton) {
         return;
       }
 
-      const image = ascoModal.querySelector("[data-asco-modal-image]");
-      const counter = ascoModal.querySelector("[data-asco-modal-counter]");
-      const previousButton = ascoModal.querySelector("[data-asco-modal-prev]");
-      const nextButton = ascoModal.querySelector("[data-asco-modal-next]");
-      const closeButtons = ascoModal.querySelectorAll("[data-asco-modal-close]");
-      let activeIndex = 0;
-      let previousFocus = null;
+      activeIndex = (index + activeGallery.images.length) % activeGallery.images.length;
+      const image = activeGallery.images[activeIndex];
+      modalImage.src = image.src;
+      modalImage.alt = image.alt;
+      modalCaption.textContent = image.caption || activeGallery.title;
+      modalCounter.textContent = `${activeIndex + 1} / ${activeGallery.images.length}`;
 
-      if (!image || !counter || !previousButton || !nextButton) {
+      const hasMultipleImages = activeGallery.images.length > 1;
+      previousButton.hidden = !hasMultipleImages;
+      nextButton.hidden = !hasMultipleImages;
+    };
+
+    const closeModal = () => {
+      modal.hidden = true;
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("gallery-modal-is-open");
+      activeGallery = null;
+
+      if (previousFocus && typeof previousFocus.focus === "function") {
+        previousFocus.focus();
+      }
+    };
+
+    const openModal = (galleryKey) => {
+      const selectedGallery = galleryItems[galleryKey];
+
+      if (!selectedGallery) {
         return;
       }
 
-      const showPoster = (index) => {
-        activeIndex = (index + ascoPosters.length) % ascoPosters.length;
-        const poster = ascoPosters[activeIndex];
-        image.src = poster.src;
-        image.alt = poster.alt;
-        counter.textContent = `${activeIndex + 1} / ${ascoPosters.length}`;
-      };
-
-      const closeModal = () => {
-        ascoModal.hidden = true;
-        ascoModal.setAttribute("aria-hidden", "true");
-        document.body.classList.remove("gallery-modal-is-open");
-
-        if (previousFocus && typeof previousFocus.focus === "function") {
-          previousFocus.focus();
-        }
-      };
-
-      const openModal = () => {
-        previousFocus = document.activeElement;
-        showPoster(0);
-        ascoModal.hidden = false;
-        ascoModal.setAttribute("aria-hidden", "false");
-        document.body.classList.add("gallery-modal-is-open");
-        nextButton.focus();
-      };
-
-      openAscoModalButton.addEventListener("click", (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        openModal();
-      });
-
-      if (openAscoModalCard) {
-        openAscoModalCard.addEventListener("click", (event) => {
-          if (event.target.closest("a, button")) {
-            return;
-          }
-
-          openModal();
-        });
+      previousFocus = document.activeElement;
+      activeGallery = selectedGallery;
+      modal.dataset.category = selectedGallery.categorySlug;
+      modalCategory.textContent = selectedGallery.category;
+      modalTitle.textContent = selectedGallery.title;
+      modalDescription.textContent = selectedGallery.description;
+      updateCarousel(0);
+      modal.hidden = false;
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("gallery-modal-is-open");
+      if (closeButton) {
+        closeButton.focus();
       }
-
-      previousButton.addEventListener("click", () => showPoster(activeIndex - 1));
-      nextButton.addEventListener("click", () => showPoster(activeIndex + 1));
-      closeButtons.forEach((button) => button.addEventListener("click", closeModal));
-
-      document.addEventListener("keydown", (event) => {
-        if (ascoModal.hidden) {
-          return;
-        }
-
-        if (event.key === "Escape") {
-          closeModal();
-        }
-
-        if (event.key === "ArrowLeft") {
-          showPoster(activeIndex - 1);
-        }
-
-        if (event.key === "ArrowRight") {
-          showPoster(activeIndex + 1);
-        }
-      });
-
-      showPoster(0);
     };
 
     filters.forEach((filter) => {
       filter.addEventListener("click", () => applyFilter(filter.dataset.filter));
     });
 
-    setupAscoModal();
+    gallery.querySelectorAll("[data-gallery-card]").forEach((card) => {
+      card.addEventListener("click", () => openModal(card.dataset.galleryCard));
+    });
+
+    previousButton.addEventListener("click", () => updateCarousel(activeIndex - 1));
+    nextButton.addEventListener("click", () => updateCarousel(activeIndex + 1));
+    closeButtons.forEach((button) => button.addEventListener("click", closeModal));
+
+    document.addEventListener("keydown", (event) => {
+      if (modal.hidden) {
+        return;
+      }
+
+      if (event.key === "Escape") {
+        closeModal();
+      }
+
+      if (event.key === "ArrowLeft" && activeGallery?.images.length > 1) {
+        updateCarousel(activeIndex - 1);
+      }
+
+      if (event.key === "ArrowRight" && activeGallery?.images.length > 1) {
+        updateCarousel(activeIndex + 1);
+      }
+    });
+
     applyFilter("all");
   });
 </script>
