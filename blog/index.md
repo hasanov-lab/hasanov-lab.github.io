@@ -19,7 +19,7 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
       {% for post in site.data.news %}
         <article class="news-post-card">
           {% if post.image %}
-            <img class="news-post-image" src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
+            <img class="news-post-image{% if post.image == 'images/code-to-clinic-logo.png' %} news-post-image--logo{% endif %}" src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
           {% endif %}
 
           <div class="news-post-content">
@@ -117,6 +117,13 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
   width: 100%;
   max-height: 360px;
   object-fit: cover;
+}
+
+.news-post-image--logo {
+  height: 240px;
+  padding: 36px 48px;
+  object-fit: contain;
+  background: #ffffff;
 }
 
 .news-post-content {
