@@ -5,6 +5,12 @@
 }
 
 .gallery-page {
+  --gallery-science: #0b63ce;
+  --gallery-science-dark: #084b9c;
+  --gallery-science-soft: #e7f0ff;
+  --gallery-lab-life: #168a4a;
+  --gallery-lab-life-dark: #0f6a38;
+  --gallery-lab-life-soft: #e8f7ee;
   max-width: 1180px;
   margin: 0 auto 48px;
 }
@@ -38,10 +44,35 @@
   transform: translateY(-2px);
 }
 
+.gallery-filter[data-filter=science]:hover,
+.gallery-filter[data-filter=science]:focus-visible {
+  color: var(--gallery-science);
+  border-color: var(--gallery-science);
+}
+
+.gallery-filter[data-filter=lab-life]:hover,
+.gallery-filter[data-filter=lab-life]:focus-visible {
+  color: var(--gallery-lab-life);
+  border-color: var(--gallery-lab-life);
+}
+
 .gallery-filter.is-active {
   background: var(--primary);
   border-color: var(--primary);
   color: #ffffff;
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--primary), transparent 70%);
+}
+
+.gallery-filter[data-filter=science].is-active {
+  background: var(--gallery-science);
+  border-color: var(--gallery-science-dark);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--gallery-science), transparent 62%);
+}
+
+.gallery-filter[data-filter=lab-life].is-active {
+  background: var(--gallery-lab-life);
+  border-color: var(--gallery-lab-life-dark);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--gallery-lab-life), transparent 62%);
 }
 
 .gallery-grid {
@@ -88,6 +119,7 @@
 .gallery-tag {
   align-self: flex-start;
   padding: 5px 10px;
+  border: 1px solid color-mix(in srgb, var(--primary), transparent 72%);
   border-radius: 999px;
   background: color-mix(in srgb, var(--primary), transparent 86%);
   color: var(--primary);
@@ -95,6 +127,18 @@
   font-weight: var(--bold);
   letter-spacing: 0.03em;
   text-transform: uppercase;
+}
+
+.gallery-card[data-category=science] .gallery-tag {
+  border-color: color-mix(in srgb, var(--gallery-science), transparent 62%);
+  background: var(--gallery-science-soft);
+  color: var(--gallery-science-dark);
+}
+
+.gallery-card[data-category=lab-life] .gallery-tag {
+  border-color: color-mix(in srgb, var(--gallery-lab-life), transparent 62%);
+  background: var(--gallery-lab-life-soft);
+  color: var(--gallery-lab-life-dark);
 }
 
 .gallery-card h2 {

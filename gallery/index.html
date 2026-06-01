@@ -566,31 +566,35 @@
 </div>
 
 <script>
-  {
+  (() => {
     const gallery = document.querySelector("[data-gallery]");
 
-    if (gallery) {
-      const filters = gallery.querySelectorAll("[data-filter]");
-      const cards = gallery.querySelectorAll("[data-category]");
-
-      filters.forEach((filter) => {
-        filter.addEventListener("click", () => {
-          const selected = filter.dataset.filter;
-
-          filters.forEach((button) => {
-            const isActive = button === filter;
-            button.classList.toggle("is-active", isActive);
-            button.setAttribute("aria-pressed", String(isActive));
-          });
-
-          cards.forEach((card) => {
-            const isVisible = selected === \"all\" \|| card.dataset.category === selected;
-            card.hidden = !isVisible;
-          });
-        });
-      });
+    if (!gallery) {
+      return;
     }
-  }
+
+    const filters = gallery.querySelectorAll("[data-filter]");
+    const cards = gallery.querySelectorAll("[data-category]");
+
+    const applyFilter = (selected) => {
+      filters.forEach((button) => {
+        const isActive = button.dataset.filter === selected;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+      });
+
+      cards.forEach((card) => {
+        const isVisible = selected === \"all\" \|| card.dataset.category === selected;
+        card.hidden = !isVisible;
+      });
+    };
+
+    filters.forEach((filter) => {
+      filter.addEventListener("click", () => applyFilter(filter.dataset.filter));
+    });
+
+    applyFilter("all");
+  })();
 </script>
   </section>
 
