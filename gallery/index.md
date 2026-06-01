@@ -18,19 +18,14 @@ title: Gallery
   </div>
 
   <div class="gallery-grid">
-    <article class="gallery-card gallery-carousel-card" data-category="science" data-asco-carousel>
-      <div class="gallery-card-media gallery-carousel-media">
-        <img src="{{ '/gallery/ascoposters/ascoa.jpeg' | relative_url }}" alt="ASCO 2026 poster preview from Hasanov Lab" loading="lazy" data-asco-carousel-image>
-        <button class="gallery-carousel-arrow gallery-carousel-arrow-prev" type="button" aria-label="Show previous ASCO 2026 poster" data-asco-carousel-prev>&#8249;</button>
-        <button class="gallery-carousel-arrow gallery-carousel-arrow-next" type="button" aria-label="Show next ASCO 2026 poster" data-asco-carousel-next>&#8250;</button>
-        <span class="gallery-multi-label gallery-carousel-label">Swipe / click arrows to view posters</span>
-      </div>
-      <div class="gallery-carousel-dots" aria-label="ASCO 2026 poster carousel" data-asco-carousel-dots></div>
-      <span class="gallery-card-body">
+    <article class="gallery-card" data-category="science">
+      <img src="{{ '/gallery/ascoposters/ascoa.jpeg' | relative_url }}" alt="ASCO 2026 poster preview from Hasanov Lab" loading="lazy">
+      <div class="gallery-card-body">
         <span class="gallery-tag">Science</span>
-        <span class="gallery-card-title">ASCO 2026 Posters</span>
-        <span class="gallery-card-description">A collection of Hasanov Lab poster presentations from the Annual ASCO 2026 meeting.</span>
-      </span>
+        <h2>ASCO 2026 Posters</h2>
+        <p>A collection of Hasanov Lab poster presentations from the Annual ASCO 2026 meeting.</p>
+        <button class="gallery-poster-button" type="button" data-asco-modal-open>View posters</button>
+      </div>
     </article>
     <article class="gallery-card" data-category="science">
       <img src="{{ '/images/gallery/science-placeholder.svg' | relative_url }}" alt="Science gallery placeholder for Conference Presentation" loading="lazy">
@@ -106,107 +101,222 @@ title: Gallery
   </div>
 </div>
 
+<div class="gallery-modal asco-poster-modal" data-asco-modal hidden aria-hidden="true">
+  <button class="gallery-modal-backdrop asco-poster-modal-backdrop" type="button" aria-label="Close ASCO poster viewer" data-asco-modal-close></button>
+  <div class="gallery-modal-panel asco-poster-modal-panel" role="dialog" aria-modal="true" aria-labelledby="asco-poster-modal-title">
+    <button class="gallery-modal-close asco-poster-modal-close" type="button" aria-label="Close ASCO poster viewer" data-asco-modal-close>&times;</button>
+    <div class="gallery-modal-header asco-poster-modal-header">
+      <span class="gallery-tag">Science</span>
+      <h2 id="asco-poster-modal-title">ASCO 2026 Posters</h2>
+      <p>A collection of Hasanov Lab poster presentations from the Annual ASCO 2026 meeting.</p>
+    </div>
+    <div class="asco-poster-modal-viewer">
+      <button class="asco-poster-modal-arrow asco-poster-modal-arrow-prev" type="button" aria-label="Show previous ASCO 2026 poster" data-asco-modal-prev>&#8249;</button>
+      <figure class="asco-poster-modal-figure">
+        <img src="{{ '/gallery/ascoposters/ascoa.jpeg' | relative_url }}" alt="ASCO 2026 poster preview from Hasanov Lab" data-asco-modal-image>
+        <figcaption class="asco-poster-modal-counter" data-asco-modal-counter>1 / 6</figcaption>
+      </figure>
+      <button class="asco-poster-modal-arrow asco-poster-modal-arrow-next" type="button" aria-label="Show next ASCO 2026 poster" data-asco-modal-next>&#8250;</button>
+    </div>
+  </div>
+</div>
+
 <style>
-  .gallery-carousel-card {
-    cursor: default;
-  }
-
-  .gallery-carousel-media {
-    overflow: hidden;
-    background: var(--overlay);
-  }
-
-  .gallery-card .gallery-carousel-media img {
-    display: block;
-    object-fit: contain;
-    background: #f6f8fb;
-  }
-
-  .gallery-carousel-arrow {
-    position: absolute;
-    top: 50%;
-    z-index: 2;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
+  .gallery-poster-button {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 10px 16px;
     border: 0;
     border-radius: 999px;
-    background: rgba(8, 75, 156, 0.88);
+    background: var(--gallery-science);
     color: #ffffff;
     font: inherit;
-    font-size: 2rem;
     font-weight: var(--bold);
     line-height: 1;
     cursor: pointer;
-    transform: translateY(-50%);
-    transition: background var(--transition), transform var(--transition), opacity var(--transition);
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
   }
 
-  .gallery-carousel-arrow:hover,
-  .gallery-carousel-arrow:focus-visible {
+  .gallery-poster-button:hover,
+  .gallery-poster-button:focus-visible {
     background: var(--gallery-science-dark);
-    transform: translateY(-50%) scale(1.06);
+    box-shadow: 0 10px 24px color-mix(in srgb, var(--gallery-science), transparent 62%);
+    transform: translateY(-2px);
   }
 
-  .gallery-carousel-arrow:focus-visible {
-    outline: 3px solid #ffffff;
-    outline-offset: 2px;
-  }
-
-  .gallery-carousel-arrow-prev {
-    left: 12px;
-  }
-
-  .gallery-carousel-arrow-next {
-    right: 12px;
-  }
-
-  .gallery-carousel-label {
-    pointer-events: none;
-  }
-
-  .gallery-carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 7px;
-    padding: 12px 14px 0;
-  }
-
-  .gallery-carousel-dot {
-    width: 8px;
-    height: 8px;
-    padding: 0;
-    border: 0;
-    border-radius: 999px;
-    background: color-mix(in srgb, var(--gallery-science), transparent 72%);
-    cursor: pointer;
-    transition: background var(--transition), transform var(--transition), width var(--transition);
-  }
-
-  .gallery-carousel-dot.is-active {
-    width: 22px;
-    background: var(--gallery-science);
-  }
-
-  .gallery-carousel-dot:focus-visible {
+  .gallery-poster-button:focus-visible {
     outline: 3px solid var(--gallery-science);
     outline-offset: 3px;
   }
 
-  @media (max-width: 620px) {
-    .gallery-carousel-arrow {
-      width: 34px;
-      height: 34px;
-      font-size: 1.8rem;
+  .asco-poster-modal {
+    background: rgba(10, 18, 32, 0.84);
+  }
+
+  .asco-poster-modal-backdrop {
+    border: 0;
+    cursor: default;
+  }
+
+  .asco-poster-modal-panel {
+    width: min(1180px, 100%);
+    max-height: min(92vh, 980px);
+    background: #0a1220;
+    color: #ffffff;
+  }
+
+  .asco-poster-modal-close {
+    top: 16px;
+    right: 16px;
+    background: rgba(255, 255, 255, 0.96);
+    color: #0a1220;
+    font-size: 2rem;
+    font-weight: var(--bold);
+  }
+
+  .asco-poster-modal-close:hover,
+  .asco-poster-modal-close:focus-visible {
+    background: #ffffff;
+  }
+
+  .asco-poster-modal-header {
+    padding: 24px 86px 16px 28px;
+  }
+
+  .asco-poster-modal-header h2,
+  .asco-poster-modal-header p {
+    color: #ffffff;
+  }
+
+  .asco-poster-modal-viewer {
+    position: relative;
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr) 56px;
+    align-items: center;
+    gap: 16px;
+    min-height: 0;
+    padding: 0 24px 28px;
+  }
+
+  .asco-poster-modal-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+  }
+
+  .asco-poster-modal-figure img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: calc(92vh - 210px);
+    object-fit: contain;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+  }
+
+  .asco-poster-modal-counter {
+    margin-top: 12px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 0.95rem;
+    font-weight: var(--bold);
+    letter-spacing: 0.04em;
+  }
+
+  .asco-poster-modal-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.94);
+    color: #0a1220;
+    font: inherit;
+    font-size: 2.7rem;
+    font-weight: var(--bold);
+    line-height: 1;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  }
+
+  .asco-poster-modal-arrow:hover,
+  .asco-poster-modal-arrow:focus-visible {
+    background: #ffffff;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+    transform: scale(1.06);
+  }
+
+  .asco-poster-modal-arrow:focus-visible {
+    outline: 3px solid var(--gallery-science);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 720px) {
+    .asco-poster-modal {
+      padding: 12px;
     }
 
-    .gallery-carousel-label {
-      right: 10px;
-      bottom: 10px;
-      max-width: calc(100% - 20px);
-      font-size: 0.72rem;
+    .asco-poster-modal-panel {
+      max-height: 94vh;
+    }
+
+    .asco-poster-modal-header {
+      padding: 22px 66px 14px 18px;
+    }
+
+    .asco-poster-modal-header h2 {
+      font-size: 1.3rem;
+    }
+
+    .asco-poster-modal-viewer {
+      grid-template-columns: 44px minmax(0, 1fr) 44px;
+      gap: 8px;
+      padding: 0 12px 18px;
+    }
+
+    .asco-poster-modal-figure img {
+      max-height: calc(94vh - 230px);
+      border-radius: 8px;
+    }
+
+    .asco-poster-modal-arrow {
+      width: 42px;
+      height: 42px;
+      font-size: 2.2rem;
+    }
+  }
+
+  @media (max-width: 440px) {
+    .asco-poster-modal-viewer {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .asco-poster-modal-figure {
+      grid-column: 1 / -1;
+      grid-row: 1;
+    }
+
+    .asco-poster-modal-arrow {
+      grid-row: 2;
+      justify-self: center;
+    }
+
+    .asco-poster-modal-arrow-prev {
+      grid-column: 1;
+    }
+
+    .asco-poster-modal-arrow-next {
+      grid-column: 2;
+    }
+
+    .asco-poster-modal-figure img {
+      max-height: calc(94vh - 280px);
     }
   }
 </style>
@@ -221,7 +331,8 @@ title: Gallery
 
     const filters = gallery.querySelectorAll("[data-filter]");
     const cards = gallery.querySelectorAll("[data-category]");
-    const ascoCarousel = gallery.querySelector("[data-asco-carousel]");
+    const openAscoModalButton = gallery.querySelector("[data-asco-modal-open]");
+    const ascoModal = document.querySelector("[data-asco-modal]");
 
     const ascoPosters = [
       {
@@ -263,68 +374,69 @@ title: Gallery
       });
     };
 
-    const setupAscoCarousel = () => {
-      if (!ascoCarousel) {
+    const setupAscoModal = () => {
+      if (!openAscoModalButton || !ascoModal) {
         return;
       }
 
-      const image = ascoCarousel.querySelector("[data-asco-carousel-image]");
-      const previousButton = ascoCarousel.querySelector("[data-asco-carousel-prev]");
-      const nextButton = ascoCarousel.querySelector("[data-asco-carousel-next]");
-      const dotsContainer = ascoCarousel.querySelector("[data-asco-carousel-dots]");
-      const media = ascoCarousel.querySelector(".gallery-carousel-media");
+      const image = ascoModal.querySelector("[data-asco-modal-image]");
+      const counter = ascoModal.querySelector("[data-asco-modal-counter]");
+      const previousButton = ascoModal.querySelector("[data-asco-modal-prev]");
+      const nextButton = ascoModal.querySelector("[data-asco-modal-next]");
+      const closeButtons = ascoModal.querySelectorAll("[data-asco-modal-close]");
       let activeIndex = 0;
-      let touchStartX = null;
+      let previousFocus = null;
 
-      if (!image || !previousButton || !nextButton || !dotsContainer) {
+      if (!image || !counter || !previousButton || !nextButton) {
         return;
       }
-
-      const dots = ascoPosters.map((poster, index) => {
-        const dot = document.createElement("button");
-        dot.className = "gallery-carousel-dot";
-        dot.type = "button";
-        dot.setAttribute("aria-label", `Show ASCO 2026 poster ${index + 1} of ${ascoPosters.length}`);
-        dot.addEventListener("click", () => showPoster(index));
-        dotsContainer.append(dot);
-        return dot;
-      });
 
       const showPoster = (index) => {
         activeIndex = (index + ascoPosters.length) % ascoPosters.length;
         const poster = ascoPosters[activeIndex];
         image.src = poster.src;
         image.alt = poster.alt;
-
-        dots.forEach((dot, dotIndex) => {
-          const isActive = dotIndex === activeIndex;
-          dot.classList.toggle("is-active", isActive);
-          dot.setAttribute("aria-current", isActive ? "true" : "false");
-        });
+        counter.textContent = `${activeIndex + 1} / ${ascoPosters.length}`;
       };
 
+      const closeModal = () => {
+        ascoModal.hidden = true;
+        ascoModal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("gallery-modal-is-open");
+        previousFocus?.focus();
+      };
+
+      const openModal = () => {
+        previousFocus = document.activeElement;
+        showPoster(0);
+        ascoModal.hidden = false;
+        ascoModal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("gallery-modal-is-open");
+        nextButton.focus();
+      };
+
+      openAscoModalButton.addEventListener("click", openModal);
       previousButton.addEventListener("click", () => showPoster(activeIndex - 1));
       nextButton.addEventListener("click", () => showPoster(activeIndex + 1));
+      closeButtons.forEach((button) => button.addEventListener("click", closeModal));
 
-      media?.addEventListener("touchstart", (event) => {
-        touchStartX = event.changedTouches[0]?.clientX ?? null;
-      }, { passive: true });
-
-      media?.addEventListener("touchend", (event) => {
-        if (touchStartX === null) {
+      document.addEventListener("keydown", (event) => {
+        if (ascoModal.hidden) {
           return;
         }
 
-        const touchEndX = event.changedTouches[0]?.clientX ?? touchStartX;
-        const deltaX = touchEndX - touchStartX;
-        touchStartX = null;
-
-        if (Math.abs(deltaX) < 40) {
-          return;
+        if (event.key === "Escape") {
+          closeModal();
         }
 
-        showPoster(activeIndex + (deltaX < 0 ? 1 : -1));
-      }, { passive: true });
+        if (event.key === "ArrowLeft") {
+          showPoster(activeIndex - 1);
+        }
+
+        if (event.key === "ArrowRight") {
+          showPoster(activeIndex + 1);
+        }
+      });
 
       showPoster(0);
     };
@@ -333,7 +445,7 @@ title: Gallery
       filter.addEventListener("click", () => applyFilter(filter.dataset.filter));
     });
 
-    setupAscoCarousel();
+    setupAscoModal();
     applyFilter("all");
   })();
 </script>
