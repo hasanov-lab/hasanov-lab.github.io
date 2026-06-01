@@ -194,6 +194,7 @@ title: Gallery
 
       const hasMultipleImages = activeGallery.images.length > 1;
       modal.classList.toggle("is-single-image", !hasMultipleImages);
+      modalCounter.hidden = !hasMultipleImages;
       previousButton.hidden = !hasMultipleImages;
       nextButton.hidden = !hasMultipleImages;
       previousButton.disabled = !hasMultipleImages;
@@ -266,7 +267,7 @@ title: Gallery
     }));
 
     modal.addEventListener("click", (event) => {
-      if (event.target === modal) {
+      if (!modalPanel || !modalPanel.contains(event.target)) {
         closeModal();
       }
     });
