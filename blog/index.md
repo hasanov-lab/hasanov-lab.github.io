@@ -15,10 +15,17 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
 
 <div class="news-container">
   <div class="news-main">
-    {% include search-box.html %}
-    {% include tags.html tags=site.tags %}
-    {% include search-info.html %}
-    {% include list.html data="posts" component="post-excerpt" %}
+    <div class="x-timeline-embed">
+      <a class="twitter-timeline"
+         data-height="650"
+         data-theme="light"
+         href="https://x.com/HasanovLab"
+         target="_blank"
+         rel="noopener noreferrer">
+        Follow Hasanov Lab on X
+      </a>
+    </div>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 
   <div class="x-card">
@@ -68,6 +75,29 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
 
 .news-main {
   min-width: 0;
+}
+
+.x-timeline-embed {
+  min-height: 650px;
+}
+
+.x-timeline-embed .twitter-timeline:not(.twitter-timeline-rendered) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 650px;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
+  color: #0f1419;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none !important;
+}
+
+.x-timeline-embed .twitter-timeline:not(.twitter-timeline-rendered):hover {
+  color: #1d9bf0;
 }
 
 /* === X / Twitter follow card === */
