@@ -18,7 +18,7 @@ title: Gallery
   </div>
 
   <div class="gallery-grid">
-    <button class="gallery-card gallery-card-action" type="button" data-category="science" data-gallery-card="asco-posters" aria-label="Open ASCO 2026 Posters gallery">
+    <article class="gallery-card gallery-card-action" data-category="science" data-gallery-card="asco-posters" role="button" tabindex="0" aria-label="Open ASCO 2026 Posters gallery">
       <img src="{{ '/gallery/ascoposters/ascoa.jpeg' | relative_url }}" alt="ASCO 2026 poster preview from Hasanov Lab" loading="lazy">
       <div class="gallery-card-body">
         <span class="gallery-tag">Science</span>
@@ -26,9 +26,9 @@ title: Gallery
         <p>A collection of Hasanov Lab poster presentations from the Annual ASCO 2026 meeting.</p>
         <span class="gallery-card-button">View posters</span>
       </div>
-    </button>
+    </article>
 
-    <button class="gallery-card gallery-card-action" type="button" data-category="lab-life" data-gallery-card="lab-meeting" aria-label="Open Lab Meeting and Team Gathering gallery">
+    <article class="gallery-card gallery-card-action" data-category="lab-life" data-gallery-card="lab-meeting" role="button" tabindex="0" aria-label="Open Lab Meeting and Team Gathering gallery">
       <img src="{{ '/gallery/gallery-lab-meeting-team-gathering.png.jpeg' | relative_url }}" alt="Lab Meeting & Team Gathering" loading="lazy">
       <div class="gallery-card-body">
         <span class="gallery-tag">Lab Life</span>
@@ -36,9 +36,9 @@ title: Gallery
         <p>A Hasanov Lab team gathering, bringing together lab members for project discussions, collaboration, and community.</p>
         <span class="gallery-card-button">View photos</span>
       </div>
-    </button>
+    </article>
 
-    <button class="gallery-card gallery-card-action" type="button" data-category="lab-life" data-gallery-card="zeynep-match" aria-label="Open Zeynep Matches into Internal Medicine gallery">
+    <article class="gallery-card gallery-card-action" data-category="lab-life" data-gallery-card="zeynep-match" role="button" tabindex="0" aria-label="Open Zeynep Matches into Internal Medicine gallery">
       <img src="{{ '/gallery/news-zeynep-internal-medicine-match.jpeg' | relative_url }}" alt="Zeynep Matches into Internal Medicine" loading="lazy">
       <div class="gallery-card-body">
         <span class="gallery-tag">Lab Life</span>
@@ -46,7 +46,7 @@ title: Gallery
         <p>Celebrating Zeynep, one of our postdoctoral scholars, on matching into Internal Medicine at UConn / the University of Connecticut.</p>
         <span class="gallery-card-button">View photos</span>
       </div>
-    </button>
+    </article>
   </div>
 </div>
 
@@ -192,14 +192,18 @@ title: Gallery
       modalCounter.textContent = `${activeIndex + 1} / ${activeGallery.images.length}`;
 
       const hasMultipleImages = activeGallery.images.length > 1;
+      modal.classList.toggle("is-single-image", !hasMultipleImages);
       previousButton.hidden = !hasMultipleImages;
       nextButton.hidden = !hasMultipleImages;
+      previousButton.disabled = !hasMultipleImages;
+      nextButton.disabled = !hasMultipleImages;
     };
 
     const closeModal = () => {
       modal.hidden = true;
       modal.setAttribute("aria-hidden", "true");
       document.body.classList.remove("gallery-modal-is-open");
+      modal.classList.remove("is-single-image");
       activeGallery = null;
 
       if (previousFocus && typeof previousFocus.focus === "function") {
@@ -234,12 +238,37 @@ title: Gallery
     });
 
     gallery.querySelectorAll("[data-gallery-card]").forEach((card) => {
-      card.addEventListener("click", () => openModal(card.dataset.galleryCard));
+      const openCardGallery = (event) => {
+        event.preventDefault();
+        openModal(card.dataset.galleryCard);
+      };
+
+      card.addEventListener("click", openCardGallery);
+      card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          openCardGallery(event);
+        }
+      });
     });
 
-    previousButton.addEventListener("click", () => updateCarousel(activeIndex - 1));
-    nextButton.addEventListener("click", () => updateCarousel(activeIndex + 1));
-    closeButtons.forEach((button) => button.addEventListener("click", closeModal));
+    previousButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      updateCarousel(activeIndex - 1);
+    });
+    nextButton.addEventListener("click", (event) => {
+      event.preventDefault();
+      updateCarousel(activeIndex + 1);
+    });
+    closeButtons.forEach((button) => button.addEventListener("click", (event) => {
+      event.preventDefault();
+      closeModal();
+    }));
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
 
     document.addEventListener("keydown", (event) => {
       if (modal.hidden) {
