@@ -112,10 +112,12 @@ title: Gallery
         <p>A collection of Hasanov Lab poster presentations from the Annual ASCO 2026 meeting.</p>
       </div>
       <div class="gallery-modal-images">
-        <img src="{{ '/images/gallery/ascoposters/asco-2026-poster-01.jpg' | relative_url }}" alt="ASCO 2026 poster 1 from Hasanov Lab" loading="lazy">
-        <img src="{{ '/images/gallery/ascoposters/asco-2026-poster-02.jpg' | relative_url }}" alt="ASCO 2026 poster 2 from Hasanov Lab" loading="lazy">
-        <img src="{{ '/images/gallery/ascoposters/asco-2026-poster-03.jpg' | relative_url }}" alt="ASCO 2026 poster 3 from Hasanov Lab" loading="lazy">
-        <img src="{{ '/images/gallery/ascoposters/asco-2026-poster-04.jpg' | relative_url }}" alt="ASCO 2026 poster 4 from Hasanov Lab" loading="lazy">
+        <img src="{{ '/gallery/ascoposters/asco-antonio.jpeg' | relative_url }}" alt="ASCO 2026 poster by Antonio Faieta from Hasanov Lab" loading="lazy">
+        <img src="{{ '/gallery/ascoposters/asco-betul.jpeg' | relative_url }}" alt="ASCO 2026 poster by Betul from Hasanov Lab" loading="lazy">
+        <img src="{{ '/gallery/ascoposters/asco-peng.jpeg' | relative_url }}" alt="ASCO 2026 poster by Peng Li from Hasanov Lab" loading="lazy">
+        <img src="{{ '/gallery/ascoposters/asco-zuhair.jpeg' | relative_url }}" alt="ASCO 2026 poster by Zuhair Majeed from Hasanov Lab" loading="lazy">
+        <img src="{{ '/gallery/ascoposters/ascoa.jpeg' | relative_url }}" alt="ASCO 2026 poster preview from Hasanov Lab" loading="lazy">
+        <img src="{{ '/gallery/ascoposters/ascozz.jpeg' | relative_url }}" alt="ASCO 2026 poster from Hasanov Lab" loading="lazy">
       </div>
     </div>
   </div>
