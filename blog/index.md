@@ -35,7 +35,7 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
 
             {% if post.link %}
               <a class="news-post-link" href="{{ post.link }}" target="_blank" rel="noopener noreferrer">
-                Read the original post
+                {{ post.link_label | default: "Read the original post" }}
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
             {% endif %}
