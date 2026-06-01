@@ -20,7 +20,7 @@ title: Gallery
   <div class="gallery-grid">
     <button class="gallery-card gallery-card-action" type="button" data-category="science" data-gallery-modal-open="asco-2026-posters" aria-haspopup="dialog">
       <span class="gallery-card-media">
-        <img src="{{ '/images/gallery/ascoposters/asco-2026-poster-01.jpg' | relative_url }}" alt="ASCO 2026 poster preview" loading="lazy">
+        <img src="{{ '/gallery/ascoposters/ascoa.jpeg' | relative_url }}" alt="ASCO 2026 poster preview" loading="lazy">
         <span class="gallery-multi-label">View posters</span>
       </span>
       <span class="gallery-card-body">
