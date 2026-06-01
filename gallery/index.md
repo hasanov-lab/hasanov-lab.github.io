@@ -18,6 +18,17 @@ title: Gallery
   </div>
 
   <div class="gallery-grid">
+    <button class="gallery-card gallery-card-action" type="button" data-category="science" data-gallery-modal-open="asco-2026-posters" aria-haspopup="dialog">
+      <span class="gallery-card-media">
+        <img src="{{ '/images/gallery/ascoposters/asco-2026-poster-01.jpg' | relative_url }}" alt="ASCO 2026 poster preview" loading="lazy">
+        <span class="gallery-multi-label">View posters</span>
+      </span>
+      <span class="gallery-card-body">
+        <span class="gallery-tag">Science</span>
+        <span class="gallery-card-title">ASCO 2026 Posters</span>
+        <span class="gallery-card-description">A collection of Hasanov Lab poster presentations from the Annual ASCO 2026 meeting.</span>
+      </span>
+    </button>
     <article class="gallery-card" data-category="science">
       <img src="{{ '/images/gallery/science-placeholder.svg' | relative_url }}" alt="Science gallery placeholder for Conference Presentation" loading="lazy">
       <div class="gallery-card-body">
@@ -90,6 +101,24 @@ title: Gallery
       </div>
     </article>
   </div>
+
+  <div class="gallery-modal" id="asco-2026-posters" role="dialog" aria-modal="true" aria-labelledby="asco-2026-posters-title" hidden>
+    <div class="gallery-modal-backdrop" data-gallery-modal-close></div>
+    <div class="gallery-modal-panel" role="document">
+      <button class="gallery-modal-close" type="button" data-gallery-modal-close aria-label="Close ASCO 2026 posters gallery">&times;</button>
+      <div class="gallery-modal-header">
+        <span class="gallery-tag">Science</span>
+        <h2 id="asco-2026-posters-title">ASCO 2026 Posters</h2>
+        <p>A collection of Hasanov Lab poster presentations from the Annual ASCO 2026 meeting.</p>
+      </div>
+      <div class="gallery-modal-images">
+        <img src="{{ '/images/gallery/ascoposters/asco-2026-poster-01.jpg' | relative_url }}" alt="ASCO 2026 poster 1 from Hasanov Lab" loading="lazy">
+        <img src="{{ '/images/gallery/ascoposters/asco-2026-poster-02.jpg' | relative_url }}" alt="ASCO 2026 poster 2 from Hasanov Lab" loading="lazy">
+        <img src="{{ '/images/gallery/ascoposters/asco-2026-poster-03.jpg' | relative_url }}" alt="ASCO 2026 poster 3 from Hasanov Lab" loading="lazy">
+        <img src="{{ '/images/gallery/ascoposters/asco-2026-poster-04.jpg' | relative_url }}" alt="ASCO 2026 poster 4 from Hasanov Lab" loading="lazy">
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -102,6 +131,10 @@ title: Gallery
 
     const filters = gallery.querySelectorAll("[data-filter]");
     const cards = gallery.querySelectorAll("[data-category]");
+    const modalOpeners = gallery.querySelectorAll("[data-gallery-modal-open]");
+    const modalClosers = gallery.querySelectorAll("[data-gallery-modal-close]");
+    let activeModal = null;
+    let previousFocus = null;
 
     const applyFilter = (selected) => {
       filters.forEach((button) => {
@@ -116,8 +149,54 @@ title: Gallery
       });
     };
 
+    const closeModal = () => {
+      if (!activeModal) {
+        return;
+      }
+
+      activeModal.hidden = true;
+      document.body.classList.remove("gallery-modal-is-open");
+
+      if (previousFocus) {
+        previousFocus.focus();
+      }
+
+      activeModal = null;
+      previousFocus = null;
+    };
+
+    const openModal = (modalId, opener) => {
+      const modal = gallery.querySelector(`#${modalId}`);
+
+      if (!modal) {
+        return;
+      }
+
+      previousFocus = opener;
+      activeModal = modal;
+      modal.hidden = false;
+      document.body.classList.add("gallery-modal-is-open");
+
+      const closeButton = modal.querySelector("[data-gallery-modal-close]");
+      closeButton?.focus();
+    };
+
     filters.forEach((filter) => {
       filter.addEventListener("click", () => applyFilter(filter.dataset.filter));
+    });
+
+    modalOpeners.forEach((opener) => {
+      opener.addEventListener("click", () => openModal(opener.dataset.galleryModalOpen, opener));
+    });
+
+    modalClosers.forEach((closer) => {
+      closer.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeModal();
+      }
     });
 
     applyFilter("all");
