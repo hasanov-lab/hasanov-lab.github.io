@@ -11,6 +11,9 @@
   --gallery-lab-life: #168a4a;
   --gallery-lab-life-dark: #0f6a38;
   --gallery-lab-life-soft: #e8f7ee;
+  --gallery-celebrations: #8a3ffc;
+  --gallery-celebrations-dark: #5f2bbd;
+  --gallery-celebrations-soft: #f1e8ff;
   max-width: 1180px;
   margin: 0 auto 48px;
 }
@@ -56,6 +59,12 @@
   border-color: var(--gallery-lab-life);
 }
 
+.gallery-filter[data-filter=celebrations]:hover,
+.gallery-filter[data-filter=celebrations]:focus-visible {
+  color: var(--gallery-celebrations);
+  border-color: var(--gallery-celebrations);
+}
+
 .gallery-filter.is-active {
   background: var(--primary);
   border-color: var(--primary);
@@ -73,6 +82,12 @@
   background: var(--gallery-lab-life);
   border-color: var(--gallery-lab-life-dark);
   box-shadow: 0 10px 24px color-mix(in srgb, var(--gallery-lab-life), transparent 62%);
+}
+
+.gallery-filter[data-filter=celebrations].is-active {
+  background: var(--gallery-celebrations);
+  border-color: var(--gallery-celebrations-dark);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--gallery-celebrations), transparent 62%);
 }
 
 .gallery-grid {
@@ -143,6 +158,16 @@
   box-shadow: 0 10px 24px color-mix(in srgb, var(--gallery-lab-life), transparent 62%);
 }
 
+.gallery-card[data-category=celebrations] .gallery-card-button {
+  background: var(--gallery-celebrations);
+}
+
+.gallery-card[data-category=celebrations]:hover .gallery-card-button,
+.gallery-card[data-category=celebrations]:focus-visible .gallery-card-button {
+  background: var(--gallery-celebrations-dark);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--gallery-celebrations), transparent 62%);
+}
+
 .gallery-card:hover,
 .gallery-card:focus-visible {
   transform: translateY(-4px);
@@ -156,6 +181,10 @@
 
 .gallery-card[data-category=lab-life]:focus-visible {
   outline-color: var(--gallery-lab-life);
+}
+
+.gallery-card[data-category=celebrations]:focus-visible {
+  outline-color: var(--gallery-celebrations);
 }
 
 .gallery-card[hidden] {
@@ -224,6 +253,12 @@
   color: var(--gallery-lab-life-dark);
 }
 
+.gallery-card[data-category=celebrations] .gallery-tag {
+  border-color: color-mix(in srgb, var(--gallery-celebrations), transparent 62%);
+  background: var(--gallery-celebrations-soft);
+  color: var(--gallery-celebrations-dark);
+}
+
 .gallery-card h2,
 .gallery-card-title {
   margin: 0;
@@ -259,6 +294,9 @@
   --gallery-lab-life: #168a4a;
   --gallery-lab-life-dark: #0f6a38;
   --gallery-lab-life-soft: #e8f7ee;
+  --gallery-celebrations: #8a3ffc;
+  --gallery-celebrations-dark: #5f2bbd;
+  --gallery-celebrations-soft: #f1e8ff;
   --gallery-active: var(--gallery-science);
   --gallery-active-dark: var(--gallery-science-dark);
   --gallery-active-soft: var(--gallery-science-soft);
@@ -277,6 +315,12 @@
   --gallery-active-soft: var(--gallery-lab-life-soft);
 }
 
+.gallery-modal[data-category=celebrations] {
+  --gallery-active: var(--gallery-celebrations);
+  --gallery-active-dark: var(--gallery-celebrations-dark);
+  --gallery-active-soft: var(--gallery-celebrations-soft);
+}
+
 .gallery-modal-backdrop {
   position: absolute;
   inset: 0;
@@ -290,8 +334,8 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  width: min(1120px, 100%);
-  max-height: min(88vh, 980px);
+  width: min(85vw, 960px);
+  max-height: 85vh;
   overflow: hidden;
   border-radius: 18px;
   border: 1px solid color-mix(in srgb, var(--gallery-active), transparent 82%);
@@ -370,8 +414,8 @@
 .gallery-carousel-figure img {
   display: block;
   width: auto;
-  max-width: 100%;
-  max-height: calc(88vh - 220px);
+  max-width: min(100%, 85vw);
+  max-height: 75vh;
   object-fit: contain;
   border-radius: 12px;
   background: #ffffff;
@@ -467,6 +511,7 @@
     padding: 14px;
   }
   .gallery-modal-panel {
+    width: min(94vw, 960px);
     max-height: 94vh;
   }
   .gallery-modal-header {
@@ -481,7 +526,8 @@
     grid-template-columns: minmax(0, 1fr);
   }
   .gallery-carousel-figure img {
-    max-height: calc(94vh - 250px);
+    max-width: 88vw;
+    max-height: 68vh;
     border-radius: 8px;
   }
   .gallery-carousel-arrow {
