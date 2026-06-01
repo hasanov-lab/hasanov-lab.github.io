@@ -46,7 +46,7 @@ title: Gallery
     </article>
 
     <article class="gallery-card" data-category="lab-life">
-      <img src="{{ '/images/gallery/gallery-lab-meeting-team-gathering.png' | relative_url }}" alt="Lab Meeting & Team Gathering" loading="lazy">
+      <img src="{{ '/gallery/gallery-lab-meeting-team-gathering.png.jpeg' | relative_url }}" alt="Lab Meeting & Team Gathering" loading="lazy">
       <div class="gallery-card-body">
         <span class="gallery-tag">Lab Life</span>
         <h2>Lab Meeting &amp; Team Gathering</h2>
