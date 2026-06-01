@@ -19,10 +19,8 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
       <a class="twitter-timeline"
          data-height="650"
          data-theme="light"
-         href="https://x.com/HasanovLab"
-         target="_blank"
-         rel="noopener noreferrer">
-        Follow Hasanov Lab on X
+         href="https://twitter.com/HasanovLab">
+        Posts by HasanovLab
       </a>
     </div>
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
