@@ -15,15 +15,34 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
 
 <div class="news-container">
   <div class="news-main">
-    <div class="x-timeline-embed">
-      <a class="twitter-timeline"
-         data-height="650"
-         data-theme="light"
-         href="https://twitter.com/HasanovLab">
-        Posts by HasanovLab
-      </a>
+    <div class="news-posts">
+      {% for post in site.data.news %}
+        <article class="news-post-card">
+          {% if post.image %}
+            <img class="news-post-image" src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
+          {% endif %}
+
+          <div class="news-post-content">
+            <div class="news-post-meta">
+              <time datetime="{{ post.date }}">{{ post.display_date | default: post.date }}</time>
+              {% if post.category %}
+                <span class="news-post-category">{{ post.category }}</span>
+              {% endif %}
+            </div>
+
+            <h2 class="news-post-title">{{ post.title }}</h2>
+            <p class="news-post-text">{{ post.text }}</p>
+
+            {% if post.link %}
+              <a class="news-post-link" href="{{ post.link }}" target="_blank" rel="noopener noreferrer">
+                Read the original post
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
     </div>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 
   <div class="x-card">
@@ -75,27 +94,85 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
   min-width: 0;
 }
 
-.x-timeline-embed {
-  min-height: 650px;
+.news-posts {
+  display: grid;
+  gap: 22px;
 }
 
-.x-timeline-embed .twitter-timeline:not(.twitter-timeline-rendered) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 650px;
-  padding: 24px;
+.news-post-card {
   background: #ffffff;
   border-radius: 18px;
+  overflow: hidden;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.08);
-  color: #0f1419;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.news-post-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+.news-post-image {
+  display: block;
+  width: 100%;
+  max-height: 360px;
+  object-fit: cover;
+}
+
+.news-post-content {
+  padding: 26px;
+}
+
+.news-post-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: #536471;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.news-post-category {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(29, 155, 240, 0.12);
+  color: #1d6fb8;
+  font-size: 0.78rem;
   font-weight: 700;
-  text-align: center;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.news-post-title {
+  margin: 0 0 12px 0 !important;
+  color: #0f1419;
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+
+.news-post-text {
+  margin: 0 !important;
+  color: #0f1419;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.news-post-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: #1d9bf0;
+  font-weight: 700;
   text-decoration: none !important;
 }
 
-.x-timeline-embed .twitter-timeline:not(.twitter-timeline-rendered):hover {
-  color: #1d9bf0;
+.news-post-link:hover {
+  text-decoration: underline !important;
 }
 
 /* === X / Twitter follow card === */
