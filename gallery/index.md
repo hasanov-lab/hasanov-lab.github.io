@@ -18,11 +18,14 @@ title: Gallery
   </div>
 
   <div class="gallery-grid">
-    <article class="gallery-card gallery-card-action" data-category="science" data-gallery-modal-open="asco-2026-posters" role="button" tabindex="0" aria-haspopup="dialog" aria-controls="asco-2026-posters">
-      <span class="gallery-card-media">
-        <img src="{{ '/gallery/ascoposters/ascoa.jpeg' | relative_url }}" alt="ASCO 2026 poster preview" loading="lazy">
-        <button class="gallery-multi-label" type="button" data-gallery-modal-open="asco-2026-posters" aria-controls="asco-2026-posters" style="appearance: none; border: 0; cursor: pointer; font-family: inherit;">View posters</button>
-      </span>
+    <article class="gallery-card gallery-carousel-card" data-category="science" data-asco-carousel>
+      <div class="gallery-card-media gallery-carousel-media">
+        <img src="{{ '/gallery/ascoposters/ascoa.jpeg' | relative_url }}" alt="ASCO 2026 poster preview from Hasanov Lab" loading="lazy" data-asco-carousel-image>
+        <button class="gallery-carousel-arrow gallery-carousel-arrow-prev" type="button" aria-label="Show previous ASCO 2026 poster" data-asco-carousel-prev>&#8249;</button>
+        <button class="gallery-carousel-arrow gallery-carousel-arrow-next" type="button" aria-label="Show next ASCO 2026 poster" data-asco-carousel-next>&#8250;</button>
+        <span class="gallery-multi-label gallery-carousel-label">Swipe / click arrows to view posters</span>
+      </div>
+      <div class="gallery-carousel-dots" aria-label="ASCO 2026 poster carousel" data-asco-carousel-dots></div>
       <span class="gallery-card-body">
         <span class="gallery-tag">Science</span>
         <span class="gallery-card-title">ASCO 2026 Posters</span>
@@ -101,27 +104,112 @@ title: Gallery
       </div>
     </article>
   </div>
-
-  <div class="gallery-modal" id="asco-2026-posters" role="dialog" aria-modal="true" aria-labelledby="asco-2026-posters-title" hidden>
-    <div class="gallery-modal-backdrop" data-gallery-modal-close></div>
-    <div class="gallery-modal-panel" role="document">
-      <button class="gallery-modal-close" type="button" data-gallery-modal-close aria-label="Close ASCO 2026 posters gallery">&times;</button>
-      <div class="gallery-modal-header">
-        <span class="gallery-tag">Science</span>
-        <h2 id="asco-2026-posters-title">ASCO 2026 Posters</h2>
-        <p>A collection of Hasanov Lab poster presentations from the Annual ASCO 2026 meeting.</p>
-      </div>
-      <div class="gallery-modal-images">
-        <img src="{{ '/gallery/ascoposters/asco-antonio.jpeg' | relative_url }}" alt="ASCO 2026 poster by Antonio Faieta from Hasanov Lab" loading="lazy">
-        <img src="{{ '/gallery/ascoposters/asco-betul.jpeg' | relative_url }}" alt="ASCO 2026 poster by Betul from Hasanov Lab" loading="lazy">
-        <img src="{{ '/gallery/ascoposters/asco-peng.jpeg' | relative_url }}" alt="ASCO 2026 poster by Peng Li from Hasanov Lab" loading="lazy">
-        <img src="{{ '/gallery/ascoposters/asco-zuhair.jpeg' | relative_url }}" alt="ASCO 2026 poster by Zuhair Majeed from Hasanov Lab" loading="lazy">
-        <img src="{{ '/gallery/ascoposters/ascoa.jpeg' | relative_url }}" alt="ASCO 2026 poster preview from Hasanov Lab" loading="lazy">
-        <img src="{{ '/gallery/ascoposters/ascozz.jpeg' | relative_url }}" alt="ASCO 2026 poster from Hasanov Lab" loading="lazy">
-      </div>
-    </div>
-  </div>
 </div>
+
+<style>
+  .gallery-carousel-card {
+    cursor: default;
+  }
+
+  .gallery-carousel-media {
+    overflow: hidden;
+    background: var(--overlay);
+  }
+
+  .gallery-card .gallery-carousel-media img {
+    display: block;
+    object-fit: contain;
+    background: #f6f8fb;
+  }
+
+  .gallery-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(8, 75, 156, 0.88);
+    color: #ffffff;
+    font: inherit;
+    font-size: 2rem;
+    font-weight: var(--bold);
+    line-height: 1;
+    cursor: pointer;
+    transform: translateY(-50%);
+    transition: background var(--transition), transform var(--transition), opacity var(--transition);
+  }
+
+  .gallery-carousel-arrow:hover,
+  .gallery-carousel-arrow:focus-visible {
+    background: var(--gallery-science-dark);
+    transform: translateY(-50%) scale(1.06);
+  }
+
+  .gallery-carousel-arrow:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 2px;
+  }
+
+  .gallery-carousel-arrow-prev {
+    left: 12px;
+  }
+
+  .gallery-carousel-arrow-next {
+    right: 12px;
+  }
+
+  .gallery-carousel-label {
+    pointer-events: none;
+  }
+
+  .gallery-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    padding: 12px 14px 0;
+  }
+
+  .gallery-carousel-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--gallery-science), transparent 72%);
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition), width var(--transition);
+  }
+
+  .gallery-carousel-dot.is-active {
+    width: 22px;
+    background: var(--gallery-science);
+  }
+
+  .gallery-carousel-dot:focus-visible {
+    outline: 3px solid var(--gallery-science);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 620px) {
+    .gallery-carousel-arrow {
+      width: 34px;
+      height: 34px;
+      font-size: 1.8rem;
+    }
+
+    .gallery-carousel-label {
+      right: 10px;
+      bottom: 10px;
+      max-width: calc(100% - 20px);
+      font-size: 0.72rem;
+    }
+  }
+</style>
 
 <script>
   (() => {
@@ -133,9 +221,34 @@ title: Gallery
 
     const filters = gallery.querySelectorAll("[data-filter]");
     const cards = gallery.querySelectorAll("[data-category]");
-    const modalClosers = gallery.querySelectorAll("[data-gallery-modal-close]");
-    let activeModal = null;
-    let previousFocus = null;
+    const ascoCarousel = gallery.querySelector("[data-asco-carousel]");
+
+    const ascoPosters = [
+      {
+        src: "{{ '/gallery/ascoposters/ascoa.jpeg' | relative_url }}",
+        alt: "ASCO 2026 poster preview from Hasanov Lab"
+      },
+      {
+        src: "{{ '/gallery/ascoposters/asco-antonio.jpeg' | relative_url }}",
+        alt: "ASCO 2026 poster by Antonio Faieta from Hasanov Lab"
+      },
+      {
+        src: "{{ '/gallery/ascoposters/asco-betul.jpeg' | relative_url }}",
+        alt: "ASCO 2026 poster by Betul from Hasanov Lab"
+      },
+      {
+        src: "{{ '/gallery/ascoposters/asco-peng.jpeg' | relative_url }}",
+        alt: "ASCO 2026 poster by Peng Li from Hasanov Lab"
+      },
+      {
+        src: "{{ '/gallery/ascoposters/asco-zuhair.jpeg' | relative_url }}",
+        alt: "ASCO 2026 poster by Zuhair Majeed from Hasanov Lab"
+      },
+      {
+        src: "{{ '/gallery/ascoposters/ascozz.jpeg' | relative_url }}",
+        alt: "ASCO 2026 poster from Hasanov Lab"
+      }
+    ];
 
     const applyFilter = (selected) => {
       filters.forEach((button) => {
@@ -150,74 +263,77 @@ title: Gallery
       });
     };
 
-    const closeModal = () => {
-      if (!activeModal) {
+    const setupAscoCarousel = () => {
+      if (!ascoCarousel) {
         return;
       }
 
-      activeModal.hidden = true;
-      document.body.classList.remove("gallery-modal-is-open");
+      const image = ascoCarousel.querySelector("[data-asco-carousel-image]");
+      const previousButton = ascoCarousel.querySelector("[data-asco-carousel-prev]");
+      const nextButton = ascoCarousel.querySelector("[data-asco-carousel-next]");
+      const dotsContainer = ascoCarousel.querySelector("[data-asco-carousel-dots]");
+      const media = ascoCarousel.querySelector(".gallery-carousel-media");
+      let activeIndex = 0;
+      let touchStartX = null;
 
-      if (previousFocus) {
-        previousFocus.focus();
-      }
-
-      activeModal = null;
-      previousFocus = null;
-    };
-
-    const openModal = (modalId, opener) => {
-      const modal = gallery.querySelector(`#${modalId}`);
-
-      if (!modal) {
+      if (!image || !previousButton || !nextButton || !dotsContainer) {
         return;
       }
 
-      previousFocus = opener;
-      activeModal = modal;
-      modal.hidden = false;
-      document.body.classList.add("gallery-modal-is-open");
+      const dots = ascoPosters.map((poster, index) => {
+        const dot = document.createElement("button");
+        dot.className = "gallery-carousel-dot";
+        dot.type = "button";
+        dot.setAttribute("aria-label", `Show ASCO 2026 poster ${index + 1} of ${ascoPosters.length}`);
+        dot.addEventListener("click", () => showPoster(index));
+        dotsContainer.append(dot);
+        return dot;
+      });
 
-      const closeButton = modal.querySelector("[data-gallery-modal-close]");
-      closeButton?.focus();
+      const showPoster = (index) => {
+        activeIndex = (index + ascoPosters.length) % ascoPosters.length;
+        const poster = ascoPosters[activeIndex];
+        image.src = poster.src;
+        image.alt = poster.alt;
+
+        dots.forEach((dot, dotIndex) => {
+          const isActive = dotIndex === activeIndex;
+          dot.classList.toggle("is-active", isActive);
+          dot.setAttribute("aria-current", isActive ? "true" : "false");
+        });
+      };
+
+      previousButton.addEventListener("click", () => showPoster(activeIndex - 1));
+      nextButton.addEventListener("click", () => showPoster(activeIndex + 1));
+
+      media?.addEventListener("touchstart", (event) => {
+        touchStartX = event.changedTouches[0]?.clientX ?? null;
+      }, { passive: true });
+
+      media?.addEventListener("touchend", (event) => {
+        if (touchStartX === null) {
+          return;
+        }
+
+        const touchEndX = event.changedTouches[0]?.clientX ?? touchStartX;
+        const deltaX = touchEndX - touchStartX;
+        touchStartX = null;
+
+        if (Math.abs(deltaX) < 40) {
+          return;
+        }
+
+        showPoster(activeIndex + (deltaX < 0 ? 1 : -1));
+      }, { passive: true });
+
+      showPoster(0);
     };
 
     filters.forEach((filter) => {
       filter.addEventListener("click", () => applyFilter(filter.dataset.filter));
     });
 
-    gallery.addEventListener("click", (event) => {
-      const opener = event.target.closest("[data-gallery-modal-open]");
-
-      if (!opener || !gallery.contains(opener)) {
-        return;
-      }
-
-      event.preventDefault();
-      openModal(opener.dataset.galleryModalOpen, opener);
-    });
-
-    gallery.addEventListener("keydown", (event) => {
-      const opener = event.target.closest('[role="button"][data-gallery-modal-open]');
-
-      if (!opener || !gallery.contains(opener) || (event.key !== "Enter" && event.key !== " ")) {
-        return;
-      }
-
-      event.preventDefault();
-      openModal(opener.dataset.galleryModalOpen, opener);
-    });
-
-    modalClosers.forEach((closer) => {
-      closer.addEventListener("click", closeModal);
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        closeModal();
-      }
-    });
-
+    setupAscoCarousel();
     applyFilter("all");
   })();
 </script>
