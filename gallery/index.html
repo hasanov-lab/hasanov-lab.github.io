@@ -624,7 +624,10 @@
   }
 
   .asco-poster-modal {
-    background: rgba(10, 18, 32, 0.84);
+    --gallery-science: #0b63ce;
+    --gallery-science-dark: #084b9c;
+    --gallery-science-soft: #e7f0ff;
+    background: rgba(10, 18, 32, 0.58);
   }
 
   .asco-poster-modal-backdrop {
@@ -635,31 +638,37 @@
   .asco-poster-modal-panel {
     width: min(1180px, 100%);
     max-height: min(92vh, 980px);
-    background: #0a1220;
-    color: #ffffff;
+    border: 1px solid color-mix(in srgb, var(--gallery-science), transparent 82%);
+    background: #f8fbff;
+    color: var(--text);
   }
 
   .asco-poster-modal-close {
     top: 16px;
     right: 16px;
-    background: rgba(255, 255, 255, 0.96);
-    color: #0a1220;
+    background: var(--gallery-science);
+    color: #ffffff;
     font-size: 2rem;
     font-weight: var(--bold);
+    box-shadow: 0 10px 24px color-mix(in srgb, var(--gallery-science), transparent 70%);
   }
 
   .asco-poster-modal-close:hover,
   .asco-poster-modal-close:focus-visible {
-    background: #ffffff;
+    background: var(--gallery-science-dark);
   }
 
   .asco-poster-modal-header {
     padding: 24px 86px 16px 28px;
   }
 
-  .asco-poster-modal-header h2,
+  .asco-poster-modal-header h2 {
+    color: var(--text);
+  }
+
   .asco-poster-modal-header p {
-    color: #ffffff;
+    color: var(--text);
+    opacity: 0.78;
   }
 
   .asco-poster-modal-viewer {
@@ -690,12 +699,12 @@
     object-fit: contain;
     border-radius: 12px;
     background: #ffffff;
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.32);
+    box-shadow: 0 18px 50px rgba(8, 75, 156, 0.18);
   }
 
   .asco-poster-modal-counter {
     margin-top: 12px;
-    color: rgba(255, 255, 255, 0.86);
+    color: var(--gallery-science-dark);
     font-size: 0.95rem;
     font-weight: var(--bold);
     letter-spacing: 0.04em;
@@ -709,8 +718,8 @@
     height: 52px;
     border: 0;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.94);
-    color: #0a1220;
+    background: #ffffff;
+    color: var(--gallery-science-dark);
     font: inherit;
     font-size: 2.7rem;
     font-weight: var(--bold);
@@ -721,8 +730,9 @@
 
   .asco-poster-modal-arrow:hover,
   .asco-poster-modal-arrow:focus-visible {
-    background: #ffffff;
-    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
+    background: var(--gallery-science);
+    color: #ffffff;
+    box-shadow: 0 10px 26px color-mix(in srgb, var(--gallery-science), transparent 68%);
     transform: scale(1.06);
   }
 
