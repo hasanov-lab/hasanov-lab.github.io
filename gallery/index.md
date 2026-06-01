@@ -239,16 +239,29 @@ title: Gallery
       filter.addEventListener("click", () => applyFilter(filter.dataset.filter));
     });
 
-    gallery.querySelectorAll("[data-gallery-card]").forEach((card) => {
-      const openCardGallery = (event) => {
-        event.preventDefault();
-        openModal(card.dataset.galleryCard);
-      };
+    const openCardGallery = (card, event) => {
+      if (!card) {
+        return;
+      }
 
-      card.addEventListener("click", openCardGallery);
+      event.preventDefault();
+      openModal(card.dataset.galleryCard);
+    };
+
+    gallery.addEventListener("click", (event) => {
+      const card = event.target.closest("[data-gallery-card]");
+
+      if (!card || !gallery.contains(card)) {
+        return;
+      }
+
+      openCardGallery(card, event);
+    });
+
+    gallery.querySelectorAll("[data-gallery-card]").forEach((card) => {
       card.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
-          openCardGallery(event);
+          openCardGallery(card, event);
         }
       });
     });
