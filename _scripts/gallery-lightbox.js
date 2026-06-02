@@ -41,6 +41,26 @@
           src: "/gallery/ascoposters/ascozz.jpeg",
           alt: "ASCO 2026 poster from Hasanov Lab",
           caption: "ASCO 2026 Posters"
+        },
+        {
+          src: "/gallery/ascoposters/new%20asco%200.jpeg",
+          alt: "ASCO 2026 group photo from Hasanov Lab",
+          caption: "ASCO 2026 Group Photo"
+        },
+        {
+          src: "/gallery/ascoposters/Newasco1.jpeg",
+          alt: "ASCO 2026 group photo from Hasanov Lab",
+          caption: "ASCO 2026 Group Photo"
+        },
+        {
+          src: "/gallery/ascoposters/new%20asco2%20.jpeg",
+          alt: "ASCO 2026 group photo from Hasanov Lab",
+          caption: "ASCO 2026 Group Photo"
+        },
+        {
+          src: "/gallery/ascoposters/new%20asco%203%20.jpeg",
+          alt: "ASCO 2026 group photo from Hasanov Lab",
+          caption: "ASCO 2026 Group Photo"
         }
       ]
     },
