@@ -72,6 +72,16 @@
     }
   };
 
+  const videoItems = {
+    "zuhair-asco-2026": {
+      category: "Video",
+      categorySlug: "video",
+      title: "Zuhair ASCO 2026 Poster Video",
+      description: "A poster presentation video by Zuhair for the ASCO 2026 meeting.",
+      embedUrl: "https://www.youtube.com/embed/8OAeRvHbG0Y?autoplay=1"
+    }
+  };
+
   const state = {
     initialized: false,
     gallery: null,
@@ -86,7 +96,9 @@
     previousButton: null,
     nextButton: null,
     closeButton: null,
+    videoFrameWrap: null,
     activeGallery: null,
+    activeVideo: null,
     activeIndex: 0,
     previousFocus: null
   };
@@ -97,6 +109,14 @@
     }
 
     return target.closest("[data-gallery-card]");
+  };
+
+  const getClosestGalleryVideo = (target) => {
+    if (!target || typeof target.closest !== "function") {
+      return null;
+    }
+
+    return target.closest("[data-gallery-video]");
   };
 
   const setFilter = (selected) => {
@@ -137,16 +157,25 @@
     state.nextButton.disabled = !hasMultipleImages;
   };
 
+  const clearVideoFrame = () => {
+    if (state.videoFrameWrap) {
+      state.videoFrameWrap.replaceChildren();
+      state.videoFrameWrap.hidden = true;
+    }
+  };
+
   const closeModal = () => {
     if (!state.modal) {
       return;
     }
 
+    clearVideoFrame();
     state.modal.hidden = true;
     state.modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("gallery-modal-is-open");
-    state.modal.classList.remove("is-single-image");
+    state.modal.classList.remove("is-single-image", "is-video");
     state.activeGallery = null;
+    state.activeVideo = null;
 
     if (state.previousFocus && typeof state.previousFocus.focus === "function") {
       state.previousFocus.focus();
@@ -164,13 +193,56 @@
       return;
     }
 
+    clearVideoFrame();
     state.previousFocus = document.activeElement;
     state.activeGallery = selectedGallery;
+    state.activeVideo = null;
+    state.modal.classList.remove("is-video");
     state.modal.dataset.category = selectedGallery.categorySlug;
     state.modalCategory.textContent = selectedGallery.category;
     state.modalTitle.textContent = selectedGallery.title;
     state.modalDescription.textContent = selectedGallery.description;
     updateCarousel(0);
+    state.modal.hidden = false;
+    state.modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("gallery-modal-is-open");
+
+    if (state.closeButton) {
+      state.closeButton.focus();
+    }
+  };
+
+  const openVideoModal = (videoKey) => {
+    if (!state.initialized) {
+      initializeGalleryLightbox();
+    }
+
+    const selectedVideo = videoItems[videoKey];
+
+    if (!selectedVideo || !state.modal || !state.videoFrameWrap) {
+      return;
+    }
+
+    clearVideoFrame();
+    state.previousFocus = document.activeElement;
+    state.activeGallery = null;
+    state.activeVideo = selectedVideo;
+    state.modal.classList.remove("is-single-image");
+    state.modal.classList.add("is-video");
+    state.modal.dataset.category = selectedVideo.categorySlug;
+    state.modalCategory.textContent = selectedVideo.category;
+    state.modalTitle.textContent = selectedVideo.title;
+    state.modalDescription.textContent = selectedVideo.description;
+
+    const iframe = document.createElement("iframe");
+    iframe.src = selectedVideo.embedUrl;
+    iframe.title = selectedVideo.title;
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    iframe.allowFullscreen = true;
+    iframe.setAttribute("allowfullscreen", "");
+    state.videoFrameWrap.hidden = false;
+    state.videoFrameWrap.appendChild(iframe);
+
     state.modal.hidden = false;
     state.modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("gallery-modal-is-open");
@@ -191,6 +263,19 @@
     }
 
     openModal(card.dataset.galleryCard);
+  };
+
+  window.openHasanovGalleryVideo = (card, event) => {
+    if (!card) {
+      return;
+    }
+
+    if (event) {
+      event.preventDefault();
+      event.galleryLightboxHandled = true;
+    }
+
+    openVideoModal(card.dataset.galleryVideo);
   };
 
   function initializeGalleryLightbox() {
@@ -217,6 +302,7 @@
     state.previousButton = state.modal.querySelector("[data-gallery-prev]");
     state.nextButton = state.modal.querySelector("[data-gallery-next]");
     state.closeButton = state.modal.querySelector(".gallery-modal-close");
+    state.videoFrameWrap = state.modal.querySelector("[data-gallery-video-frame]");
 
     state.gallery.querySelectorAll("[data-filter]").forEach((filter) => {
       filter.addEventListener("click", () => setFilter(filter.dataset.filter));
@@ -224,6 +310,13 @@
 
     state.gallery.addEventListener("click", (event) => {
       if (event.galleryLightboxHandled) {
+        return;
+      }
+
+      const videoCard = getClosestGalleryVideo(event.target);
+
+      if (videoCard && state.gallery.contains(videoCard)) {
+        window.openHasanovGalleryVideo(videoCard, event);
         return;
       }
 
@@ -240,6 +333,14 @@
       card.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
           window.openHasanovGalleryCard(card, event);
+        }
+      });
+    });
+
+    state.gallery.querySelectorAll("[data-gallery-video]").forEach((card) => {
+      card.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          window.openHasanovGalleryVideo(card, event);
         }
       });
     });
