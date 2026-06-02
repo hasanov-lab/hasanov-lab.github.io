@@ -68,6 +68,19 @@ title: Gallery
           <span class="gallery-card-button">Watch video</span>
         </div>
       </article>
+
+      <article class="gallery-card gallery-card-action gallery-video-card" data-category="video" data-gallery-video="antonio-lu-psma-617" role="button" tabindex="0" aria-label="Lu-PSMA-617 Real-World Outcomes and EHR-Based ML Model in Advanced Prostate Cancer" onclick="window.openHasanovGalleryVideo && window.openHasanovGalleryVideo(this, event)">
+        <div class="gallery-card-media gallery-video-thumbnail">
+          <img src="https://img.youtube.com/vi/Pprk51ziVlc/hqdefault.jpg" alt="Lu-PSMA-617 Real-World Outcomes and EHR-Based ML Model in Advanced Prostate Cancer" loading="lazy">
+          <span class="gallery-video-play" aria-hidden="true"></span>
+        </div>
+        <div class="gallery-card-body">
+          <span class="gallery-tag">Video</span>
+          <h2>Lu-PSMA-617 Real-World Outcomes and EHR-Based ML Model in Advanced Prostate Cancer</h2>
+          <p>By Antonio Faieta</p>
+          <span class="gallery-card-button">Watch video</span>
+        </div>
+      </article>
     </div>
   </section>
 </div>
