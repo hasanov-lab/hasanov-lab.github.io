@@ -86,6 +86,13 @@
       title: "Lu-PSMA-617 Real-World Outcomes and EHR-Based ML Model in Advanced Prostate Cancer",
       description: "By Antonio Faieta",
       embedUrl: "https://www.youtube.com/embed/Pprk51ziVlc?autoplay=1"
+    },
+    "betul-rcc-brain-metastases": {
+      category: "Video",
+      categorySlug: "video",
+      title: "Genomic Landscape of RCC Brain Metastases",
+      description: "By Betul Gok Yavuz",
+      embedUrl: "https://www.youtube.com/embed/OalExMxoDHs?autoplay=1"
     }
   };
 
