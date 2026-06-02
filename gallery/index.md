@@ -61,7 +61,7 @@ title: Gallery
         <div class="gallery-card-body">
           <span class="gallery-tag">Video</span>
           <h2>Belzutifan Real-World Outcomes and EHR-Based ML Model in Advanced RCC</h2>
-          <p>Poster video by Zuhair.</p>
+          <p>By Zuhair Majeed</p>
           <span class="gallery-card-button">Watch video</span>
         </div>
       </article>
@@ -100,7 +100,7 @@ title: Gallery
     <div class="gallery-modal-header">
       <span class="gallery-tag">Video</span>
       <h2 id="gallery-video-modal-title" data-gallery-video-modal-title>Belzutifan Real-World Outcomes and EHR-Based ML Model in Advanced RCC</h2>
-      <p id="gallery-video-modal-description" data-gallery-video-modal-description>Poster video by Zuhair.</p>
+      <p id="gallery-video-modal-description" data-gallery-video-modal-description>By Zuhair Majeed</p>
     </div>
     <div class="gallery-video-frame-wrap" data-gallery-video-frame-wrap></div>
   </div>
