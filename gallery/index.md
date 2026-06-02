@@ -55,13 +55,13 @@ title: Gallery
     <div class="gallery-grid gallery-video-grid">
       <article class="gallery-card gallery-card-action gallery-video-card" data-category="video" data-gallery-video="zuhair-asco-2026" role="button" tabindex="0" aria-label="Watch Zuhair ASCO 2026 Poster Video" onclick="window.openHasanovGalleryVideo && window.openHasanovGalleryVideo(this, event)">
         <div class="gallery-card-media gallery-video-thumbnail">
-          <img src="https://img.youtube.com/vi/8OAeRvHbG0Y/hqdefault.jpg" alt="YouTube thumbnail for Zuhair ASCO 2026 Poster Video" loading="lazy">
+          <img src="https://img.youtube.com/vi/8OAeRvHbG0Y/hqdefault.jpg" alt="YouTube thumbnail for Belzutifan Real-World Outcomes and EHR-Based ML Model in Advanced RCC" loading="lazy">
           <span class="gallery-video-play" aria-hidden="true"></span>
         </div>
         <div class="gallery-card-body">
           <span class="gallery-tag">Video</span>
-          <h2>Zuhair ASCO 2026 Poster Video</h2>
-          <p>A poster presentation video by Zuhair for the ASCO 2026 meeting.</p>
+          <h2>Belzutifan Real-World Outcomes and EHR-Based ML Model in Advanced RCC</h2>
+          <p>Poster video by Zuhair.</p>
           <span class="gallery-card-button">Watch video</span>
         </div>
       </article>
@@ -90,5 +90,18 @@ title: Gallery
       <button class="gallery-carousel-arrow gallery-carousel-arrow-next" type="button" aria-label="Show next image" data-gallery-next>&#8250;</button>
     </div>
     <div class="gallery-video-frame-wrap" data-gallery-video-frame hidden></div>
+  </div>
+</div>
+
+<div class="gallery-modal gallery-video-modal" id="gallery-video-lightbox" data-gallery-video-modal hidden aria-hidden="true">
+  <button class="gallery-modal-backdrop" type="button" aria-label="Close video viewer" data-gallery-video-close></button>
+  <div class="gallery-modal-panel gallery-video-modal-panel" role="dialog" aria-modal="true" aria-labelledby="gallery-video-modal-title" aria-describedby="gallery-video-modal-description">
+    <button class="gallery-modal-close" type="button" aria-label="Close video viewer" data-gallery-video-close>&times;</button>
+    <div class="gallery-modal-header">
+      <span class="gallery-tag">Video</span>
+      <h2 id="gallery-video-modal-title" data-gallery-video-modal-title>Belzutifan Real-World Outcomes and EHR-Based ML Model in Advanced RCC</h2>
+      <p id="gallery-video-modal-description" data-gallery-video-modal-description>Poster video by Zuhair.</p>
+    </div>
+    <div class="gallery-video-frame-wrap" data-gallery-video-frame-wrap></div>
   </div>
 </div>
