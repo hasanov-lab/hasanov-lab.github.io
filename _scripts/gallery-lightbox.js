@@ -98,7 +98,7 @@
       categorySlug: "video",
       title: "Belzutifan Real-World Outcomes and EHR-Based ML Model in Advanced RCC",
       description: "By Zuhair Majeed",
-      embedUrl: "https://www.youtube.com/embed/8OAeRvHbG0Y?autoplay=1"
+      embedUrl: "https://www.youtube.com/embed/lVSRhm7HHBc?autoplay=1"
     },
     "antonio-lu-psma-617": {
       category: "Video",
