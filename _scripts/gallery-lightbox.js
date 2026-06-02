@@ -93,6 +93,13 @@
       title: "Genomic Landscape of RCC Brain Metastases",
       description: "By Betul Gok Yavuz",
       embedUrl: "https://www.youtube.com/embed/OalExMxoDHs?autoplay=1"
+    },
+    "shriya-metastatic-rcc": {
+      category: "Video",
+      categorySlug: "video",
+      title: "Spatial Transcriptomics in Metastatic RCC",
+      description: "By Shriya Deshmukh",
+      embedUrl: "https://www.youtube.com/embed/XFHCCjsCyDM?autoplay=1"
     }
   };
 
