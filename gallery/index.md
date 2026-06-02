@@ -52,8 +52,12 @@ title: Gallery
 
   <section class="gallery-video-section" aria-labelledby="lab-videos-title">
     <div class="gallery-video-heading-wrap">
-      <h2 class="gallery-section-heading" id="lab-videos-title">Lab Videos</h2>
-      <a class="gallery-youtube-link" href="https://www.youtube.com/@HasanovLab" target="_blank" rel="noopener noreferrer">Visit our YouTube channel</a>
+      <h2 class="gallery-section-heading" id="lab-videos-title">
+        <span>Lab Videos</span>
+        <a class="gallery-youtube-link" href="https://www.youtube.com/@HasanovLab" target="_blank" rel="noopener noreferrer" aria-label="Visit Hasanov Lab YouTube channel">
+          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+        </a>
+      </h2>
     </div>
     <div class="gallery-grid gallery-video-grid">
       <article class="gallery-card gallery-card-action gallery-video-card" data-category="video" data-gallery-video="zuhair-asco-2026" role="button" tabindex="0" aria-label="Watch Zuhair ASCO 2026 Poster Video" onclick="window.openHasanovGalleryVideo && window.openHasanovGalleryVideo(this, event)">
