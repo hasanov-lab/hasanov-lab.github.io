@@ -14,15 +14,15 @@ Interactive web-based calculators and tools developed by the Hasanov Lab.
 {% include section.html %}
 
 <div class="tools-grid">
-  <div class="tool-card tool-card-disabled" aria-label="Apollo link coming soon">
+  <a class="tool-card" href="{{ '/tools/apollo/' | relative_url }}" target="_blank" rel="noopener noreferrer" aria-label="Open Apollo tools page">
     <div class="tool-logo-wrap">
       <img src="{{ '/images/tools/apollo-logo.png' | relative_url }}" alt="Apollo logo" class="tool-logo">
     </div>
     <div class="tool-card-body">
       <h2 class="tool-title">Apollo</h2>
-      <p class="tool-status">Link coming soon</p>
+      <p class="tool-status">View tools <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
     </div>
-  </div>
+  </a>
 
   <a class="tool-card" href="https://hasanovlab-oncogenie.share.connect.posit.cloud" target="_blank" rel="noopener noreferrer" aria-label="Open OncoGenie tool">
     <div class="tool-logo-wrap">
