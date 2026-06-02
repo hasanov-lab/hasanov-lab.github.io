@@ -580,8 +580,12 @@
   display: none;
 }
 
-.gallery-video-modal-panel {
+.gallery-modal.is-video .gallery-modal-panel {
   width: min(92vw, 1040px);
+}
+
+.gallery-modal.is-video .gallery-carousel {
+  display: none;
 }
 
 .gallery-video-frame-wrap {

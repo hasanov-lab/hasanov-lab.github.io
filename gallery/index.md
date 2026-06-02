@@ -53,7 +53,7 @@ title: Gallery
   <section class="gallery-video-section" aria-labelledby="poster-videos-title">
     <h2 class="gallery-section-heading" id="poster-videos-title">Poster Videos</h2>
     <div class="gallery-grid gallery-video-grid">
-      <article class="gallery-card gallery-card-action gallery-video-card" data-category="video" data-gallery-video="zuhair-asco-2026" role="button" tabindex="0" aria-label="Watch Zuhair ASCO 2026 Poster Video">
+      <article class="gallery-card gallery-card-action gallery-video-card" data-category="video" data-gallery-video="zuhair-asco-2026" role="button" tabindex="0" aria-label="Watch Zuhair ASCO 2026 Poster Video" onclick="window.openHasanovGalleryVideo && window.openHasanovGalleryVideo(this, event)">
         <div class="gallery-card-media gallery-video-thumbnail">
           <img src="https://img.youtube.com/vi/8OAeRvHbG0Y/hqdefault.jpg" alt="YouTube thumbnail for Zuhair ASCO 2026 Poster Video" loading="lazy">
           <span class="gallery-video-play" aria-hidden="true"></span>
@@ -89,5 +89,6 @@ title: Gallery
       </figure>
       <button class="gallery-carousel-arrow gallery-carousel-arrow-next" type="button" aria-label="Show next image" data-gallery-next>&#8250;</button>
     </div>
+    <div class="gallery-video-frame-wrap" data-gallery-video-frame hidden></div>
   </div>
 </div>
