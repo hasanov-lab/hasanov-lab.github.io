@@ -111,6 +111,19 @@ title: Gallery
           <span class="gallery-card-button">Watch video</span>
         </div>
       </article>
+
+      <article class="gallery-card gallery-card-action gallery-video-card" data-category="video" data-gallery-video="peng-rcc-transcriptomic-outcomes" role="button" tabindex="0" aria-label="Watch Transcriptomic Prediction of RCC Treatment Outcomes" onclick="window.openHasanovGalleryVideo && window.openHasanovGalleryVideo(this, event)">
+        <div class="gallery-card-media gallery-video-thumbnail">
+          <img src="https://img.youtube.com/vi/HmnE7B0gRnA/hqdefault.jpg" alt="YouTube thumbnail for Transcriptomic Prediction of RCC Treatment Outcomes" loading="lazy">
+          <span class="gallery-video-play" aria-hidden="true"></span>
+        </div>
+        <div class="gallery-card-body">
+          <span class="gallery-tag">Video</span>
+          <h2>Transcriptomic Prediction of RCC Treatment Outcomes</h2>
+          <p>By Peng Li</p>
+          <span class="gallery-card-button">Watch video</span>
+        </div>
+      </article>
     </div>
   </section>
 </div>
