@@ -49,6 +49,24 @@ title: Gallery
       </div>
     </article>
   </div>
+
+  <section class="gallery-video-section" aria-labelledby="poster-videos-title">
+    <h2 class="gallery-section-heading" id="poster-videos-title">Poster Videos</h2>
+    <div class="gallery-grid gallery-video-grid">
+      <article class="gallery-card gallery-card-action gallery-video-card" data-category="video" data-gallery-video="zuhair-asco-2026" data-youtube-url="https://youtu.be/8OAeRvHbG0Y?si=v-bmxzH2u8vGYRNy" data-video-embed="https://www.youtube.com/embed/8OAeRvHbG0Y?si=v-bmxzH2u8vGYRNy" role="button" tabindex="0" aria-label="Watch Zuhair ASCO 2026 Poster Video">
+        <div class="gallery-card-media gallery-video-thumbnail">
+          <img src="https://img.youtube.com/vi/8OAeRvHbG0Y/hqdefault.jpg" alt="YouTube thumbnail for Zuhair ASCO 2026 Poster Video" loading="lazy">
+          <span class="gallery-video-play" aria-hidden="true"></span>
+        </div>
+        <div class="gallery-card-body">
+          <span class="gallery-tag">Video</span>
+          <h2>Zuhair ASCO 2026 Poster Video</h2>
+          <p>A poster presentation video by Zuhair for the ASCO 2026 meeting.</p>
+          <span class="gallery-card-button">Watch video</span>
+        </div>
+      </article>
+    </div>
+  </section>
 </div>
 
 <div class="gallery-modal" id="gallery-lightbox" data-gallery-modal hidden aria-hidden="true">
@@ -74,12 +92,26 @@ title: Gallery
   </div>
 </div>
 
+<div class="gallery-modal gallery-video-modal" id="gallery-video-lightbox" data-gallery-video-modal hidden aria-hidden="true">
+  <button class="gallery-modal-backdrop" type="button" aria-label="Close video viewer" data-gallery-video-close></button>
+  <div class="gallery-modal-panel gallery-video-modal-panel" role="dialog" aria-modal="true" aria-labelledby="gallery-video-modal-title" aria-describedby="gallery-video-modal-description">
+    <button class="gallery-modal-close" type="button" aria-label="Close video viewer" data-gallery-video-close>&times;</button>
+    <div class="gallery-modal-header">
+      <span class="gallery-tag">Video</span>
+      <h2 id="gallery-video-modal-title">Zuhair ASCO 2026 Poster Video</h2>
+      <p id="gallery-video-modal-description">A poster presentation video by Zuhair for the ASCO 2026 meeting.</p>
+    </div>
+    <div class="gallery-video-frame-wrap" data-gallery-video-frame-wrap></div>
+  </div>
+</div>
+
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     const gallery = document.querySelector("[data-gallery]");
     const modal = document.querySelector("[data-gallery-modal]");
+    const videoModal = document.querySelector("[data-gallery-video-modal]");
 
-    if (!gallery || !modal) {
+    if (!gallery || !modal || !videoModal) {
       return;
     }
 
@@ -151,7 +183,7 @@ title: Gallery
     };
 
     const filters = gallery.querySelectorAll("[data-filter]");
-    const cards = gallery.querySelectorAll("[data-category]");
+    const cards = gallery.querySelectorAll("[data-category]:not([data-gallery-video])");
     const modalPanel = modal.querySelector(".gallery-modal-panel");
     const modalCategory = modal.querySelector("[data-gallery-modal-category]");
     const modalTitle = modal.querySelector("[data-gallery-modal-title]");
@@ -163,6 +195,10 @@ title: Gallery
     const nextButton = modal.querySelector("[data-gallery-next]");
     const closeButtons = modal.querySelectorAll("[data-gallery-close]");
     const closeButton = modal.querySelector(".gallery-modal-close");
+    const videoModalPanel = videoModal.querySelector(".gallery-video-modal-panel");
+    const videoFrameWrap = videoModal.querySelector("[data-gallery-video-frame-wrap]");
+    const videoCloseButtons = videoModal.querySelectorAll("[data-gallery-video-close]");
+    const videoCloseButton = videoModal.querySelector(".gallery-modal-close");
     let activeGallery = null;
     let activeIndex = 0;
     let previousFocus = null;
@@ -201,15 +237,69 @@ title: Gallery
       nextButton.disabled = !hasMultipleImages;
     };
 
+    const hasOpenModal = () => !modal.hidden || !videoModal.hidden;
+
+    const restorePreviousFocus = () => {
+      if (previousFocus && typeof previousFocus.focus === "function") {
+        previousFocus.focus();
+      }
+
+      previousFocus = null;
+    };
+
     const closeModal = () => {
       modal.hidden = true;
       modal.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("gallery-modal-is-open");
       modal.classList.remove("is-single-image");
       activeGallery = null;
 
-      if (previousFocus && typeof previousFocus.focus === "function") {
-        previousFocus.focus();
+      if (!hasOpenModal()) {
+        document.body.classList.remove("gallery-modal-is-open");
+      }
+
+      restorePreviousFocus();
+    };
+
+    const closeVideoModal = () => {
+      videoModal.hidden = true;
+      videoModal.setAttribute("aria-hidden", "true");
+
+      if (videoFrameWrap) {
+        videoFrameWrap.replaceChildren();
+      }
+
+      if (!hasOpenModal()) {
+        document.body.classList.remove("gallery-modal-is-open");
+      }
+
+      restorePreviousFocus();
+    };
+
+    const openVideoModal = (card) => {
+      const videoEmbedUrl = card?.dataset.videoEmbed;
+
+      if (!videoEmbedUrl) {
+        return;
+      }
+
+      previousFocus = document.activeElement;
+      videoModal.dataset.category = "video";
+
+      if (videoFrameWrap) {
+        const videoFrame = document.createElement("iframe");
+        videoFrame.title = "Zuhair ASCO 2026 Poster Video";
+        videoFrame.src = videoEmbedUrl;
+        videoFrame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        videoFrame.allowFullscreen = true;
+        videoFrameWrap.replaceChildren(videoFrame);
+      }
+
+      videoModal.hidden = false;
+      videoModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("gallery-modal-is-open");
+
+      if (videoCloseButton) {
+        videoCloseButton.focus();
       }
     };
 
@@ -248,7 +338,23 @@ title: Gallery
       openModal(card.dataset.galleryCard);
     };
 
+    const openCardVideo = (card, event) => {
+      if (!card) {
+        return;
+      }
+
+      event.preventDefault();
+      openVideoModal(card);
+    };
+
     gallery.addEventListener("click", (event) => {
+      const videoCard = event.target.closest("[data-gallery-video]");
+
+      if (videoCard && gallery.contains(videoCard)) {
+        openCardVideo(videoCard, event);
+        return;
+      }
+
       const card = event.target.closest("[data-gallery-card]");
 
       if (!card || !gallery.contains(card)) {
@@ -258,9 +364,14 @@ title: Gallery
       openCardGallery(card, event);
     });
 
-    gallery.querySelectorAll("[data-gallery-card]").forEach((card) => {
+    gallery.querySelectorAll("[data-gallery-card], [data-gallery-video]").forEach((card) => {
       card.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
+          if (card.matches("[data-gallery-video]")) {
+            openCardVideo(card, event);
+            return;
+          }
+
           openCardGallery(card, event);
         }
       });
@@ -278,6 +389,10 @@ title: Gallery
       event.preventDefault();
       closeModal();
     }));
+    videoCloseButtons.forEach((button) => button.addEventListener("click", (event) => {
+      event.preventDefault();
+      closeVideoModal();
+    }));
 
     modal.addEventListener("click", (event) => {
       if (!modalPanel || !modalPanel.contains(event.target)) {
@@ -285,7 +400,18 @@ title: Gallery
       }
     });
 
+    videoModal.addEventListener("click", (event) => {
+      if (!videoModalPanel || !videoModalPanel.contains(event.target)) {
+        closeVideoModal();
+      }
+    });
+
     document.addEventListener("keydown", (event) => {
+      if (!videoModal.hidden && event.key === "Escape") {
+        closeVideoModal();
+        return;
+      }
+
       if (modal.hidden) {
         return;
       }
