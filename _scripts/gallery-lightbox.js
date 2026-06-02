@@ -73,11 +73,11 @@
   };
 
   const videoItems = {
-    "zuhair-asco-2026": {
+    "belzutifan-rcc": {
       category: "Video",
       categorySlug: "video",
-      title: "Zuhair ASCO 2026 Poster Video",
-      description: "A poster presentation video by Zuhair for the ASCO 2026 meeting.",
+      title: "Belzutifan Real-World Outcomes and EHR-Based ML Model in Advanced RCC",
+      description: "By Zuhair Majeed",
       embedUrl: "https://www.youtube.com/embed/8OAeRvHbG0Y?autoplay=1"
     },
     "antonio-lu-psma-617": {
@@ -173,6 +173,20 @@
     if (state.videoFrameWrap) {
       state.videoFrameWrap.replaceChildren();
       state.videoFrameWrap.hidden = true;
+    }
+  };
+
+  const hasOpenModal = () => Boolean(
+    (state.modal && !state.modal.hidden) ||
+    (state.videoModal && !state.videoModal.hidden)
+  );
+
+  const restorePreviousFocus = () => {
+    const previousFocus = state.previousFocus;
+    state.previousFocus = null;
+
+    if (previousFocus && typeof previousFocus.focus === "function") {
+      previousFocus.focus();
     }
   };
 
