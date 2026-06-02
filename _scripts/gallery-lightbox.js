@@ -79,6 +79,13 @@
       title: "Zuhair ASCO 2026 Poster Video",
       description: "A poster presentation video by Zuhair for the ASCO 2026 meeting.",
       embedUrl: "https://www.youtube.com/embed/8OAeRvHbG0Y?autoplay=1"
+    },
+    "antonio-lu-psma-617": {
+      category: "Video",
+      categorySlug: "video",
+      title: "Lu-PSMA-617 Real-World Outcomes and EHR-Based ML Model in Advanced Prostate Cancer",
+      description: "By Antonio Faieta",
+      embedUrl: "https://www.youtube.com/embed/Pprk51ziVlc?autoplay=1"
     }
   };
 
@@ -206,48 +213,6 @@
     }
 
     restorePreviousFocus();
-  };
-
-  const openVideoModal = (card) => {
-    if (!state.initialized) {
-      initializeGalleryLightbox();
-    }
-
-    const videoEmbedUrl = card?.dataset.videoEmbed;
-    const videoTitle = card?.dataset.videoTitle || card?.querySelector("h2")?.textContent || "Poster video";
-    const videoDescription = card?.dataset.videoDescription || card?.querySelector("p")?.textContent || "";
-
-    if (!videoEmbedUrl || !state.videoModal) {
-      return;
-    }
-
-    state.previousFocus = document.activeElement;
-    state.videoModal.dataset.category = "video";
-
-    if (state.videoModalTitle) {
-      state.videoModalTitle.textContent = videoTitle;
-    }
-
-    if (state.videoModalDescription) {
-      state.videoModalDescription.textContent = videoDescription;
-    }
-
-    if (state.videoFrameWrap) {
-      const videoFrame = document.createElement("iframe");
-      videoFrame.title = videoTitle;
-      videoFrame.src = videoEmbedUrl;
-      videoFrame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-      videoFrame.allowFullscreen = true;
-      state.videoFrameWrap.replaceChildren(videoFrame);
-    }
-
-    state.videoModal.hidden = false;
-    state.videoModal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("gallery-modal-is-open");
-
-    if (state.videoCloseButton) {
-      state.videoCloseButton.focus();
-    }
   };
 
   const openModal = (galleryKey) => {
