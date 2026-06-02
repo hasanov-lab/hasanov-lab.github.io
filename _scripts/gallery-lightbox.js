@@ -120,6 +120,13 @@
       title: "Spatial Transcriptomics in Metastatic RCC",
       description: "By Shriya Deshmukh",
       embedUrl: "https://www.youtube.com/embed/XFHCCjsCyDM?autoplay=1"
+    },
+    "peng-rcc-transcriptomic-outcomes": {
+      category: "Video",
+      categorySlug: "video",
+      title: "Transcriptomic Prediction of RCC Treatment Outcomes",
+      description: "By Peng Li",
+      embedUrl: "https://www.youtube.com/embed/HmnE7B0gRnA?autoplay=1"
     }
   };
 
