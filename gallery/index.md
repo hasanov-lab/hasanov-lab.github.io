@@ -81,6 +81,19 @@ title: Gallery
           <span class="gallery-card-button">Watch video</span>
         </div>
       </article>
+
+      <article class="gallery-card gallery-card-action gallery-video-card" data-category="video" data-gallery-video="betul-rcc-brain-metastases" role="button" tabindex="0" aria-label="Genomic Landscape of RCC Brain Metastases" onclick="window.openHasanovGalleryVideo && window.openHasanovGalleryVideo(this, event)">
+        <div class="gallery-card-media gallery-video-thumbnail">
+          <img src="https://img.youtube.com/vi/OalExMxoDHs/hqdefault.jpg" alt="Genomic Landscape of RCC Brain Metastases" loading="lazy">
+          <span class="gallery-video-play" aria-hidden="true"></span>
+        </div>
+        <div class="gallery-card-body">
+          <span class="gallery-tag">Video</span>
+          <h2>Genomic Landscape of RCC Brain Metastases</h2>
+          <p>By Betul Gok Yavuz</p>
+          <span class="gallery-card-button">Watch video</span>
+        </div>
+      </article>
     </div>
   </section>
 </div>
