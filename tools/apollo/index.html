@@ -43,7 +43,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Tools | Hasanov Lab</title>
+<title>Apollo Tools | Hasanov Lab</title>
 
 <link rel="icon" href="/images/icon.png">
 
@@ -54,13 +54,13 @@
 <meta property="og:site_title" content="Hasanov Lab">
 <meta property="og:site_name" content="Hasanov Lab">
 <meta property="og:description" content="Code to Clinic">
-<meta property="og:url" content="https://hasanov-lab.github.io/tools/">
+<meta property="og:url" content="https://hasanov-lab.github.io/tools/apollo/">
 <meta property="og:image" content="https://hasanov-lab.github.io/images/code-to-clinic-logo.png">
 <meta property="og:locale" content="en_US">
 
 <meta property="twitter:title" content="Hasanov Lab">
 <meta property="twitter:description" content="Code to Clinic">
-<meta property="twitter:url" content="https://hasanov-lab.github.io/tools/">
+<meta property="twitter:url" content="https://hasanov-lab.github.io/tools/apollo/">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:image" content="https://hasanov-lab.github.io/images/code-to-clinic-logo.png">
 
@@ -74,14 +74,14 @@
     
       "@type": "WebSite",
     
-    "name": "Tools",
+    "name": "Apollo Tools",
     "description": "Code to Clinic. Bridging computational biology and clinical oncology to understand and combat brain metastasis.",
-    "headline": "Tools",
+    "headline": "Apollo Tools",
     "publisher": {
       "@type": "Organization",
       "logo": { "@type": "ImageObject", "url": "/images/icon.png" }
     },
-    "url": "https://hasanov-lab.github.io/tools/"
+    "url": "https://hasanov-lab.github.io/tools/apollo/"
   }
 </script>
 
@@ -468,11 +468,9 @@
   
 
   <section class="background" data-size="page">
-    <p><img class="page-logo page-logo-small code-to-clinic-page-logo" src="/images/code-to-clinic-logo.png" alt="Code to Clinic logo"></p>
+    <h1 id="apollo-tools">Apollo Tools</h1>
 
-<h1 class="page-title-clean">TOOLS</h1>
-
-<p>Interactive web-based calculators and tools developed by the Hasanov Lab.</p>
+<p>A collection of clinical and computational oncology tools from the Hasanov Lab.</p>
   </section>
 
   
@@ -486,125 +484,69 @@
   <size></size>
 -->
 
-<div class="tools-grid">
-  <a class="tool-card" href="/tools/apollo/" target="_blank" rel="noopener noreferrer" aria-label="Open Apollo tools page">
-    <div class="tool-logo-wrap">
-      <img src="/images/tools/apollo-logo.png" alt="Apollo logo" class="tool-logo">
-    </div>
-    <div class="tool-card-body">
-      <h2 class="tool-title">Apollo</h2>
-      <p class="tool-status">View tools <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
-    </div>
-  </a>
-
-  <a class="tool-card" href="https://hasanovlab-oncogenie.share.connect.posit.cloud" target="_blank" rel="noopener noreferrer" aria-label="Open OncoGenie tool">
-    <div class="tool-logo-wrap">
-      <img src="/images/tools/oncogenie-logo.png" alt="OncoGenie logo" class="tool-logo">
-    </div>
-    <div class="tool-card-body">
-      <h2 class="tool-title">OncoGenie</h2>
-      <p class="tool-status">Launch tool <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
-    </div>
-  </a>
-
-  <a class="tool-card" href="/tools/rcc-bm/" aria-label="Open RCC-BM model selection">
-    <div class="tool-logo-wrap">
-      <img src="/images/tools/rccbm-logo.png" alt="RCC-BM logo" class="tool-logo tool-logo-wide">
-    </div>
-    <div class="tool-card-body">
-      <h2 class="tool-title">RCC-BM</h2>
-      <p class="tool-status">Select model <i class="fa-solid fa-arrow-right"></i></p>
-    </div>
+<div class="rccbm-model-grid apollo-tools-grid">
+  <a class="rccbm-model-card" href="https://hasanovlab-apollo-pulvicto.share.connect.posit.cloud/" target="_blank" rel="noopener noreferrer" aria-label="Open Pluvicto for Advanced Prostate Cancer tool">
+    <h2>Pluvicto for Advanced Prostate Cancer</h2>
+    <p>Real-world outcomes and EHR-based machine learning model for patients with advanced prostate cancer treated with Lu-PSMA-617.</p>
+    <span>Open tool <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
   </a>
 </div>
 
 <style>
-.tools-grid {
+.rccbm-model-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 28px;
   margin: 28px 0 48px;
 }
 
-.tool-card {
+.apollo-tools-grid {
+  grid-template-columns: minmax(0, 360px);
+  justify-content: center;
+}
+
+.rccbm-model-card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 360px;
+  min-height: 220px;
   padding: 28px;
   background: var(--background);
   border-radius: 10px;
   box-shadow: var(--shadow);
-  text-align: center;
   text-decoration: none !important;
   color: inherit !important;
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.tool-card[href]:hover {
+.rccbm-model-card[href]:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 32px rgba(0, 0, 0, 0.14);
 }
 
-.tool-card-disabled {
-  opacity: 0.86;
-}
-
-.tool-logo-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 220px;
-  margin-bottom: 18px;
-}
-
-.tool-logo {
-  max-width: 100%;
-  max-height: 210px;
-  object-fit: contain;
-}
-
-.tool-logo-wide {
-  max-width: 118%;
-  max-height: 218px;
-}
-
-.tool-card-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.tool-title {
-  margin: 0 !important;
+.rccbm-model-card h2 {
+  margin: 0 0 16px !important;
   padding: 0 !important;
   border: 0 !important;
   color: var(--primary) !important;
-  font-size: 1.45rem !important;
-  font-weight: var(--semi-bold) !important;
-  letter-spacing: 0 !important;
+  font-size: 1.35rem !important;
   text-transform: none !important;
+  letter-spacing: 0 !important;
 }
 
-.tool-status {
-  margin: 0 !important;
+.rccbm-model-card p {
+  flex: 1;
+  margin: 0 0 22px !important;
   color: var(--gray);
-  font-size: 0.95rem;
 }
 
-.tool-card[href] .tool-status {
+.rccbm-model-card span {
   color: var(--primary);
   font-weight: var(--semi-bold);
 }
 
 @media (max-width: 900px) {
-  .tools-grid {
+  .rccbm-model-grid {
     grid-template-columns: 1fr;
-  }
-
-  .tool-card {
-    min-height: 300px;
   }
 }
 </style>
