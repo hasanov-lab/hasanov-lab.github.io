@@ -98,6 +98,19 @@ title: Gallery
           <span class="gallery-card-button">Watch video</span>
         </div>
       </article>
+
+      <article class="gallery-card gallery-card-action gallery-video-card" data-category="video" data-gallery-video="shriya-metastatic-rcc" role="button" tabindex="0" aria-label="Watch Spatial Transcriptomics in Metastatic RCC" onclick="window.openHasanovGalleryVideo && window.openHasanovGalleryVideo(this, event)">
+        <div class="gallery-card-media gallery-video-thumbnail">
+          <img src="https://img.youtube.com/vi/XFHCCjsCyDM/hqdefault.jpg" alt="YouTube thumbnail for Spatial Transcriptomics in Metastatic RCC" loading="lazy">
+          <span class="gallery-video-play" aria-hidden="true"></span>
+        </div>
+        <div class="gallery-card-body">
+          <span class="gallery-tag">Video</span>
+          <h2>Spatial Transcriptomics in Metastatic RCC</h2>
+          <p>By Shriya Deshmukh</p>
+          <span class="gallery-card-button">Watch video</span>
+        </div>
+      </article>
     </div>
   </section>
 </div>
