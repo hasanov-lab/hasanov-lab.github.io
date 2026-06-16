@@ -511,9 +511,29 @@ This work advances our understanding of brain metastasis biology and precision o
             
               <div class="news-post-gallery" aria-label="Images for Mostafa Presents Work on RCC Brain Metastases">
                 
-                  <img class="news-post-gallery-image" src="/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-1.jpg" alt="Mostafa presenting RCC brain metastases research" loading="lazy">
+                  
+                    <button class="news-post-gallery-button" type="button" data-news-gallery="mostafa-rcc-brain-metastases" data-news-gallery-index="0" aria-label="Open image 1 of 4 for Mostafa Presents Work on RCC Brain Metastases">
+                      <img class="news-post-gallery-image" src="/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-1.jpg" alt="Mostafa presenting RCC brain metastases research" loading="lazy">
+                    </button>
+                  
                 
-                  <img class="news-post-gallery-image" src="/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-2.jpg" alt="Mostafa RCC brain metastases presentation image" loading="lazy">
+                  
+                    <button class="news-post-gallery-button" type="button" data-news-gallery="mostafa-rcc-brain-metastases" data-news-gallery-index="1" aria-label="Open image 2 of 4 for Mostafa Presents Work on RCC Brain Metastases">
+                      <img class="news-post-gallery-image" src="/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-2.jpg" alt="Mostafa RCC brain metastases presentation image" loading="lazy">
+                    </button>
+                  
+                
+                  
+                    <button class="news-post-gallery-button" type="button" data-news-gallery="mostafa-rcc-brain-metastases" data-news-gallery-index="2" aria-label="Open image 3 of 4 for Mostafa Presents Work on RCC Brain Metastases">
+                      <img class="news-post-gallery-image" src="/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-3.jpeg" alt="Mostafa discussing RCC brain metastases research" loading="lazy">
+                    </button>
+                  
+                
+                  
+                    <button class="news-post-gallery-button" type="button" data-news-gallery="mostafa-rcc-brain-metastases" data-news-gallery-index="3" aria-label="Open image 4 of 4 for Mostafa Presents Work on RCC Brain Metastases">
+                      <img class="news-post-gallery-image" src="/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-4.jpeg" alt="Mostafa RCC brain metastases research presentation slide" loading="lazy">
+                    </button>
+                  
                 
               </div>
             
@@ -637,6 +657,30 @@ This work advances our understanding of brain metastasis biology and precision o
   </div>
 </div>
 
+<div class="gallery-modal news-gallery-modal" id="news-gallery-lightbox" data-gallery-modal="" hidden="" aria-hidden="true">
+  <button class="gallery-modal-backdrop" type="button" aria-label="Close news image viewer" data-gallery-close=""></button>
+  <div class="gallery-modal-panel" role="dialog" aria-modal="true" aria-labelledby="news-gallery-modal-title" aria-describedby="news-gallery-modal-description">
+    <button class="gallery-modal-close" type="button" aria-label="Close news image viewer" data-gallery-close="">×</button>
+    <div class="gallery-modal-header">
+      <span class="gallery-tag" data-gallery-modal-category="">Research</span>
+      <h2 id="news-gallery-modal-title" data-gallery-modal-title="">Mostafa Presents Work on RCC Brain Metastases</h2>
+      <p id="news-gallery-modal-description" data-gallery-modal-description="">Mostafa presenting work on the single-cell and spatial landscape of renal cell carcinoma brain metastases.</p>
+    </div>
+    <div class="gallery-carousel">
+      <button class="gallery-carousel-arrow gallery-carousel-arrow-prev" type="button" aria-label="Show previous image" data-gallery-prev="">‹</button>
+      <figure class="gallery-carousel-figure">
+        <img src="/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-1.jpg" alt="Mostafa presenting RCC brain metastases research" data-gallery-image="">
+        <figcaption>
+          <span class="gallery-carousel-caption" data-gallery-caption="">Mostafa Presents Work on RCC Brain Metastases</span>
+          <span class="gallery-carousel-counter" data-gallery-counter="">1 / 4</span>
+        </figcaption>
+      </figure>
+      <button class="gallery-carousel-arrow gallery-carousel-arrow-next" type="button" aria-label="Show next image" data-gallery-next="">›</button>
+    </div>
+    <div class="gallery-video-frame-wrap" data-gallery-video-frame="" hidden=""></div>
+  </div>
+</div>
+
 <style>
 .news-container {
   display: grid;
@@ -735,6 +779,24 @@ This work advances our understanding of brain metastasis biology and precision o
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   margin-top: 18px;
+}
+
+.news-post-gallery-button {
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.news-post-gallery-button:focus-visible {
+  outline: 3px solid #1d9bf0;
+  outline-offset: 4px;
+}
+
+.news-post-gallery-button .news-post-gallery-image {
+  cursor: pointer;
 }
 
 .news-post-gallery-image {
