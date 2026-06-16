@@ -36,7 +36,13 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
             {% if post.images %}
               <div class="news-post-gallery" aria-label="Images for {{ post.title | escape }}">
                 {% for image in post.images %}
-                  <img class="news-post-gallery-image" src="{{ image.src | relative_url }}" alt="{{ image.alt | default: post.title | escape }}" loading="lazy">
+                  {% if post.title == "Mostafa Presents Work on RCC Brain Metastases" %}
+                    <button class="news-post-gallery-button" type="button" data-news-gallery="mostafa-rcc-brain-metastases" data-news-gallery-index="{{ forloop.index0 }}" aria-label="Open image {{ forloop.index }} of {{ post.images.size }} for {{ post.title | escape }}">
+                      <img class="news-post-gallery-image" src="{{ image.src | relative_url }}" alt="{{ image.alt | default: post.title | escape }}" loading="lazy">
+                    </button>
+                  {% else %}
+                    <img class="news-post-gallery-image" src="{{ image.src | relative_url }}" alt="{{ image.alt | default: post.title | escape }}" loading="lazy">
+                  {% endif %}
                 {% endfor %}
               </div>
             {% endif %}
@@ -80,6 +86,30 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
         <i class="fa-brands fa-x-twitter"></i> Follow on X
       </a>
     </div>
+  </div>
+</div>
+
+<div class="gallery-modal news-gallery-modal" id="news-gallery-lightbox" data-gallery-modal hidden aria-hidden="true">
+  <button class="gallery-modal-backdrop" type="button" aria-label="Close news image viewer" data-gallery-close></button>
+  <div class="gallery-modal-panel" role="dialog" aria-modal="true" aria-labelledby="news-gallery-modal-title" aria-describedby="news-gallery-modal-description">
+    <button class="gallery-modal-close" type="button" aria-label="Close news image viewer" data-gallery-close>&times;</button>
+    <div class="gallery-modal-header">
+      <span class="gallery-tag" data-gallery-modal-category>Research</span>
+      <h2 id="news-gallery-modal-title" data-gallery-modal-title>Mostafa Presents Work on RCC Brain Metastases</h2>
+      <p id="news-gallery-modal-description" data-gallery-modal-description>Mostafa presenting work on the single-cell and spatial landscape of renal cell carcinoma brain metastases.</p>
+    </div>
+    <div class="gallery-carousel">
+      <button class="gallery-carousel-arrow gallery-carousel-arrow-prev" type="button" aria-label="Show previous image" data-gallery-prev>&#8249;</button>
+      <figure class="gallery-carousel-figure">
+        <img src="{{ '/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-1.jpg' | relative_url }}" alt="Mostafa presenting RCC brain metastases research" data-gallery-image>
+        <figcaption>
+          <span class="gallery-carousel-caption" data-gallery-caption>Mostafa Presents Work on RCC Brain Metastases</span>
+          <span class="gallery-carousel-counter" data-gallery-counter>1 / 4</span>
+        </figcaption>
+      </figure>
+      <button class="gallery-carousel-arrow gallery-carousel-arrow-next" type="button" aria-label="Show next image" data-gallery-next>&#8250;</button>
+    </div>
+    <div class="gallery-video-frame-wrap" data-gallery-video-frame hidden></div>
   </div>
 </div>
 
@@ -181,6 +211,24 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   margin-top: 18px;
+}
+
+.news-post-gallery-button {
+  display: block;
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.news-post-gallery-button:focus-visible {
+  outline: 3px solid #1d9bf0;
+  outline-offset: 4px;
+}
+
+.news-post-gallery-button .news-post-gallery-image {
+  cursor: pointer;
 }
 
 .news-post-gallery-image {
