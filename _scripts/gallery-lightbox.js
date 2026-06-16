@@ -82,12 +82,12 @@
         },
         {
           src: "/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-3.jpeg",
-          alt: "Mostafa RCC brain metastases research presentation photo",
+          alt: "Mostafa discussing RCC brain metastases research",
           caption: "Mostafa Presents RCC Brain Metastases Research"
         },
         {
           src: "/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-4.jpeg",
-          alt: "Mostafa presenting renal cell carcinoma brain metastases research",
+          alt: "Mostafa RCC brain metastases research presentation slide",
           caption: "Mostafa Presents RCC Brain Metastases Research"
         }
       ]
@@ -298,7 +298,7 @@
     restorePreviousFocus();
   };
 
-  const openModal = (galleryKey) => {
+  const openModal = (galleryKey, startIndex = 0) => {
     if (!state.initialized) {
       initializeGalleryLightbox();
     }
@@ -318,7 +318,7 @@
     state.modalCategory.textContent = selectedGallery.category;
     state.modalTitle.textContent = selectedGallery.title;
     state.modalDescription.textContent = selectedGallery.description;
-    updateCarousel(0);
+    updateCarousel(startIndex);
     state.modal.hidden = false;
     state.modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("gallery-modal-is-open");
@@ -381,6 +381,16 @@
     openModal(card.dataset.galleryCard);
   };
 
+  window.openHasanovGalleryKey = (galleryKey, startIndex, event) => {
+    if (event) {
+      event.preventDefault();
+      event.galleryLightboxHandled = true;
+    }
+
+    const parsedIndex = Number.parseInt(startIndex, 10);
+    openModal(galleryKey, Number.isNaN(parsedIndex) ? 0 : parsedIndex);
+  };
+
   window.openHasanovGalleryVideo = (card, event) => {
     if (!card) {
       return;
@@ -403,7 +413,7 @@
     state.modal = document.querySelector("[data-gallery-modal]");
     state.videoModal = document.querySelector("[data-gallery-video-modal]");
 
-    if (!state.gallery || !state.modal) {
+    if (!state.modal) {
       return;
     }
 
@@ -429,11 +439,12 @@
     state.closeButton = state.modal.querySelector(".gallery-modal-close");
     state.videoFrameWrap = state.modal.querySelector("[data-gallery-video-frame]");
 
-    state.gallery.querySelectorAll("[data-filter]").forEach((filter) => {
-      filter.addEventListener("click", () => setFilter(filter.dataset.filter));
-    });
+    if (state.gallery) {
+      state.gallery.querySelectorAll("[data-filter]").forEach((filter) => {
+        filter.addEventListener("click", () => setFilter(filter.dataset.filter));
+      });
 
-    state.gallery.addEventListener("click", (event) => {
+      state.gallery.addEventListener("click", (event) => {
       if (event.galleryLightboxHandled) {
         return;
       }
@@ -454,7 +465,7 @@
       window.openHasanovGalleryCard(card, event);
     });
 
-    state.gallery.querySelectorAll("[data-gallery-card], [data-gallery-video]").forEach((card) => {
+      state.gallery.querySelectorAll("[data-gallery-card], [data-gallery-video]").forEach((card) => {
       card.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
           if (card.matches("[data-gallery-video]")) {
@@ -467,11 +478,19 @@
       });
     });
 
-    state.gallery.querySelectorAll("[data-gallery-video]").forEach((card) => {
+      state.gallery.querySelectorAll("[data-gallery-video]").forEach((card) => {
       card.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
           window.openHasanovGalleryVideo(card, event);
         }
+      });
+    });
+
+    }
+
+    document.querySelectorAll("[data-news-gallery]").forEach((trigger) => {
+      trigger.addEventListener("click", (event) => {
+        window.openHasanovGalleryKey(trigger.dataset.newsGallery, trigger.dataset.newsGalleryIndex, event);
       });
     });
 
@@ -542,7 +561,9 @@
       }
     });
 
-    setFilter("all");
+    if (state.gallery) {
+      setFilter("all");
+    }
   }
 
   if (document.readyState === "loading") {
