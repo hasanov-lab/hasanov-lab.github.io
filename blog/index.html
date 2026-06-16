@@ -492,6 +492,35 @@
       
         <article class="news-post-card">
           
+
+          <div class="news-post-content">
+            <div class="news-post-meta">
+              <time datetime="2026-06-11">June 11, 2026</time>
+              
+                <span class="news-post-category">Research</span>
+              
+            </div>
+
+            <h2 class="news-post-title">Mostafa Presents Work on RCC Brain Metastases</h2>
+            <p class="news-post-text">Proud to see our PhD student, Mostafa, present his work on the single-cell and spatial landscape of renal cell carcinoma brain metastases.<br>
+<br>
+Using single-nucleus RNA-seq, spatial transcriptomics, and computational biology, this research explores mechanisms of immune dysfunction and therapeutic resistance in CNS metastases.<br>
+<br>
+This work advances our understanding of brain metastasis biology and precision oncology.</p>
+
+            
+
+            
+              <a class="news-post-link" href="https://x.com/hasanovlab/status/2064744712943141221?s=48" target="_blank" rel="noopener noreferrer">
+                View post
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            
+          </div>
+        </article>
+      
+        <article class="news-post-card">
+          
             <img class="news-post-image" src="/images/news/news-asco-2026-abstracts.jpg.jpeg" alt="Hasanov Lab Research Featured in ASCO 2026 Abstracts">
           
 
@@ -505,6 +534,8 @@
 
             <h2 class="news-post-title">Hasanov Lab Research Featured in ASCO 2026 Abstracts</h2>
             <p class="news-post-text">Hasanov Lab members and collaborators presented multiple abstracts at ASCO 2026, highlighting work in renal cell carcinoma, prostate cancer, cancer genomics, machine learning, treatment outcomes, and translational oncology.</p>
+
+            
 
             
               <a class="news-post-link" href="https://x.com/hasanovlab/status/2059622156040913028?s=48" target="_blank" rel="noopener noreferrer">
@@ -532,6 +563,8 @@
             <p class="news-post-text">We are excited to announce the launch of the Hasanov Lab website. Stay tuned for updates on our research, publications, tools, and team news.</p>
 
             
+
+            
           </div>
         </article>
       
@@ -550,6 +583,8 @@
 
             <h2 class="news-post-title">Congratulations to Zeynep on Matching into Internal Medicine</h2>
             <p class="news-post-text">Congratulations to Zeynep, one of our postdoctoral scholars, on matching into Internal Medicine at UConn / the University of Connecticut. We are proud of her achievement and excited to celebrate this important milestone in her medical career.</p>
+
+            
 
             
           </div>
@@ -685,6 +720,33 @@
   color: #0f1419;
   font-size: 1rem;
   line-height: 1.6;
+}
+
+.news-post-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.news-post-gallery-image {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 640px) {
+  .news-post-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .news-post-gallery-image {
+    height: auto;
+    max-height: 420px;
+  }
 }
 
 .news-post-link {
