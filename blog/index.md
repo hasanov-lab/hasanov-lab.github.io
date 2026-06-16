@@ -31,7 +31,15 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
             </div>
 
             <h2 class="news-post-title">{{ post.title }}</h2>
-            <p class="news-post-text">{{ post.text }}</p>
+            <p class="news-post-text">{{ post.text | newline_to_br }}</p>
+
+            {% if post.images %}
+              <div class="news-post-gallery" aria-label="Images for {{ post.title | escape }}">
+                {% for image in post.images %}
+                  <img class="news-post-gallery-image" src="{{ image.src | relative_url }}" alt="{{ image.alt | default: post.title | escape }}" loading="lazy">
+                {% endfor %}
+              </div>
+            {% endif %}
 
             {% if post.link %}
               <a class="news-post-link" href="{{ post.link }}" target="_blank" rel="noopener noreferrer">
@@ -166,6 +174,33 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
   color: #0f1419;
   font-size: 1rem;
   line-height: 1.6;
+}
+
+.news-post-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.news-post-gallery-image {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 640px) {
+  .news-post-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .news-post-gallery-image {
+    height: auto;
+    max-height: 420px;
+  }
 }
 
 .news-post-link {
