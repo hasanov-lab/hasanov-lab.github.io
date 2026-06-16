@@ -64,6 +64,24 @@
         }
       ]
     },
+    "mostafa-rcc-brain-metastases": {
+      category: "Science",
+      categorySlug: "science",
+      title: "Mostafa Presents RCC Brain Metastases Research",
+      description: "Mostafa presenting his work on the single-cell and spatial landscape of renal cell carcinoma brain metastases.",
+      images: [
+        {
+          src: "/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-1.jpg",
+          alt: "Mostafa presenting RCC brain metastases research",
+          caption: "Mostafa Presents RCC Brain Metastases Research"
+        },
+        {
+          src: "/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-2.jpg",
+          alt: "Mostafa RCC brain metastases presentation image",
+          caption: "Mostafa Presents RCC Brain Metastases Research"
+        }
+      ]
+    },
     "lab-meeting": {
       category: "Lab Life",
       categorySlug: "lab-life",
