@@ -79,16 +79,6 @@
           src: "/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-2.jpg",
           alt: "Mostafa RCC brain metastases presentation image",
           caption: "Mostafa Presents RCC Brain Metastases Research"
-        },
-        {
-          src: "/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-3.jpeg",
-          alt: "Mostafa discussing RCC brain metastases research",
-          caption: "Mostafa Presents RCC Brain Metastases Research"
-        },
-        {
-          src: "/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-4.jpeg",
-          alt: "Mostafa RCC brain metastases research presentation slide",
-          caption: "Mostafa Presents RCC Brain Metastases Research"
         }
       ]
     },
