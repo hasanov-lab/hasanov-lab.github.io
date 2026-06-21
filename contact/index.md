@@ -78,9 +78,41 @@ nav:
   align-items: stretch;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .contact-container {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-card {
+    padding: 24px 18px;
+  }
+
+  .contact-heading {
+    font-size: 1.7rem !important;
+  }
+
+  .contact-item {
+    gap: 14px;
+  }
+
+  .contact-icon-circle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .contact-social-btn {
+    flex: 1 1 130px;
+    justify-content: center;
+  }
+
+  .contact-map {
+    min-height: 360px;
+  }
+
+  .contact-map iframe {
+    min-height: 360px !important;
   }
 }
 
