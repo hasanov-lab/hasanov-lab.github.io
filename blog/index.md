@@ -19,7 +19,17 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
       {% for post in site.data.news %}
         <article class="news-post-card">
           {% if post.image %}
-            <img class="news-post-image{% if post.image == 'images/code-to-clinic-logo.png' %} news-post-image--logo{% endif %}" src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
+            {% assign news_image_lightbox = false %}
+            {% if post.title == "Congratulations to Zuhair Majeed on Receiving the 2026 Cecile & Ken Youner IKCC Scholarship" or post.title == "Hasanov Lab Research Featured in ASCO 2026 Abstracts" %}
+              {% assign news_image_lightbox = true %}
+            {% endif %}
+            {% if news_image_lightbox %}
+              <button class="news-post-gallery-button news-post-image-button" type="button" data-news-lightbox-title="{{ post.title | escape }}" data-news-lightbox-category="{{ post.category | default: 'News' | escape }}" data-news-lightbox-description="{{ post.text | strip_newlines | escape }}" data-news-lightbox-src="{{ post.image | relative_url }}" data-news-lightbox-alt="{{ post.title | escape }}" data-news-lightbox-caption="{{ post.title | escape }}" data-news-lightbox-index="0" data-news-lightbox-total="1" aria-label="Open image for {{ post.title | escape }}">
+                <img class="news-post-image{% if post.image == 'images/code-to-clinic-logo.png' %} news-post-image--logo{% endif %}" src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
+              </button>
+            {% else %}
+              <img class="news-post-image{% if post.image == 'images/code-to-clinic-logo.png' %} news-post-image--logo{% endif %}" src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
+            {% endif %}
           {% endif %}
 
           <div class="news-post-content">
@@ -36,8 +46,8 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
             {% if post.images %}
               <div class="news-post-gallery" aria-label="Images for {{ post.title | escape }}">
                 {% for image in post.images %}
-                  {% if post.title == "Mostafa Presents Work on RCC Brain Metastases" %}
-                    <button class="news-post-gallery-button" type="button" data-news-gallery="mostafa-rcc-brain-metastases" data-news-gallery-index="{{ forloop.index0 }}" data-news-gallery-limit="2" aria-label="Open image {{ forloop.index }} of {{ post.images.size }} for {{ post.title | escape }}">
+                  {% if post.title == "Mostafa Presents Work on RCC Brain Metastases" or post.title == "Congratulations on Receiving the ASCO Merit Award" %}
+                    <button class="news-post-gallery-button" type="button" data-news-lightbox-group="{{ post.title | slugify }}" data-news-lightbox-title="{{ post.title | escape }}" data-news-lightbox-category="{{ post.category | default: 'News' | escape }}" data-news-lightbox-description="{{ post.text | strip_newlines | escape }}" data-news-lightbox-src="{{ image.src | relative_url }}" data-news-lightbox-alt="{{ image.alt | default: post.title | escape }}" data-news-lightbox-caption="{{ post.title | escape }}" data-news-lightbox-index="{{ forloop.index0 }}" data-news-lightbox-total="{{ post.images.size }}" aria-label="Open image {{ forloop.index }} of {{ post.images.size }} for {{ post.title | escape }}">
                       <img class="news-post-gallery-image" src="{{ image.src | relative_url }}" alt="{{ image.alt | default: post.title | escape }}" loading="lazy">
                     </button>
                   {% else %}
@@ -112,6 +122,134 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
     <div class="gallery-video-frame-wrap" data-gallery-video-frame hidden></div>
   </div>
 </div>
+
+<script>
+(function () {
+  const modal = document.querySelector("#news-gallery-lightbox");
+  if (!modal) {
+    return;
+  }
+
+  const panel = modal.querySelector(".gallery-modal-panel");
+  const category = modal.querySelector("[data-gallery-modal-category]");
+  const title = modal.querySelector("[data-gallery-modal-title]");
+  const description = modal.querySelector("[data-gallery-modal-description]");
+  const image = modal.querySelector("[data-gallery-image]");
+  const caption = modal.querySelector("[data-gallery-caption]");
+  const counter = modal.querySelector("[data-gallery-counter]");
+  const previousButton = modal.querySelector("[data-gallery-prev]");
+  const nextButton = modal.querySelector("[data-gallery-next]");
+  const closeButton = modal.querySelector(".gallery-modal-close");
+  let activeImages = [];
+  let activeIndex = 0;
+  let previousFocus = null;
+
+  const updateImage = (index) => {
+    if (!activeImages.length) {
+      return;
+    }
+
+    activeIndex = (index + activeImages.length) % activeImages.length;
+    const activeImage = activeImages[activeIndex];
+    image.src = activeImage.src;
+    image.alt = activeImage.alt;
+    caption.textContent = activeImage.caption;
+    counter.textContent = `${activeIndex + 1} / ${activeImages.length}`;
+
+    const hasMultipleImages = activeImages.length > 1;
+    modal.classList.toggle("is-single-image", !hasMultipleImages);
+    counter.hidden = !hasMultipleImages;
+    previousButton.hidden = !hasMultipleImages;
+    nextButton.hidden = !hasMultipleImages;
+    previousButton.disabled = !hasMultipleImages;
+    nextButton.disabled = !hasMultipleImages;
+  };
+
+  const closeModal = () => {
+    modal.hidden = true;
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("gallery-modal-is-open");
+    activeImages = [];
+    if (previousFocus && typeof previousFocus.focus === "function") {
+      previousFocus.focus();
+    }
+  };
+
+  const openModal = (trigger) => {
+    const group = trigger.dataset.newsLightboxGroup;
+    const triggers = Array.from(document.querySelectorAll("[data-news-lightbox-src]")).filter((item) => (
+      group
+        ? item.dataset.newsLightboxGroup === group
+        : item.dataset.newsLightboxSrc === trigger.dataset.newsLightboxSrc
+    ));
+
+    activeImages = triggers.map((item) => ({
+      src: item.dataset.newsLightboxSrc,
+      alt: item.dataset.newsLightboxAlt,
+      caption: item.dataset.newsLightboxCaption || item.dataset.newsLightboxTitle
+    }));
+
+    previousFocus = document.activeElement;
+    category.textContent = trigger.dataset.newsLightboxCategory || "News";
+    title.textContent = trigger.dataset.newsLightboxTitle;
+    description.textContent = trigger.dataset.newsLightboxDescription || "";
+    updateImage(Number.parseInt(trigger.dataset.newsLightboxIndex, 10) || 0);
+    modal.hidden = false;
+    modal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("gallery-modal-is-open");
+    closeButton.focus();
+  };
+
+  document.querySelectorAll("[data-news-lightbox-src]").forEach((trigger) => {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      openModal(trigger);
+    });
+  });
+
+  previousButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    updateImage(activeIndex - 1);
+  });
+
+  nextButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    updateImage(activeIndex + 1);
+  });
+
+  modal.querySelectorAll("[data-gallery-close]").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      closeModal();
+    });
+  });
+
+  modal.addEventListener("click", (event) => {
+    if (!panel.contains(event.target)) {
+      closeModal();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (modal.hidden) {
+      return;
+    }
+
+    if (event.key === "Escape") {
+      closeModal();
+    }
+
+    if (event.key === "ArrowLeft" && activeImages.length > 1) {
+      updateImage(activeIndex - 1);
+    }
+
+    if (event.key === "ArrowRight" && activeImages.length > 1) {
+      updateImage(activeIndex + 1);
+    }
+  });
+})();
+</script>
 
 <style>
 .news-container {
@@ -227,8 +365,17 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
   outline-offset: 4px;
 }
 
-.news-post-gallery-button .news-post-gallery-image {
+.news-post-gallery-button .news-post-gallery-image,
+.news-post-image-button .news-post-image {
   cursor: pointer;
+}
+
+.news-post-image-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
 }
 
 .news-post-gallery-image {
