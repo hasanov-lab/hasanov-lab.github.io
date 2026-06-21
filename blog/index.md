@@ -18,20 +18,6 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
     <div class="news-posts">
       {% for post in site.data.news %}
         <article class="news-post-card">
-          {% if post.image %}
-            {% assign news_image_lightbox = false %}
-            {% if post.title == "Congratulations to Zuhair Majeed on Receiving the 2026 Cecile & Ken Youner IKCC Scholarship" or post.title == "Hasanov Lab Research Featured in ASCO 2026 Abstracts" %}
-              {% assign news_image_lightbox = true %}
-            {% endif %}
-            {% if news_image_lightbox %}
-              <button class="news-post-gallery-button news-post-image-button" type="button" data-news-lightbox-title="{{ post.title | escape }}" data-news-lightbox-category="{{ post.category | default: 'News' | escape }}" data-news-lightbox-description="{{ post.text | strip_newlines | escape }}" data-news-lightbox-src="{{ post.image | relative_url }}" data-news-lightbox-alt="{{ post.title | escape }}" data-news-lightbox-caption="{{ post.title | escape }}" data-news-lightbox-index="0" data-news-lightbox-total="1" aria-label="Open image for {{ post.title | escape }}">
-                <img class="news-post-image{% if post.image == 'images/code-to-clinic-logo.png' %} news-post-image--logo{% endif %}" src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
-              </button>
-            {% else %}
-              <img class="news-post-image{% if post.image == 'images/code-to-clinic-logo.png' %} news-post-image--logo{% endif %}" src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
-            {% endif %}
-          {% endif %}
-
           <div class="news-post-content">
             <div class="news-post-meta">
               <time datetime="{{ post.date }}">{{ post.display_date | default: post.date }}</time>
@@ -42,6 +28,20 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
 
             <h2 class="news-post-title">{{ post.title }}</h2>
             <p class="news-post-text">{{ post.text | newline_to_br }}</p>
+
+            {% if post.image %}
+              {% assign news_image_lightbox = false %}
+              {% if post.title == "Congratulations to Zuhair Majeed on Receiving the 2026 Cecile & Ken Youner IKCC Scholarship" or post.title == "Hasanov Lab Research Featured in ASCO 2026 Abstracts" %}
+                {% assign news_image_lightbox = true %}
+              {% endif %}
+              {% if news_image_lightbox %}
+                <button class="news-post-gallery-button news-post-image-button" type="button" data-news-lightbox-title="{{ post.title | escape }}" data-news-lightbox-category="{{ post.category | default: 'News' | escape }}" data-news-lightbox-description="{{ post.text | strip_newlines | escape }}" data-news-lightbox-src="{{ post.image | relative_url }}" data-news-lightbox-alt="{{ post.title | escape }}" data-news-lightbox-caption="{{ post.title | escape }}" data-news-lightbox-index="0" data-news-lightbox-total="1" aria-label="Open image for {{ post.title | escape }}">
+                  <img class="news-post-image{% if post.image == 'images/code-to-clinic-logo.png' %} news-post-image--logo{% endif %}" src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
+                </button>
+              {% else %}
+                <img class="news-post-image{% if post.image == 'images/code-to-clinic-logo.png' %} news-post-image--logo{% endif %}" src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}">
+              {% endif %}
+            {% endif %}
 
             {% if post.images %}
               <div class="news-post-gallery" aria-label="Images for {{ post.title | escape }}">
