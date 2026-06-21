@@ -569,6 +569,28 @@
   text-align: center;
 }
 
+
+.gallery-modal[data-gallery-key="mostafa-rcc-brain-metastases"] .gallery-modal-panel {
+  overflow: auto;
+}
+
+.gallery-modal[data-gallery-key="mostafa-rcc-brain-metastases"] .gallery-modal-header {
+  flex: 0 0 auto;
+}
+
+.gallery-modal[data-gallery-key="mostafa-rcc-brain-metastases"] .gallery-carousel {
+  flex: 1 1 auto;
+}
+
+.gallery-modal[data-gallery-key="mostafa-rcc-brain-metastases"] .gallery-carousel-figure img {
+  max-height: min(62vh, 720px);
+}
+
+.gallery-modal[data-gallery-key="mostafa-rcc-brain-metastases"] .gallery-carousel-figure figcaption {
+  width: 100%;
+  padding: 0 8px;
+}
+
 .gallery-carousel-caption {
   font-weight: var(--semi-bold);
 }
@@ -712,6 +734,10 @@
     max-width: 88vw;
     max-height: 68vh;
     border-radius: 8px;
+  }
+
+  .gallery-modal[data-gallery-key="mostafa-rcc-brain-metastases"] .gallery-carousel-figure img {
+    max-height: 56vh;
   }
 
   .gallery-carousel-arrow {

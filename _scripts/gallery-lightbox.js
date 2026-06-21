@@ -79,6 +79,16 @@
           src: "/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-2.jpg",
           alt: "Mostafa RCC brain metastases presentation image",
           caption: "Mostafa Presents RCC Brain Metastases Research"
+        },
+        {
+          src: "/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-3.jpeg",
+          alt: "Mostafa RCC brain metastases research discussion image",
+          caption: "Mostafa Presents RCC Brain Metastases Research"
+        },
+        {
+          src: "/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-4.jpeg",
+          alt: "Mostafa RCC brain metastases research presentation audience image",
+          caption: "Mostafa Presents RCC Brain Metastases Research"
         }
       ]
     },
@@ -288,7 +298,7 @@
     restorePreviousFocus();
   };
 
-  const openModal = (galleryKey, startIndex = 0) => {
+  const openModal = (galleryKey, startIndex = 0, options = {}) => {
     if (!state.initialized) {
       initializeGalleryLightbox();
     }
@@ -301,13 +311,16 @@
 
     clearVideoFrame();
     state.previousFocus = document.activeElement;
-    state.activeGallery = selectedGallery;
+    state.activeGallery = options.imageLimit
+      ? { ...selectedGallery, images: selectedGallery.images.slice(0, options.imageLimit) }
+      : selectedGallery;
     state.activeVideo = null;
     state.modal.classList.remove("is-video");
     state.modal.dataset.category = selectedGallery.categorySlug;
-    state.modalCategory.textContent = selectedGallery.category;
-    state.modalTitle.textContent = selectedGallery.title;
-    state.modalDescription.textContent = selectedGallery.description;
+    state.modal.dataset.galleryKey = galleryKey;
+    state.modalCategory.textContent = state.activeGallery.category;
+    state.modalTitle.textContent = state.activeGallery.title;
+    state.modalDescription.textContent = state.activeGallery.description;
     updateCarousel(startIndex);
     state.modal.hidden = false;
     state.modal.setAttribute("aria-hidden", "false");
@@ -378,7 +391,16 @@
     }
 
     const parsedIndex = Number.parseInt(startIndex, 10);
-    openModal(galleryKey, Number.isNaN(parsedIndex) ? 0 : parsedIndex);
+    const trigger = event && event.currentTarget;
+    const parsedLimit = trigger && trigger.dataset.newsGalleryLimit
+      ? Number.parseInt(trigger.dataset.newsGalleryLimit, 10)
+      : Number.NaN;
+
+    openModal(
+      galleryKey,
+      Number.isNaN(parsedIndex) ? 0 : parsedIndex,
+      { imageLimit: Number.isNaN(parsedLimit) ? null : parsedLimit }
+    );
   };
 
   window.openHasanovGalleryVideo = (card, event) => {

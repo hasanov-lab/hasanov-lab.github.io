@@ -37,7 +37,7 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
               <div class="news-post-gallery" aria-label="Images for {{ post.title | escape }}">
                 {% for image in post.images %}
                   {% if post.title == "Mostafa Presents Work on RCC Brain Metastases" %}
-                    <button class="news-post-gallery-button" type="button" data-news-gallery="mostafa-rcc-brain-metastases" data-news-gallery-index="{{ forloop.index0 }}" aria-label="Open image {{ forloop.index }} of {{ post.images.size }} for {{ post.title | escape }}">
+                    <button class="news-post-gallery-button" type="button" data-news-gallery="mostafa-rcc-brain-metastases" data-news-gallery-index="{{ forloop.index0 }}" data-news-gallery-limit="2" aria-label="Open image {{ forloop.index }} of {{ post.images.size }} for {{ post.title | escape }}">
                       <img class="news-post-gallery-image" src="{{ image.src | relative_url }}" alt="{{ image.alt | default: post.title | escape }}" loading="lazy">
                     </button>
                   {% else %}
@@ -104,7 +104,7 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
         <img src="{{ '/images/news/mostafa-rcc-brain-metastases/mostafa-rcc-bm-1.jpg' | relative_url }}" alt="Mostafa presenting RCC brain metastases research" data-gallery-image>
         <figcaption>
           <span class="gallery-carousel-caption" data-gallery-caption>Mostafa Presents Work on RCC Brain Metastases</span>
-          <span class="gallery-carousel-counter" data-gallery-counter>1 / 4</span>
+          <span class="gallery-carousel-counter" data-gallery-counter>1 / 2</span>
         </figcaption>
       </figure>
       <button class="gallery-carousel-arrow gallery-carousel-arrow-next" type="button" aria-label="Show next image" data-gallery-next>&#8250;</button>
