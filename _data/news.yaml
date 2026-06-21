@@ -1,16 +1,3 @@
-- title: Congratulations on Receiving the ASCO Merit Award
-  date: "2026-06-02"
-  display_date: June 2, 2026
-  category: news
-  text: Congratulations on receiving the ASCO Merit Award. This recognition highlights outstanding research contributions and reflects the dedication, hard work, and scientific excellence of our team members and collaborators. We are proud to celebrate this achievement as part of the Hasanov Lab’s continued contributions to cancer research and translational oncology.
-  images:
-    - src: images/news/asco-merit-award/1.jpeg
-      alt: ASCO Merit Award recognition photo 1
-    - src: images/news/asco-merit-award/2.jpeg
-      alt: ASCO Merit Award recognition photo 2
-  link: https://x.com/hasanovlab/status/2061869208460242960?s=48
-  link_label: View post on X
-
 - title: Congratulations to Zuhair Majeed on Receiving the 2026 Cecile & Ken Youner IKCC Scholarship
   date: "2026-06-19"
   display_date: June 19, 2026
@@ -18,6 +5,19 @@
   text: Congratulations to Zuhair Majeed, MD, on being selected for the 2026 Cecile & Ken Youner IKCC Scholarship. This recognition reflects his hard work, curiosity, and dedication to improving outcomes for patients with kidney cancer. We are proud to celebrate this well-deserved achievement and look forward to his continued growth as a physician-scientist.
   image: images/news/news-zuhair-ikcc-scholarship.jpeg
   link: https://x.com/hasanovlab/status/2068047694392672542?s=46
+  link_label: View post on X
+
+- title: Congratulations on Receiving the ASCO Merit Award
+  date: "2026-06-02"
+  display_date: June 2, 2026
+  category: news
+  text: Congratulations on receiving the ASCO Merit Award. This recognition highlights outstanding research contributions and reflects the dedication, hard work, and scientific excellence of our team members and collaborators. We are proud to celebrate this achievement as part of the Hasanov Lab’s continued contributions to cancer research and translational oncology.
+  images:
+    - src: /images/news/news-asco-merit-award-01.jpeg
+      alt: ASCO Merit Award recognition photo 1
+    - src: /images/news/news-asco-merit-award-02.jpeg
+      alt: ASCO Merit Award recognition photo 2
+  link: https://x.com/hasanovlab/status/2061869208460242960?s=48
   link_label: View post on X
 
 - title: Mostafa Presents Work on RCC Brain Metastases
