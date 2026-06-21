@@ -419,6 +419,27 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
   text-decoration: underline !important;
 }
 
+.news-gallery-modal .gallery-modal-panel {
+  width: min(94vw, 1180px);
+}
+
+.news-gallery-modal .gallery-carousel-figure img {
+  max-width: min(100%, 90vw);
+  max-height: 78vh;
+}
+
+@media (max-width: 640px) {
+  .news-gallery-modal .gallery-modal-panel {
+    width: min(96vw, 1180px);
+    max-height: 94vh;
+  }
+
+  .news-gallery-modal .gallery-carousel-figure img {
+    max-width: 90vw;
+    max-height: 70vh;
+  }
+}
+
 /* === X / Twitter follow card === */
 .x-card {
   display: block;
