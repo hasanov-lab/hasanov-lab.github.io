@@ -193,8 +193,13 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
     };
 
     newsPosts.addEventListener("click", (event) => {
-      const trigger = event.target.closest("[data-news-lightbox-src]");
-      if (!trigger || !newsPosts.contains(trigger)) {
+      const clickedImage = event.target.closest(".news-lightbox-image, [data-news-lightbox-image]");
+      if (!clickedImage || !newsPosts.contains(clickedImage)) {
+        return;
+      }
+
+      const trigger = clickedImage.closest("[data-news-lightbox-src]");
+      if (!trigger) {
         return;
       }
 
