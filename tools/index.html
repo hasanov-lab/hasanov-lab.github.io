@@ -260,6 +260,10 @@
   
 
   
+    <link href="/_styles/responsive.css" rel="stylesheet">
+  
+
+  
     <link href="/_styles/rule.css" rel="stylesheet">
   
 
@@ -598,13 +602,31 @@
   font-weight: var(--semi-bold);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
+  .tools-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
   .tools-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .tool-card {
-    min-height: 300px;
+    min-height: 280px;
+    padding: 22px;
+  }
+
+  .tool-logo-wrap {
+    height: 180px;
+  }
+
+  .tool-logo,
+  .tool-logo-wide {
+    max-width: 100%;
+    max-height: 170px;
   }
 }
 </style>
