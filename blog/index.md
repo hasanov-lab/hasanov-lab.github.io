@@ -30,7 +30,7 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
             <p class="news-post-text">{{ post.text | newline_to_br }}</p>
 
             {% if post.image %}
-              <button class="news-post-gallery-button news-post-image-button" type="button" data-news-lightbox-title="{{ post.title | escape }}" data-news-lightbox-category="{{ post.category | default: 'News' | escape }}" data-news-lightbox-description="{{ post.text | strip_newlines | escape }}" data-news-lightbox-src="{{ post.image | relative_url }}" data-news-lightbox-alt="{{ post.title | escape }}" data-news-lightbox-caption="{{ post.title | escape }}" data-news-lightbox-index="0" data-news-lightbox-total="1" aria-label="Open image for {{ post.title | escape }}">
+              <button class="news-post-gallery-button news-post-image-button" type="button" data-news-lightbox-title="{{ post.title | escape }}" data-news-lightbox-category="{{ post.category | default: 'News' | escape }}" data-news-lightbox-src="{{ post.image | relative_url }}" data-news-lightbox-alt="{{ post.title | escape }}" data-news-lightbox-caption="{{ post.title | escape }}" data-news-lightbox-index="0" data-news-lightbox-total="1" aria-label="Open image for {{ post.title | escape }}">
                 <img class="news-post-image news-lightbox-image{% if post.image == 'images/code-to-clinic-logo.png' %} news-post-image--logo{% endif %}" src="{{ post.image | relative_url }}" alt="{{ post.title | escape }}" data-news-lightbox-image>
               </button>
             {% endif %}
@@ -38,7 +38,7 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
             {% if post.images %}
               <div class="news-post-gallery" aria-label="Images for {{ post.title | escape }}">
                 {% for image in post.images %}
-                  <button class="news-post-gallery-button" type="button" data-news-lightbox-group="{{ post.title | slugify }}" data-news-lightbox-title="{{ post.title | escape }}" data-news-lightbox-category="{{ post.category | default: 'News' | escape }}" data-news-lightbox-description="{{ post.text | strip_newlines | escape }}" data-news-lightbox-src="{{ image.src | relative_url }}" data-news-lightbox-alt="{{ image.alt | default: post.title | escape }}" data-news-lightbox-caption="{{ post.title | escape }}" data-news-lightbox-index="{{ forloop.index0 }}" data-news-lightbox-total="{{ post.images.size }}" aria-label="Open image {{ forloop.index }} of {{ post.images.size }} for {{ post.title | escape }}">
+                  <button class="news-post-gallery-button" type="button" data-news-lightbox-group="{{ post.title | slugify }}" data-news-lightbox-title="{{ post.title | escape }}" data-news-lightbox-category="{{ post.category | default: 'News' | escape }}" data-news-lightbox-src="{{ image.src | relative_url }}" data-news-lightbox-alt="{{ image.alt | default: post.title | escape }}" data-news-lightbox-caption="{{ post.title | escape }}" data-news-lightbox-index="{{ forloop.index0 }}" data-news-lightbox-total="{{ post.images.size }}" aria-label="Open image {{ forloop.index }} of {{ post.images.size }} for {{ post.title | escape }}">
                     <img class="news-post-gallery-image news-lightbox-image" src="{{ image.src | relative_url }}" alt="{{ image.alt | default: post.title | escape }}" loading="lazy" data-news-lightbox-image>
                   </button>
                 {% endfor %}
@@ -89,13 +89,8 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
 
 <div class="gallery-modal news-gallery-modal" id="news-gallery-lightbox" data-gallery-modal hidden aria-hidden="true">
   <button class="gallery-modal-backdrop" type="button" aria-label="Close news image viewer" data-gallery-close></button>
-  <div class="gallery-modal-panel" role="dialog" aria-modal="true" aria-labelledby="news-gallery-modal-title" aria-describedby="news-gallery-modal-description">
+  <div class="gallery-modal-panel" role="dialog" aria-modal="true" aria-label="News image viewer">
     <button class="gallery-modal-close" type="button" aria-label="Close news image viewer" data-gallery-close>&times;</button>
-    <div class="gallery-modal-header">
-      <span class="gallery-tag" data-gallery-modal-category>Research</span>
-      <h2 id="news-gallery-modal-title" data-gallery-modal-title>Mostafa Presents Work on RCC Brain Metastases</h2>
-      <p id="news-gallery-modal-description" data-gallery-modal-description>Mostafa presenting work on the single-cell and spatial landscape of renal cell carcinoma brain metastases.</p>
-    </div>
     <div class="gallery-carousel">
       <button class="gallery-carousel-arrow gallery-carousel-arrow-prev" type="button" aria-label="Show previous image" data-gallery-prev>&#8249;</button>
       <figure class="gallery-carousel-figure">
@@ -281,22 +276,46 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
 
 .news-gallery-modal .gallery-modal-panel {
   width: min(94vw, 1180px);
+  background: rgba(8, 13, 24, 0.96);
+}
+
+.news-gallery-modal .gallery-carousel {
+  padding: 28px;
 }
 
 .news-gallery-modal .gallery-carousel-figure img {
   max-width: min(100%, 90vw);
   max-height: 78vh;
+  background: transparent;
+}
+
+.news-gallery-modal .gallery-carousel-figure figcaption {
+  color: #ffffff;
+}
+
+.news-gallery-modal .gallery-carousel-caption {
+  display: none;
 }
 
 @media (max-width: 640px) {
+  .news-gallery-modal {
+    padding: 14px;
+  }
+
   .news-gallery-modal .gallery-modal-panel {
     width: min(96vw, 1180px);
     max-height: 94vh;
   }
 
+  .news-gallery-modal .gallery-carousel {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    gap: 8px;
+    padding: 22px 12px 18px;
+  }
+
   .news-gallery-modal .gallery-carousel-figure img {
     max-width: 90vw;
-    max-height: 70vh;
+    max-height: 76vh;
   }
 }
 
