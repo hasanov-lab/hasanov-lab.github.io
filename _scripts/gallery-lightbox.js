@@ -422,7 +422,7 @@
     }
 
     state.gallery = document.querySelector("[data-gallery]");
-    state.modal = document.querySelector("[data-gallery-modal]");
+    state.modal = document.querySelector("#gallery-lightbox");
     state.videoModal = document.querySelector("[data-gallery-video-modal]");
 
     if (!state.modal) {
@@ -578,9 +578,176 @@
     }
   }
 
+
+  function initializeNewsLightbox() {
+    const modal = document.querySelector("#news-gallery-lightbox");
+    const modalPanel = modal ? modal.querySelector(".gallery-modal-panel") : null;
+    const category = modal ? modal.querySelector("[data-gallery-modal-category]") : null;
+    const title = modal ? modal.querySelector("[data-gallery-modal-title]") : null;
+    const description = modal ? modal.querySelector("[data-gallery-modal-description]") : null;
+    const modalImage = modal ? modal.querySelector("[data-gallery-image]") : null;
+    const caption = modal ? modal.querySelector("[data-gallery-caption]") : null;
+    const counter = modal ? modal.querySelector("[data-gallery-counter]") : null;
+    const previousButton = modal ? modal.querySelector("[data-gallery-prev]") : null;
+    const nextButton = modal ? modal.querySelector("[data-gallery-next]") : null;
+    const closeButton = modal ? modal.querySelector(".gallery-modal-close") : null;
+
+    if (!modal || !modalPanel || !modalImage || modal.dataset.newsLightboxInitialized === "true") {
+      return;
+    }
+
+    modal.dataset.newsLightboxInitialized = "true";
+
+    let activeImages = [];
+    let activeIndex = 0;
+    let previousFocus = null;
+
+    const updateNewsImage = (index) => {
+      if (!activeImages.length) {
+        return;
+      }
+
+      activeIndex = (index + activeImages.length) % activeImages.length;
+      const activeImage = activeImages[activeIndex];
+      modalImage.src = activeImage.src;
+      modalImage.alt = activeImage.alt || "News image";
+
+      if (caption) {
+        caption.textContent = activeImage.caption || activeImage.alt || "News image";
+      }
+
+      if (counter) {
+        counter.textContent = `${activeIndex + 1} / ${activeImages.length}`;
+        counter.hidden = activeImages.length < 2;
+      }
+
+      const hasMultipleImages = activeImages.length > 1;
+      modal.classList.toggle("is-single-image", !hasMultipleImages);
+
+      [previousButton, nextButton].forEach((button) => {
+        if (button) {
+          button.hidden = !hasMultipleImages;
+          button.disabled = !hasMultipleImages;
+        }
+      });
+    };
+
+    const closeNewsModal = () => {
+      modal.hidden = true;
+      modal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("gallery-modal-is-open");
+      activeImages = [];
+
+      if (previousFocus && typeof previousFocus.focus === "function") {
+        previousFocus.focus();
+      }
+    };
+
+    const openNewsModal = (trigger) => {
+      const post = trigger.closest(".news-post-card");
+      const group = trigger.dataset.newsLightboxGroup;
+      const triggers = Array.from((post || document).querySelectorAll("[data-news-lightbox-src]")).filter((item) => (
+        group
+          ? item.dataset.newsLightboxGroup === group
+          : item === trigger || item.dataset.newsLightboxSrc === trigger.dataset.newsLightboxSrc
+      ));
+
+      activeImages = (triggers.length ? triggers : [trigger]).map((item) => ({
+        src: item.dataset.newsLightboxSrc,
+        alt: item.dataset.newsLightboxAlt,
+        caption: item.dataset.newsLightboxCaption || item.dataset.newsLightboxTitle
+      }));
+
+      previousFocus = document.activeElement;
+
+      if (category) {
+        category.textContent = trigger.dataset.newsLightboxCategory || "News";
+      }
+
+      if (title) {
+        title.textContent = trigger.dataset.newsLightboxTitle || "News image";
+      }
+
+      if (description) {
+        description.textContent = trigger.dataset.newsLightboxDescription || "";
+      }
+
+      updateNewsImage(Number.parseInt(trigger.dataset.newsLightboxIndex, 10) || 0);
+      modal.hidden = false;
+      modal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("gallery-modal-is-open");
+
+      if (closeButton) {
+        closeButton.focus();
+      }
+    };
+
+    document.addEventListener("click", (event) => {
+      if (!event.target.matches(".news-lightbox-image")) {
+        return;
+      }
+
+      const trigger = event.target.closest("[data-news-lightbox-src]");
+      if (!trigger) {
+        return;
+      }
+
+      event.preventDefault();
+      event.stopPropagation();
+      openNewsModal(trigger);
+    });
+
+    if (previousButton) {
+      previousButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        updateNewsImage(activeIndex - 1);
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        updateNewsImage(activeIndex + 1);
+      });
+    }
+
+    modal.querySelectorAll("[data-gallery-close]").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        event.preventDefault();
+        closeNewsModal();
+      });
+    });
+
+    modal.addEventListener("click", (event) => {
+      if (!modalPanel.contains(event.target)) {
+        closeNewsModal();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (modal.hidden) {
+        return;
+      }
+
+      if (event.key === "Escape") {
+        closeNewsModal();
+      }
+
+      if (event.key === "ArrowLeft" && activeImages.length > 1) {
+        updateNewsImage(activeIndex - 1);
+      }
+
+      if (event.key === "ArrowRight" && activeImages.length > 1) {
+        updateNewsImage(activeIndex + 1);
+      }
+    });
+  }
+
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initializeGalleryLightbox);
+    document.addEventListener("DOMContentLoaded", initializeNewsLightbox);
   } else {
     initializeGalleryLightbox();
+    initializeNewsLightbox();
   }
 })();
