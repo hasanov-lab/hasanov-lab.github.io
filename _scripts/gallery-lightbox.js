@@ -582,9 +582,6 @@
   function initializeNewsLightbox() {
     const modal = document.querySelector("#news-gallery-lightbox");
     const modalPanel = modal ? modal.querySelector(".gallery-modal-panel") : null;
-    const category = modal ? modal.querySelector("[data-gallery-modal-category]") : null;
-    const title = modal ? modal.querySelector("[data-gallery-modal-title]") : null;
-    const description = modal ? modal.querySelector("[data-gallery-modal-description]") : null;
     const modalImage = modal ? modal.querySelector("[data-gallery-image]") : null;
     const caption = modal ? modal.querySelector("[data-gallery-caption]") : null;
     const counter = modal ? modal.querySelector("[data-gallery-counter]") : null;
@@ -660,17 +657,6 @@
 
       previousFocus = document.activeElement;
 
-      if (category) {
-        category.textContent = trigger.dataset.newsLightboxCategory || "News";
-      }
-
-      if (title) {
-        title.textContent = trigger.dataset.newsLightboxTitle || "News image";
-      }
-
-      if (description) {
-        description.textContent = trigger.dataset.newsLightboxDescription || "";
-      }
 
       updateNewsImage(Number.parseInt(trigger.dataset.newsLightboxIndex, 10) || 0);
       modal.hidden = false;
