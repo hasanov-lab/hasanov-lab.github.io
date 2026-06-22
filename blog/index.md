@@ -260,7 +260,7 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
 <style>
 .news-container {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 0.85fr);
   gap: 30px;
   margin: 20px 0;
   align-items: start;
@@ -297,12 +297,14 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
 .news-post-image {
   display: block;
   width: 100%;
-  max-height: 360px;
-  object-fit: cover;
+  max-height: 520px;
+  object-fit: contain;
+  border-radius: 14px;
+  background: #f7f9fb;
 }
 
 .news-post-image--logo {
-  height: 240px;
+  height: 280px;
   padding: 36px 48px;
   object-fit: contain;
   background: #ffffff;
@@ -352,8 +354,8 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
 
 .news-post-gallery {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
   margin-top: 18px;
 }
 
@@ -364,6 +366,7 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
   border-radius: 14px;
   background: transparent;
   cursor: zoom-in;
+  overflow: hidden;
 }
 
 .news-post-gallery-button:focus-visible {
@@ -383,13 +386,16 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
   padding: 0;
   border: 0;
   background: transparent;
+  margin-top: 18px;
+  cursor: zoom-in;
 }
 
 .news-post-gallery-image {
   display: block;
   width: 100%;
-  height: 230px;
-  object-fit: cover;
+  height: 320px;
+  object-fit: contain;
+  background: #f7f9fb;
   border-radius: 14px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
@@ -401,7 +407,7 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
 
   .news-post-gallery-image {
     height: auto;
-    max-height: 420px;
+    max-height: 520px;
   }
 }
 
