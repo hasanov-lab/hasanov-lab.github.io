@@ -297,25 +297,74 @@ Stay updated with the latest news, publications, and events from the Hasanov Lab
   display: none;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .news-gallery-modal {
-    padding: 14px;
+    align-items: center;
+    padding: 10px;
   }
 
   .news-gallery-modal .gallery-modal-panel {
-    width: min(96vw, 1180px);
-    max-height: 94vh;
+    width: 96vw;
+    max-width: 96vw;
+    max-height: 92vh;
+    height: auto;
+    overflow: auto;
+  }
+
+  .news-gallery-modal .gallery-modal-close {
+    top: 10px;
+    right: 10px;
+    width: 44px;
+    height: 44px;
   }
 
   .news-gallery-modal .gallery-carousel {
-    grid-template-columns: 44px minmax(0, 1fr) 44px;
-    gap: 8px;
-    padding: 22px 12px 18px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 10px 12px;
+    padding: 62px 10px 12px;
+  }
+
+  .news-gallery-modal .gallery-carousel-figure {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: 100%;
   }
 
   .news-gallery-modal .gallery-carousel-figure img {
-    max-width: 90vw;
-    max-height: 76vh;
+    max-width: 100%;
+    max-height: min(75vh, calc(92vh - 130px));
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .news-gallery-modal .gallery-carousel-figure figcaption {
+    margin-top: 8px;
+  }
+
+  .news-gallery-modal .gallery-carousel-counter {
+    font-size: 0.9rem;
+  }
+
+  .news-gallery-modal .gallery-carousel-arrow {
+    grid-row: 2;
+    width: 44px;
+    height: 44px;
+    justify-self: center;
+    font-size: 2.2rem;
+  }
+
+  .news-gallery-modal .gallery-carousel-arrow-prev {
+    grid-column: 1;
+  }
+
+  .news-gallery-modal .gallery-carousel-arrow-next {
+    grid-column: 2;
+  }
+
+  .news-gallery-modal.is-single-image .gallery-carousel {
+    grid-template-columns: minmax(0, 1fr);
+    padding-bottom: 10px;
   }
 }
 
