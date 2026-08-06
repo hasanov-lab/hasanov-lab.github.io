@@ -14,6 +14,11 @@ A collection of clinical and computational oncology tools from the Hasanov Lab.
     <p>Real-world outcomes and EHR-based machine learning model for patients with advanced prostate cancer treated with Lu-PSMA-617.</p>
     <span>Open tool <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
   </a>
+  <a class="rccbm-model-card" href="https://hasanovlab-apollo-belzutifan.share.connect.posit.cloud/" target="_blank" rel="noopener noreferrer" aria-label="Open Belzutifan Tool">
+    <h2>Belzutifan</h2>
+    <p>An interactive Apollo tool for exploring Belzutifan-related outcomes and decision-support modeling.</p>
+    <span>Open Belzutifan Tool <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+  </a>
 </div>
 
 <style>
@@ -25,7 +30,7 @@ A collection of clinical and computational oncology tools from the Hasanov Lab.
 }
 
 .apollo-tools-grid {
-  grid-template-columns: minmax(0, 360px);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 360px));
   justify-content: center;
 }
 
