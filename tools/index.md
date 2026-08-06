@@ -43,6 +43,17 @@ Interactive web-based calculators and tools developed by the Hasanov Lab.
       <p class="tool-status">Select model <i class="fa-solid fa-arrow-right"></i></p>
     </div>
   </a>
+
+  <a class="tool-card" href="https://hasanovlab-brainmetcompass.share.connect.posit.cloud/" target="_blank" rel="noopener noreferrer" aria-label="Open BrainMetCompass tool">
+    <div class="tool-logo-wrap">
+      <img src="{{ '/images/tools/brainmetcompass-logo.png' | relative_url }}" alt="BrainMetCompass logo" class="tool-logo">
+    </div>
+    <div class="tool-card-body">
+      <h2 class="tool-title">BrainMetCompass</h2>
+      <p class="tool-description">An interactive tool for brain metastasis research, clinical prediction, and decision-support exploration.</p>
+      <p class="tool-status">Open BrainMetCompass <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+    </div>
+  </a>
 </div>
 
 <style>
@@ -112,6 +123,14 @@ Interactive web-based calculators and tools developed by the Hasanov Lab.
   font-weight: var(--semi-bold) !important;
   letter-spacing: 0 !important;
   text-transform: none !important;
+}
+
+
+.tool-description {
+  margin: 0 !important;
+  color: var(--gray);
+  font-size: 0.95rem;
+  line-height: 1.45;
 }
 
 .tool-status {
