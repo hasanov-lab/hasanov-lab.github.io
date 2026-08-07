@@ -16,7 +16,7 @@ A collection of clinical and computational oncology tools from the Hasanov Lab.
   </a>
   <a class="rccbm-model-card" href="https://hasanovlab-apollo-belzutifan.share.connect.posit.cloud/" target="_blank" rel="noopener noreferrer" aria-label="Open Belzutifan Tool">
     <h2>Belzutifan</h2>
-    <p>An interactive Apollo tool for exploring Belzutifan-related outcomes and decision-support modeling.</p>
+    <p>An interactive Apollo tool for Belzutifan in advanced RCC.</p>
     <span>Open Belzutifan Tool <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
   </a>
 </div>
