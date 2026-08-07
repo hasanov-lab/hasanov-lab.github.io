@@ -46,7 +46,7 @@ Interactive web-based calculators and tools developed by the Hasanov Lab.
 
   <a class="tool-card" href="https://hasanovlab-brainmetcompass.share.connect.posit.cloud/" target="_blank" rel="noopener noreferrer" aria-label="Open BrainMetCompass tool">
     <div class="tool-logo-wrap">
-      <img src="{{ '/images/tools/brainmetcompass-logo.png' | relative_url }}" alt="BrainMetCompass logo" class="tool-logo">
+      <img src="{{ '/tools/brainmetcompass.png' | relative_url }}" alt="BrainMetCompass logo" class="tool-logo">
     </div>
     <div class="tool-card-body">
       <h2 class="tool-title">BrainMetCompass</h2>
