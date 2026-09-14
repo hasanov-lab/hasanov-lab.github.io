@@ -23,11 +23,12 @@ Our lab brings together physician-scientists, clinicians, statisticians, bioinfo
   {% include portrait.html lookup="semiha-ozgul" no_link=true %}
   {% include portrait.html lookup="bayan-abu-alragheb" no_link=true %}
   {% include portrait.html lookup="peng-li" no_link=true %}
+  {% include portrait.html lookup="hongxin-chuai" no_link=true %}
   {% include portrait.html lookup="mostafa-ali" no_link=true %}
   {% include portrait.html lookup="nurlan" no_link=true %}
   {% include portrait.html lookup="shriya-deshmukh" no_link=true %}
   {% include portrait.html lookup="tugcs" no_link=true %}
-  {% include portrait.html lookup="hongxin-chuai" no_link=true %}
+  {% include portrait.html lookup="ahmed-khattab" no_link=true %}
 </div>
 
 ## Alumni
