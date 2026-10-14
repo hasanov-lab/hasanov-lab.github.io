@@ -486,74 +486,55 @@
   <size></size>
 -->
 
-<div class="rccbm-model-grid apollo-tools-grid">
-  <a class="rccbm-model-card" href="https://hasanovlab-apollo-pulvicto.share.connect.posit.cloud/" target="_blank" rel="noopener noreferrer" aria-label="Open Pluvicto for Advanced Prostate Cancer tool">
-    <h2>Pluvicto for Advanced Prostate Cancer</h2>
-    <p>Real-world outcomes and EHR-based machine learning model for patients with advanced prostate cancer treated with Lu-PSMA-617.</p>
-    <span>Open tool <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-  </a>
-  <a class="rccbm-model-card" href="https://hasanovlab-apollo-belzutifan.share.connect.posit.cloud/" target="_blank" rel="noopener noreferrer" aria-label="Open Belzutifan Tool">
-    <h2>Belzutifan</h2>
-    <p>An interactive Apollo tool for Belzutifan in advanced RCC.</p>
-    <span>Open Belzutifan Tool <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-  </a>
-</div>
+<section class="apollo-coming-soon" aria-labelledby="apollo-coming-soon-title">
+  <div class="apollo-coming-soon-content">
+    <h2 id="apollo-coming-soon-title">COMING SOON</h2>
+    <p>New Apollo clinical prediction and decision-support tools are currently under development. Stay tuned for updates.</p>
+  </div>
+</section>
 
 <style>
-.rccbm-model-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
-  margin: 28px 0 48px;
-}
-
-.apollo-tools-grid {
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 360px));
-  justify-content: center;
-}
-
-.rccbm-model-card {
+.apollo-coming-soon {
   display: flex;
-  flex-direction: column;
-  min-height: 220px;
-  padding: 28px;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(280px, 42vh, 440px);
+  margin: 28px 0 48px;
+  padding: 40px 24px;
+  text-align: center;
   background: var(--background);
   border-radius: 10px;
-  box-shadow: var(--shadow);
-  text-decoration: none !important;
-  color: inherit !important;
-  transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.rccbm-model-card[href]:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.14);
+.apollo-coming-soon-content {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
 }
 
-.rccbm-model-card h2 {
-  margin: 0 0 16px !important;
+.apollo-coming-soon h2 {
+  margin: 0 0 20px !important;
   padding: 0 !important;
   border: 0 !important;
   color: var(--primary) !important;
-  font-size: 1.35rem !important;
-  text-transform: none !important;
-  letter-spacing: 0 !important;
+  font-size: clamp(2rem, 5vw, 3.25rem) !important;
+  font-weight: var(--bold);
+  line-height: 1.15;
+  letter-spacing: 0.06em;
 }
 
-.rccbm-model-card p {
-  flex: 1;
-  margin: 0 0 22px !important;
+.apollo-coming-soon p {
+  margin: 0 auto !important;
   color: var(--gray);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.7;
 }
 
-.rccbm-model-card span {
-  color: var(--primary);
-  font-weight: var(--semi-bold);
-}
-
-@media (max-width: 900px) {
-  .rccbm-model-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 600px) {
+  .apollo-coming-soon {
+    min-height: 260px;
+    margin: 20px 0 36px;
+    padding: 32px 20px;
   }
 }
 </style>
