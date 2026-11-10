@@ -39,7 +39,7 @@
 {% assign share = "images/code-to-clinic-logo.png" | file_exists | absolute_url %}
 
 {% assign published = page.date | date_to_xmlschema %}
-{% assign updated = page.last_modified_at | date_to_xmlschema %}
+{% assign updated = page.date | date_to_xmlschema %}
 
 {% assign feed = "feed.xml" | absolute_url %}
 
