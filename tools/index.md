@@ -76,7 +76,8 @@ Interactive web-based calculators and tools developed by the Hasanov Lab.
       <p class="tool-description">Immunotherapy Survival Model - Renal Cell Carcinoma.</p>
       <p class="tool-status">Open ISM-RCC <i class="fa-solid fa-arrow-right"></i></p>
     </div>
-  </a>/div>
+  </a>
+</div>
 
 <style>
 .tools-grid {
