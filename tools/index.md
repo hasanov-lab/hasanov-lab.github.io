@@ -65,7 +65,6 @@ Interactive web-based calculators and tools developed by the Hasanov Lab.
       <p class="tool-status">Launch BM-GSM <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
     </div>
   </a>
-<
 
   <a class="tool-card" href="{{ '/tools/ism-rcc/' | relative_url }}" aria-label="Open ISM-RCC tool">
     <div class="tool-logo-wrap">
