@@ -65,7 +65,18 @@ Interactive web-based calculators and tools developed by the Hasanov Lab.
       <p class="tool-status">Launch BM-GSM <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
     </div>
   </a>
-</div>
+<
+
+  <a class="tool-card" href="{{ '/tools/ism-rcc/' | relative_url }}" aria-label="Open ISM-RCC tool">
+    <div class="tool-logo-wrap">
+      <img src="{{ '/images/tools/ism-rcc-logo.svg' | relative_url }}" alt="ISM-RCC Hasanov Lab logo" class="tool-logo">
+    </div>
+    <div class="tool-card-body">
+      <h2 class="tool-title">ISM-RCC</h2>
+      <p class="tool-description">Immunotherapy Survival Model - Renal Cell Carcinoma.</p>
+      <p class="tool-status">Open ISM-RCC <i class="fa-solid fa-arrow-right"></i></p>
+    </div>
+  </a>/div>
 
 <style>
 .tools-grid {
