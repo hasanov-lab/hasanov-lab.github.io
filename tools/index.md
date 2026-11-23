@@ -113,7 +113,7 @@ Interactive web-based calculators and tools developed by the Hasanov Lab.
   object-fit: contain;
 }
 
-.tool-card[href*="01a1d0fb-d0fc-66b3-72ce-c2557dc47a73"] .tool-logo {
+.tool-card[href*="/tools/bm-gsm/"] .tool-logo {
   border-radius: 50%;
   background: #fff;
 }
