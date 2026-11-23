@@ -1,7 +1,5 @@
 ---
 title: BM-GSM
-nav:
-  hidden: true
 ---
 
 <div class="bmgsm-landing">
