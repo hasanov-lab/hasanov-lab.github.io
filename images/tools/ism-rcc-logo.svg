@@ -5,7 +5,7 @@
 <circle cx="400" cy="400" r="238" fill="#fff" stroke="#d6ad55" stroke-width="8"/>
 <defs>
 <path id="top" d="M 130 420 A 270 270 0 0 1 670 420"/>
-<path id="bottom" d="M 130 435 A 270 270 0 0 0 670 435"/>
+<path id="bottom" d="M 670 410 A 270 270 0 0 1 130 410"/>
 </defs>
 <text fill="#f0c866" font-family="Arial, Helvetica, sans-serif" font-size="67" font-weight="700" letter-spacing="7"><textPath href="#top" startOffset="50%" text-anchor="middle">ISM-RCC</textPath></text>
 <text fill="#f0c866" font-family="Arial, Helvetica, sans-serif" font-size="47" font-weight="700" letter-spacing="6"><textPath href="#bottom" startOffset="50%" text-anchor="middle">HASANOV LAB</textPath></text>
