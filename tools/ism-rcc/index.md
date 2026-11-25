@@ -4,7 +4,7 @@ title: ISM-RCC
 
 <div class="ismrcc-landing">
   <div class="ismrcc-logo-wrap">
-    <img src="{{ '/images/tools/ism-rcc-logo.svg' | relative_url }}" alt="ISM-RCC Hasanov Lab logo" class="ismrcc-logo">
+    <img src="{{ '/images/tools/ism-rcc-logo.jpg' | relative_url }}" alt="ISM-RCC Hasanov Lab logo" class="ismrcc-logo">
   </div>
   <h1>ISM-RCC</h1>
   <h2>Immunotherapy Survival Model - Renal Cell Carcinoma</h2>
